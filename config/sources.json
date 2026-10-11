@@ -5,7 +5,7 @@
     "lookback_days": 120
   },
   "de_dnrec": {
-    "enabled": true,
+    "enabled": false,
     "collector": "delaware",
     "_seed_note": "UnitIDs confirmed from public DNREC pages; discovery adds the rest when it can.",
     "seed_unit_ids": ["288", "292", "296", "298", "304", "363620"]
