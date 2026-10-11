@@ -1,4 +1,3 @@
-yaml
 # Once a day: collect from all sources, export JSON for the website, rebuild
 # the page, and commit the results. GitHub Pages serves docs/.
 name: collect
