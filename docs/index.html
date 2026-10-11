@@ -734,6 +734,10 @@ a:hover { text-decoration-color: currentColor; }
 
 /* ---------- frame ---------- */
 .app { display: grid; grid-template-rows: auto auto minmax(0, 1fr); height: 100%; }
+/* Pin each part to its row: a hidden banner must not let the map slide into its row. */
+.topbar { grid-row: 1; }
+.banner { grid-row: 2; }
+.layout { grid-row: 3; }
 .topbar {
   display: flex; align-items: baseline; gap: 1.25rem; flex-wrap: wrap;
   padding: .85rem 1.25rem .8rem; border-bottom: 1px solid var(--rule);
@@ -860,6 +864,8 @@ table.states .flag { color: var(--advisory); font-weight: 600; }
 .stats div { padding: .55rem .65rem; border: 1px solid var(--rule); border-radius: var(--radius-s); }
 .stats dt { font-size: .75rem; color: var(--ink-2); line-height: 1.3; }
 .stats dd { margin: .15rem 0 0; font-size: 1.15rem; font-weight: 600; }
+.stats .dd-note { display: block; font-size: .78rem; font-weight: 500; line-height: 1.3; color: var(--ink-2); }
+.note { margin: 1.2rem 0 0; font-size: .9rem; color: var(--ink-2); max-width: 60ch; }
 .chart-box { position: relative; height: 210px; margin-top: .3rem; }
 .chart-note { font-size: .78rem; color: var(--ink-3); margin: .35rem 0 0; }
 .advlist { list-style: none; margin: 0; padding: 0; font-size: .875rem; }
@@ -958,6 +964,10 @@ const STATUS = {
                 note: "The source reported a status this site could not interpret. Check the official source." },
 };
 const ATTENTION = new Set(["closed", "advisory", "resampling"]);
+// Sources that publish a status for each beach but no individual sample results.
+const STATUS_ONLY = {
+  md_mde: "Maryland publishes the current status of each beach but not individual sample results, so there is no result history to show here.",
+};
 
 // ------------------------------------------------------------------ helpers
 const $ = (s, el = document) => el.querySelector(s);
@@ -1164,7 +1174,7 @@ function renderOverview() {
     const place = [countyName(p), p.state].filter(Boolean).join(", ");
     const val = p.latest_value != null || p.latest_qualifier
       ? `<b>${esc(fmtVal(p.latest_value, p.latest_qualifier))}</b><span class="pl">${esc(fmtDate(p.latest_sample_date))}</span>`
-      : `<span class="pl">No results</span>`;
+      : `<span class="pl">${STATUS_ONLY[sourceOf(p.site_id)] ? "Status only" : "No results yet"}</span>`;
     return `<li><button type="button" data-site="${esc(p.site_id)}">${shapeSVG(p.status, 16)}
       <span><span class="nm">${esc(p.name)}</span><span class="pl">${esc(place)}</span></span>
       <span class="val">${val}</span></button></li>`;
@@ -1282,6 +1292,8 @@ function renderSite(p, h) {
     <div class="status-line">${shapeSVG(p.status, 22)}
       <div><strong>${st.label}</strong><p>${st.note}${reported}</p></div></div>
 
+    ${!samples.length ? `<p class="note">${esc(STATUS_ONLY[src] ||
+        "No sample results have been published for this beach yet.")}</p>` : `
     <div class="reading">
       ${p.latest_sample_date ? `
         <div class="big">${esc(fmtVal(p.latest_value, p.latest_qualifier))}</div>
@@ -1290,10 +1302,11 @@ function renderSite(p, h) {
     </div>
 
     <dl class="stats">
-      <div><dt>30-day average (geometric mean)</dt><dd>${p.geomean_30d != null ? Math.round(p.geomean_30d) : "Not enough samples"}</dd></div>
+      <div><dt>30-day average (geometric mean)</dt><dd>${p.geomean_30d != null ? Math.round(p.geomean_30d)
+        : `<span class="dd-note">Needs 5 samples in 30 days</span>`}</dd></div>
       <div><dt>Samples this season</dt><dd>${season.length}</dd></div>
       <div><dt>Results over the limit</dt><dd>${exceed}</dd></div>
-    </dl>
+    </dl>`}
 
     ${samples.length > 1 ? `<h3>${indicatorName} this season</h3>
       <div class="chart-box"><canvas id="chart" aria-label="Sample results over time"></canvas></div>
