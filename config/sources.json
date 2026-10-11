@@ -1,0 +1,44 @@
+{
+  "nyc_doh": {
+    "enabled": true,
+    "collector": "nyc",
+    "lookback_days": 120
+  },
+  "de_dnrec": {
+    "enabled": true,
+    "collector": "delaware",
+    "_seed_note": "UnitIDs confirmed from public DNREC pages; discovery adds the rest when it can.",
+    "seed_unit_ids": ["288", "292", "296", "298", "304", "363620"]
+  },
+  "va_vdh": {
+    "enabled": true,
+    "collector": "virginia"
+  },
+  "md_mde": {
+    "enabled": true,
+    "collector": "arcgis",
+    "state": "MD",
+    "agency": "Maryland Dept. of the Environment, Healthy Beaches",
+    "portal": "https://maryland.maps.arcgis.com",
+    "item_id": "724261e6ba0746bc9fa501f2d4f21de0",
+    "homepage_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+    "layer_name_filter": "beach",
+    "field_map": {}
+  },
+  "ny_doh": {
+    "enabled": true,
+    "collector": "arcgis",
+    "state": "NY",
+    "agency": "New York State Dept. of Health, Coastal Beaches",
+    "portal": "https://www.arcgis.com",
+    "item_id": "301748017d7d40649bc5082fc1c5365e",
+    "homepage_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+    "layer_name_filter": "beach",
+    "field_map": {}
+  },
+  "nj_dep": {
+    "enabled": true,
+    "collector": "new_jersey",
+    "api_url": null
+  }
+}

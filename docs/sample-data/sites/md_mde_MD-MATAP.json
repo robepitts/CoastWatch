@@ -1,0 +1,78 @@
+{
+ "site_id": "md_mde:MD-MATAP",
+ "name": "Matapeake Beach",
+ "state": "MD",
+ "county": "Queen Anne's",
+ "water_body": "Chesapeake Bay",
+ "status": "no_data",
+ "source_status": null,
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "latest_sample_date": "2026-06-22",
+ "latest_value": 49.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": 43.4,
+ "bav": 104,
+ "samples_count": 6,
+ "history_file": "sites/md_mde_MD-MATAP.json",
+ "samples": [
+  {
+   "sample_date": "2026-05-18",
+   "indicator": "enterococcus",
+   "value": 87.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-05-25",
+   "indicator": "enterococcus",
+   "value": 29.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-01",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-08",
+   "indicator": "enterococcus",
+   "value": 101.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-15",
+   "indicator": "enterococcus",
+   "value": 107.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-06-22",
+   "indicator": "enterococcus",
+   "value": 49.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": [
+  {
+   "kind": "advisory",
+   "reason": "Bacteria",
+   "start_date": "2026-06-16",
+   "end_date": "2026-06-18",
+   "source_text": "Swimming advisory"
+  }
+ ]
+}

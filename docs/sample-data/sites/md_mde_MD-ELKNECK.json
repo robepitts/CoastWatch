@@ -1,0 +1,131 @@
+{
+ "site_id": "md_mde:MD-ELKNECK",
+ "name": "Elk Neck State Park",
+ "state": "MD",
+ "county": "Cecil",
+ "water_body": "Chesapeake Bay",
+ "status": "advisory",
+ "source_status": "Algae Bloom",
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "latest_sample_date": "2026-07-20",
+ "latest_value": 85.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": 60.8,
+ "bav": 104,
+ "samples_count": 10,
+ "history_file": "sites/md_mde_MD-ELKNECK.json",
+ "samples": [
+  {
+   "sample_date": "2026-05-18",
+   "indicator": "enterococcus",
+   "value": 21.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-05-25",
+   "indicator": "enterococcus",
+   "value": 13.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-01",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-08",
+   "indicator": "enterococcus",
+   "value": 153.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-06-15",
+   "indicator": "enterococcus",
+   "value": 45.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-22",
+   "indicator": "enterococcus",
+   "value": 21.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-29",
+   "indicator": "enterococcus",
+   "value": 337.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-07-06",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-13",
+   "indicator": "enterococcus",
+   "value": 138.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-07-20",
+   "indicator": "enterococcus",
+   "value": 85.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": [
+  {
+   "kind": "advisory",
+   "reason": "Algae",
+   "start_date": "2026-07-20",
+   "end_date": null,
+   "source_text": "Algae Bloom"
+  },
+  {
+   "kind": "advisory",
+   "reason": "Bacteria",
+   "start_date": "2026-07-14",
+   "end_date": "2026-07-16",
+   "source_text": "Swimming advisory"
+  },
+  {
+   "kind": "advisory",
+   "reason": "Bacteria",
+   "start_date": "2026-06-30",
+   "end_date": "2026-07-02",
+   "source_text": "Swimming advisory"
+  },
+  {
+   "kind": "advisory",
+   "reason": "Bacteria",
+   "start_date": "2026-06-09",
+   "end_date": "2026-06-11",
+   "source_text": "Swimming advisory"
+  }
+ ]
+}

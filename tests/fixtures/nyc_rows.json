@@ -1,0 +1,5 @@
+[
+ {"sample_id":"JB2609291130-1.2","sample_date":"2026-09-29T00:00:00.000","beach_name":"MANHATTAN BEACH","sample_location":"Center","enterococci_results":"20.00","units_or_notes":"MPN/100 ml"},
+ {"sample_id":"JB2609221130-1.2","sample_date":"2026-09-22T00:00:00.000","beach_name":"MANHATTAN BEACH","sample_location":"Center","enterococci_results":"130.00","units_or_notes":"MPN/100 ml"},
+ {"sample_id":"MA2609290930-1.1","sample_date":"2026-09-29T00:00:00.000","beach_name":"ORCHARD BEACH","sample_location":"Rigth","units_or_notes":"Result below detection limit"}
+]

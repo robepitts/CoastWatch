@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mid-Atlantic Beach Water Quality</title>
+<meta name="description" content="Latest beach water quality results from Virginia, Maryland, Delaware, New Jersey and New York on one map.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/*LEAFLET_CSS*/
+</style>
+<style>
+:root {
+  --water: #e4eff2;
+  --land: #d8ddca;
+  --land-context: #e9ebe2;
+  --coast: #8fa6a6;
+  --surface: #fbfcfb;
+  --surface-2: #eef3f2;
+  --ink: #18323d;
+  --ink-2: #4a6370;
+  --ink-3: #7a8f98;
+  --rule: #d3dedf;
+  --open: #1d8a6f;
+  --advisory: #d48f12;
+  --closed: #c0392b;
+  --resampling: #6a58a8;
+  --muted: #8b989c;
+  --marker-edge: #ffffff;
+  --banner-bg: #fff4dc;
+  --banner-ink: #6b4a05;
+  --focus: #1b6fd1;
+  --radius-s: 4px;
+  --radius-m: 8px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --water: #0f2129; --land: #24332f; --land-context: #1b2725; --coast: #4d6662;
+    --surface: #13222a; --surface-2: #1a2c35; --ink: #e2ecee; --ink-2: #a9bcc2; --ink-3: #7d9198;
+    --rule: #2a3f48; --open: #3cbf98; --advisory: #f0b23a; --closed: #f0675a; --resampling: #a493e6;
+    --muted: #7f8d91; --marker-edge: #0f2129; --banner-bg: #3a2e12; --banner-ink: #f6dda0; --focus: #6aa8ff;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --water: #0f2129; --land: #24332f; --land-context: #1b2725; --coast: #4d6662;
+  --surface: #13222a; --surface-2: #1a2c35; --ink: #e2ecee; --ink-2: #a9bcc2; --ink-3: #7d9198;
+  --rule: #2a3f48; --open: #3cbf98; --advisory: #f0b23a; --closed: #f0675a; --resampling: #a493e6;
+  --muted: #7f8d91; --marker-edge: #0f2129; --banner-bg: #3a2e12; --banner-ink: #f6dda0; --focus: #6aa8ff;
+  color-scheme: dark;
+}
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { scroll-padding-top: env(safe-area-inset-top, 0px); height: 100%; }
+body {
+  margin: 0; height: 100%;
+  background: var(--surface); color: var(--ink);
+  font: 400 15px/1.5 "Public Sans", "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+a { color: var(--ink); text-decoration-color: var(--coast); text-underline-offset: 2px; }
+a:hover { text-decoration-color: currentColor; }
+
+/* ---------- frame ---------- */
+.app { display: grid; grid-template-rows: auto auto minmax(0, 1fr); height: 100%; }
+.topbar {
+  display: flex; align-items: baseline; gap: 1.25rem; flex-wrap: wrap;
+  padding: .85rem 1.25rem .8rem; border-bottom: 1px solid var(--rule);
+}
+.topbar h1 { margin: 0; font-size: 1.2rem; font-weight: 700; letter-spacing: -.01em; }
+.topbar .fresh { margin: 0; color: var(--ink-2); font-size: .875rem; }
+.banner {
+  margin: 0; padding: .5rem 1.25rem; font-size: .875rem;
+  background: var(--banner-bg); color: var(--banner-ink); border-bottom: 1px solid var(--rule);
+}
+.banner[hidden] { display: none; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, 420px); min-height: 0; }
+
+/* ---------- map ---------- */
+.map-wrap { position: relative; min-height: 0; }
+#map { position: absolute; inset: 0; background: var(--water); }
+.leaflet-container { font: inherit; background: var(--water); }
+.leaflet-control-attribution { font-size: 11px; background: color-mix(in srgb, var(--surface) 85%, transparent) !important; color: var(--ink-3); }
+.leaflet-control-attribution a { color: var(--ink-2); }
+.leaflet-bar a { background: var(--surface); color: var(--ink); border-bottom-color: var(--rule); }
+.leaflet-bar a:hover { background: var(--surface-2); }
+.leaflet-bar { border: 1px solid var(--rule) !important; box-shadow: none !important; }
+.cw-marker { background: none; border: 0; }
+.cw-marker svg { display: block; overflow: visible; filter: drop-shadow(0 1px 1px rgba(10, 30, 40, .35)); }
+.cw-marker.is-selected svg { transform: scale(1.45); transform-origin: 50% 50%; }
+.cw-marker.is-selected::after {
+  content: ""; position: absolute; inset: -9px; border-radius: 50%;
+  border: 2px solid var(--ink); pointer-events: none;
+}
+
+.filters {
+  position: absolute; z-index: 500; top: .75rem; left: .75rem; right: auto;
+  display: flex; flex-direction: column; gap: .5rem; max-width: calc(100% - 4.5rem);
+  padding: .6rem .7rem; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-m);
+}
+.filters .row { display: flex; gap: .35rem; flex-wrap: wrap; align-items: center; }
+.chip {
+  border: 1px solid var(--rule); background: var(--surface); border-radius: 999px;
+  padding: .15rem .6rem; font-size: .85rem; font-weight: 600; cursor: pointer; color: var(--ink-3);
+}
+.chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--surface); }
+.search {
+  width: 100%; min-width: 12rem; padding: .35rem .55rem; font-size: .875rem;
+  border: 1px solid var(--rule); border-radius: var(--radius-s); background: var(--surface-2);
+}
+.toggle { display: flex; align-items: center; gap: .4rem; font-size: .85rem; color: var(--ink-2); cursor: pointer; }
+.toggle input { accent-color: var(--ink); margin: 0; }
+
+.legend {
+  position: absolute; z-index: 500; left: .75rem; bottom: 1.6rem;
+  padding: .5rem .7rem; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius-m);
+  font-size: .8rem; color: var(--ink-2);
+}
+.legend ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .2rem; }
+.legend li { display: flex; align-items: center; gap: .45rem; }
+
+/* ---------- panel ---------- */
+.panel { border-left: 1px solid var(--rule); overflow-y: auto; min-height: 0; background: var(--surface); }
+.panel-inner { padding: 1.1rem 1.25rem 2rem; }
+.panel h2 { font-size: 1.15rem; line-height: 1.3; margin: 0 0 .2rem; font-weight: 700; letter-spacing: -.01em; }
+.panel h3 { font-size: .95rem; margin: 1.6rem 0 .55rem; font-weight: 600; }
+.sub { margin: 0; color: var(--ink-2); font-size: .875rem; }
+.back {
+  display: inline-flex; align-items: center; gap: .35rem; margin: 0 0 .9rem; padding: .2rem 0;
+  background: none; border: 0; color: var(--ink-2); font-size: .875rem; cursor: pointer;
+}
+.back:hover { color: var(--ink); }
+.back svg { width: 14px; height: 14px; }
+
+.statusbar { display: flex; height: 10px; border-radius: 999px; overflow: hidden; margin: .9rem 0 .6rem; background: var(--surface-2); }
+.statusbar span { display: block; height: 100%; }
+.statuskey { display: flex; flex-wrap: wrap; gap: .35rem 1rem; margin: 0; padding: 0; list-style: none; font-size: .85rem; color: var(--ink-2); }
+.statuskey li { display: flex; align-items: center; gap: .35rem; }
+.statuskey b { color: var(--ink); font-weight: 600; }
+
+.sitelist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.sitelist li { border-bottom: 1px solid var(--rule); }
+.sitelist button {
+  width: 100%; display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: .6rem; align-items: center;
+  padding: .55rem .25rem; background: none; border: 0; text-align: left; cursor: pointer;
+}
+.sitelist button:hover { background: var(--surface-2); }
+.sitelist .nm { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sitelist .pl { display: block; font-size: .8rem; color: var(--ink-3); }
+.sitelist .val { text-align: right; font-size: .85rem; color: var(--ink-2); white-space: nowrap; }
+.sitelist .val b { color: var(--ink); font-weight: 600; }
+.empty { color: var(--ink-2); font-size: .9rem; padding: .75rem 0; margin: 0; }
+
+table.states { width: 100%; border-collapse: collapse; font-size: .85rem; }
+table.states th { text-align: left; font-weight: 600; color: var(--ink-2); padding: .35rem .3rem; border-bottom: 1px solid var(--rule); }
+table.states td { padding: .45rem .3rem; border-bottom: 1px solid var(--rule); }
+table.states td.n, table.states th.n { text-align: right; }
+table.states tr[data-state] { cursor: pointer; }
+table.states tr[data-state]:hover td { background: var(--surface-2); }
+table.states .flag { color: var(--advisory); font-weight: 600; }
+
+.status-line { display: flex; gap: .6rem; align-items: flex-start; margin: 1rem 0 0; padding: .75rem .85rem; border-radius: var(--radius-m); background: var(--surface-2); }
+.status-line svg { flex: none; margin-top: .15rem; }
+.status-line strong { display: block; font-size: 1rem; }
+.status-line p { margin: .1rem 0 0; font-size: .875rem; color: var(--ink-2); }
+
+.reading { margin-top: 1.4rem; }
+.reading .big { font-size: 2.4rem; font-weight: 700; line-height: 1; letter-spacing: -.02em; }
+.reading .unit { font-size: .875rem; color: var(--ink-2); margin-top: .3rem; }
+.gauge { position: relative; height: 34px; margin: 1rem 0 .2rem; }
+.gauge .track { position: absolute; left: 0; right: 0; top: 12px; height: 8px; border-radius: 999px; overflow: hidden; display: flex; }
+.gauge .ok { background: color-mix(in srgb, var(--open) 35%, var(--surface-2)); }
+.gauge .bad { background: color-mix(in srgb, var(--advisory) 40%, var(--surface-2)); flex: 1; }
+.gauge .limit { position: absolute; top: 6px; width: 2px; height: 20px; background: var(--ink); }
+.gauge .limit span { position: absolute; top: 22px; left: 50%; transform: translateX(-50%); font-size: .75rem; color: var(--ink-2); white-space: nowrap; }
+.gauge .pin { position: absolute; top: 0; width: 0; height: 0; transform: translateX(-6px);
+  border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 10px solid var(--ink); }
+.gauge-scale { position: relative; height: 1rem; font-size: .7rem; color: var(--ink-3); margin-top: 1rem; }
+.gauge-scale span { position: absolute; transform: translateX(-50%); }
+.gauge-scale span:first-child { transform: none; }
+.gauge-scale span:last-child { transform: translateX(-100%); }
+
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; margin: 1.3rem 0 0; }
+.stats div { padding: .55rem .65rem; border: 1px solid var(--rule); border-radius: var(--radius-s); }
+.stats dt { font-size: .75rem; color: var(--ink-2); line-height: 1.3; }
+.stats dd { margin: .15rem 0 0; font-size: 1.15rem; font-weight: 600; }
+.chart-box { position: relative; height: 210px; margin-top: .3rem; }
+.chart-note { font-size: .78rem; color: var(--ink-3); margin: .35rem 0 0; }
+.advlist { list-style: none; margin: 0; padding: 0; font-size: .875rem; }
+.advlist li { display: flex; justify-content: space-between; gap: 1rem; padding: .4rem 0; border-bottom: 1px solid var(--rule); }
+.advlist .dates { color: var(--ink-2); white-space: nowrap; }
+.official { display: inline-block; margin-top: 1.4rem; font-weight: 600; }
+.fineprint { font-size: .8rem; color: var(--ink-3); margin-top: 1rem; }
+
+.footer { padding: .9rem 1.25rem; border-top: 1px solid var(--rule); font-size: .8rem; color: var(--ink-3); }
+.footer p { margin: 0; max-width: 70ch; }
+.loading { padding: 2rem 1.25rem; color: var(--ink-2); }
+
+@media (max-width: 820px) {
+  .app { height: auto; display: block; }
+  .layout { display: block; }
+  .map-wrap { display: flex; flex-direction: column; }
+  #map { position: relative; inset: auto; height: 56vh; min-height: 340px; order: 2; }
+  .filters { position: static; order: 1; max-width: none; border: 0; border-bottom: 1px solid var(--rule);
+             border-radius: 0; padding: .7rem 1rem; }
+  .legend { position: static; order: 3; border: 0; border-top: 1px solid var(--rule); border-radius: 0; padding: .55rem 1rem; }
+  .legend ul { display: flex; flex-wrap: wrap; gap: .3rem .9rem; }
+  .panel { border-left: 0; border-top: 1px solid var(--rule); overflow: visible; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <h1>Mid-Atlantic Beach Water Quality</h1>
+    <p class="fresh" id="fresh">Loading the latest results…</p>
+  </header>
+  <p class="banner" id="banner" hidden></p>
+  <main class="layout">
+    <section class="map-wrap" aria-label="Map of monitored beaches">
+      <div id="map"></div>
+      <div class="filters" role="group" aria-label="Filter beaches">
+        <div class="row" id="state-chips"></div>
+        <input class="search" id="search" type="search" placeholder="Find a beach" aria-label="Find a beach by name">
+        <label class="toggle"><input type="checkbox" id="attention-only"> Only advisories and closures</label>
+      </div>
+      <div class="legend" aria-hidden="true"><ul id="legend"></ul></div>
+    </section>
+    <aside class="panel" id="panel" aria-live="polite"><div class="loading">Loading…</div></aside>
+  </main>
+</div>
+<footer class="footer">
+  <p>This site combines public data from the Virginia Department of Health, Maryland Department of the Environment, Delaware DNREC, New Jersey DEP, New York State Department of Health and NYC Health. It is not an official source. Water quality can change quickly, especially after rain, so always follow posted signs and lifeguards.</p>
+</footer>
+
+<script id="cw-embed" type="application/json">null</script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.js"></script>
+<script>
+(() => {
+"use strict";
+
+// ------------------------------------------------------------------ config
+const EMBED = JSON.parse(document.getElementById("cw-embed").textContent);
+const params = new URLSearchParams(location.search);
+const CONFIG = {
+  dataBase: params.has("sample") ? "sample-data/" : "data/",
+  fallbackBase: "sample-data/",
+  // Street-level tiles only when zoomed in; the regional view uses the drawn coastline.
+  tiles: !EMBED,
+  tileMinZoom: 10,
+  staleDays: 14,
+};
+
+const STATES = { VA: "Virginia", MD: "Maryland", DE: "Delaware", NJ: "New Jersey", NY: "New York" };
+const AGENCY = {
+  va_vdh: "Virginia Department of Health", md_mde: "Maryland Department of the Environment",
+  de_dnrec: "Delaware DNREC", nj_dep: "New Jersey DEP", ny_doh: "New York State Department of Health",
+  nyc_doh: "NYC Health",
+};
+const STATUS = {
+  closed:     { label: "Closed", rank: 0, color: "--closed", shape: "square",
+                note: "Closed to swimming by the local health authority." },
+  advisory:   { label: "Advisory", rank: 1, color: "--advisory", shape: "triangle",
+                note: "Swimming not recommended. A recent sample exceeded the state limit, or another hazard such as an algae bloom was reported." },
+  resampling: { label: "Resampling", rank: 2, color: "--resampling", shape: "diamond",
+                note: "One sample exceeded the limit. A confirmation sample is being tested." },
+  open:       { label: "Meets standard", rank: 3, color: "--open", shape: "circle",
+                note: "The most recent sample met the state standard." },
+  no_data:    { label: "No recent data", rank: 4, color: "--muted", shape: "ring-dashed",
+                note: "No result in the past two weeks. Check the official source before swimming." },
+  off_season: { label: "Off season", rank: 5, color: "--muted", shape: "ring",
+                note: "Not sampled until next swimming season, usually starting in May." },
+  unknown:    { label: "Status unclear", rank: 6, color: "--muted", shape: "dot",
+                note: "The source reported a status this site could not interpret. Check the official source." },
+};
+const ATTENTION = new Set(["closed", "advisory", "resampling"]);
+
+// ------------------------------------------------------------------ helpers
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const fmtDate = (iso, opts = { month: "short", day: "numeric" }) =>
+  iso ? new Date(iso + "T12:00:00").toLocaleDateString("en-US", opts) : "";
+const fmtLong = iso => fmtDate(iso, { month: "long", day: "numeric", year: "numeric" });
+const fmtVal = (v, q) => v == null ? (q === "below_detection" ? "Below detection" : "Not reported")
+  : `${q === "<" || q === ">" ? q : ""}${Math.round(v).toLocaleString("en-US")}`;
+const sourceOf = id => id.split(":")[0];
+const countyName = p => !p.county ? "" : (p.state === "VA" || /county|city/i.test(p.county)) ? p.county : `${p.county} County`;
+
+function shapeSVG(status, size = 18) {
+  const s = STATUS[status] || STATUS.unknown;
+  const c = `var(${s.color})`, e = "var(--marker-edge)";
+  const body = {
+    circle: `<circle cx="10" cy="10" r="7" fill="${c}" stroke="${e}" stroke-width="1.5"/>`,
+    triangle: `<path d="M10 2.2 18.4 16.8H1.6Z" fill="${c}" stroke="${e}" stroke-width="1.5" stroke-linejoin="round"/>`,
+    square: `<rect x="3" y="3" width="14" height="14" rx="1.5" fill="${c}" stroke="${e}" stroke-width="1.5"/><rect x="6" y="9" width="8" height="2" fill="#fff"/>`,
+    diamond: `<path d="M10 1.8 18.2 10 10 18.2 1.8 10Z" fill="${c}" stroke="${e}" stroke-width="1.5" stroke-linejoin="round"/>`,
+    ring: `<circle cx="10" cy="10" r="6" fill="var(--surface)" stroke="${c}" stroke-width="2.5"/>`,
+    "ring-dashed": `<circle cx="10" cy="10" r="6" fill="var(--surface)" stroke="${c}" stroke-width="2.5" stroke-dasharray="3.2 2.4"/>`,
+    dot: `<circle cx="10" cy="10" r="4" fill="${c}" stroke="${e}" stroke-width="1.5"/>`,
+  }[s.shape];
+  return `<svg width="${size}" height="${size}" viewBox="0 0 20 20" aria-hidden="true">${body}</svg>`;
+}
+
+async function getJSON(path) {
+  const r = await fetch(path, { cache: "no-cache" });
+  if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`);
+  return r.json();
+}
+
+// ------------------------------------------------------------------ state
+const app = {
+  features: [], summary: null, base: CONFIG.dataBase, histories: {},
+  selected: null, states: new Set(Object.keys(STATES)), attentionOnly: false, query: "",
+  map: null, markers: new Map(), markerLayer: null, chart: null,
+};
+
+// ------------------------------------------------------------------ data
+async function loadData() {
+  if (EMBED) {
+    app.features = EMBED.sites.features; app.summary = EMBED.summary; app.histories = EMBED.histories || {};
+    return EMBED.basemap;
+  }
+  let sites;
+  try {
+    sites = await getJSON(app.base + "sites.geojson");
+    app.summary = await getJSON(app.base + "summary.json");
+  } catch (e) {
+    if (app.base === CONFIG.fallbackBase) throw e;
+    app.base = CONFIG.fallbackBase;             // no live data yet: show the sample set
+    sites = await getJSON(app.base + "sites.geojson");
+    app.summary = await getJSON(app.base + "summary.json");
+  }
+  app.features = sites.features;
+  return getJSON("basemap.json").catch(() => null);
+}
+
+async function loadHistory(f) {
+  const file = f.properties.history_file;
+  if (!app.histories[file]) app.histories[file] = await getJSON(app.base + file);
+  return app.histories[file];
+}
+
+// ------------------------------------------------------------------ header
+function renderHeader() {
+  const s = app.summary || {};
+  const banner = $("#banner");
+  if (s.sample_data) {
+    $("#fresh").textContent = `Preview showing results as of ${fmtLong(s.as_of)}.`;
+    banner.textContent = "These are simulated results for previewing the layout. They are not real water quality data.";
+    banner.hidden = false;
+  } else {
+    const when = s.generated_at ? new Date(s.generated_at) : null;
+    $("#fresh").textContent = when
+      ? `Updated daily. Last checked ${when.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}.`
+      : "Updated daily.";
+  }
+}
+
+// ------------------------------------------------------------------ map
+function initMap(basemap) {
+  const map = app.map = L.map("map", { zoomControl: false, attributionControl: true, minZoom: 6, maxZoom: 16,
+                                       zoomSnap: 0.5, worldCopyJump: false });
+  L.control.zoom({ position: "topright" }).addTo(map);
+  map.attributionControl.setPrefix(false);
+  map.attributionControl.addAttribution("Boundaries: U.S. Census Bureau");
+  if (basemap) {
+    L.geoJSON(basemap, {
+      interactive: false,
+      style: f => ({ fillColor: f.properties.focus ? css("--land") : css("--land-context"), fillOpacity: 1,
+                     color: css("--coast"), weight: f.properties.focus ? 0.9 : 0.6 }),
+    }).addTo(map);
+  }
+  if (CONFIG.tiles) {
+    const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+    const tiles = L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark ? "dark_all" : "light_all"}/{z}/{x}/{y}{r}.png`, {
+      subdomains: "abcd", maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    });
+    const sync = () => map.getZoom() >= CONFIG.tileMinZoom ? tiles.addTo(map) : tiles.remove();
+    map.on("zoomend", sync);
+  }
+  app.markerLayer = L.layerGroup().addTo(map);
+  for (const f of app.features) {
+    const [lon, lat] = f.geometry.coordinates;
+    const p = f.properties;
+    const m = L.marker([lat, lon], {
+      icon: icon(p.status, false), title: `${p.name}: ${(STATUS[p.status] || STATUS.unknown).label}`,
+      alt: p.name, riseOnHover: true, keyboard: true,
+    });
+    m.on("click", () => select(p.site_id));
+    m.feature = f;
+    app.markers.set(p.site_id, m);
+  }
+  const pts = app.features.map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0]]);
+  if (pts.length) map.fitBounds(pts, { padding: [40, 40] }); else map.setView([38.9, -74.9], 7);
+  map.on("moveend", () => { if (!app.selected) renderOverview(); });
+}
+
+function icon(status, selected) {
+  return L.divIcon({ className: "cw-marker" + (selected ? " is-selected" : ""), html: shapeSVG(status, 18),
+                     iconSize: [18, 18], iconAnchor: [9, 9] });
+}
+
+function passes(p) {
+  if (!app.states.has(p.state)) return false;
+  if (app.attentionOnly && !ATTENTION.has(p.status)) return false;
+  if (app.query && !p.name.toLowerCase().includes(app.query)) return false;
+  return true;
+}
+
+function applyFilters() {
+  for (const [id, m] of app.markers) {
+    const show = passes(m.feature.properties);
+    if (show && !app.markerLayer.hasLayer(m)) app.markerLayer.addLayer(m);
+    if (!show && app.markerLayer.hasLayer(m)) app.markerLayer.removeLayer(m);
+  }
+  if (!app.selected) renderOverview();
+}
+
+function inView() {
+  const b = app.map.getBounds();
+  return app.features.filter(f => passes(f.properties) &&
+    b.contains([f.geometry.coordinates[1], f.geometry.coordinates[0]]));
+}
+
+// ------------------------------------------------------------------ controls
+function renderControls() {
+  const chips = $("#state-chips");
+  chips.innerHTML = Object.entries(STATES).map(([k, v]) =>
+    `<button class="chip" type="button" aria-pressed="true" data-state="${k}" title="${v}">${k}</button>`).join("");
+  chips.addEventListener("click", e => {
+    const b = e.target.closest("[data-state]"); if (!b) return;
+    const k = b.dataset.state, on = b.getAttribute("aria-pressed") !== "true";
+    b.setAttribute("aria-pressed", String(on));
+    on ? app.states.add(k) : app.states.delete(k);
+    applyFilters();
+  });
+  $("#search").addEventListener("input", e => { app.query = e.target.value.trim().toLowerCase(); applyFilters(); });
+  $("#attention-only").addEventListener("change", e => { app.attentionOnly = e.target.checked; applyFilters(); });
+  const order = ["open", "advisory", "closed", "resampling", "no_data", "off_season"];
+  $("#legend").innerHTML = order.map(k => `<li>${shapeSVG(k, 14)}${STATUS[k].label}</li>`).join("");
+}
+
+// ------------------------------------------------------------------ overview panel
+function sortSites(list) {
+  return list.slice().sort((a, b) => {
+    const pa = a.properties, pb = b.properties;
+    return (STATUS[pa.status]?.rank ?? 9) - (STATUS[pb.status]?.rank ?? 9)
+      || (pb.latest_value ?? -1) - (pa.latest_value ?? -1) || pa.name.localeCompare(pb.name);
+  });
+}
+
+function renderOverview() {
+  const list = sortSites(inView());
+  const counts = {};
+  for (const f of list) counts[f.properties.status] = (counts[f.properties.status] || 0) + 1;
+  const order = Object.keys(STATUS).sort((a, b) => STATUS[a].rank - STATUS[b].rank).filter(k => counts[k]);
+  const total = list.length;
+  const offSeason = (counts.off_season || 0) > total / 2;
+
+  const rows = list.slice(0, 80).map(f => {
+    const p = f.properties;
+    const place = [countyName(p), p.state].filter(Boolean).join(", ");
+    const val = p.latest_value != null || p.latest_qualifier
+      ? `<b>${esc(fmtVal(p.latest_value, p.latest_qualifier))}</b><span class="pl">${esc(fmtDate(p.latest_sample_date))}</span>`
+      : `<span class="pl">No results</span>`;
+    return `<li><button type="button" data-site="${esc(p.site_id)}">${shapeSVG(p.status, 16)}
+      <span><span class="nm">${esc(p.name)}</span><span class="pl">${esc(place)}</span></span>
+      <span class="val">${val}</span></button></li>`;
+  }).join("");
+
+  $("#panel").innerHTML = `<div class="panel-inner">
+    <h2>${total ? `${total} beach${total === 1 ? "" : "es"} in view` : "No beaches in view"}</h2>
+    <p class="sub">${total ? "Zoom or pan the map to change this list. Select a beach for its full history."
+                           : "Zoom out, or turn states back on in the filters."}</p>
+    ${offSeason ? `<p class="sub" style="margin-top:.6rem">Most beaches are between seasons. Routine sampling resumes in May.</p>` : ""}
+    ${total ? `<div class="statusbar" role="img" aria-label="${order.map(k => `${counts[k]} ${STATUS[k].label}`).join(", ")}">
+      ${order.map(k => `<span style="width:${(counts[k] / total) * 100}%;background:var(${STATUS[k].color})"></span>`).join("")}</div>
+      <ul class="statuskey">${order.map(k => `<li>${shapeSVG(k, 13)}<b>${counts[k]}</b> ${STATUS[k].label}</li>`).join("")}</ul>` : ""}
+    <h3>Beaches, most urgent first</h3>
+    ${total ? `<ul class="sitelist">${rows}</ul>${total > 80 ? `<p class="empty">Showing the first 80. Zoom in to see the rest.</p>` : ""}`
+            : `<p class="empty">Nothing matches the current filters here.</p>`}
+    <h3>By state</h3>
+    ${stateTable()}
+  </div>`;
+}
+
+function stateTable() {
+  const by = {};
+  for (const f of app.features) {
+    const p = f.properties, s = by[p.state] ||= { n: 0, attention: 0, sources: new Set() };
+    s.n++; if (ATTENTION.has(p.status)) s.attention++; s.sources.add(sourceOf(p.site_id));
+  }
+  const newest = app.summary?.by_state || {};
+  return `<table class="states"><thead><tr><th>State</th><th class="n">Beaches</th>
+    <th class="n">Advisories or closures</th><th class="n">Newest result</th></tr></thead><tbody>
+    ${Object.keys(STATES).filter(k => by[k]).map(k => `<tr data-state="${k}" tabindex="0" title="Show ${STATES[k]} on the map">
+      <td>${STATES[k]}</td><td class="n">${by[k].n}</td>
+      <td class="n ${by[k].attention ? "flag" : ""}">${by[k].attention}</td>
+      <td class="n">${esc(fmtDate(newest[k]?.newest_sample)) || "None"}</td></tr>`).join("")}
+    </tbody></table>`;
+}
+
+function zoomToState(k) {
+  const pts = app.features.filter(f => f.properties.state === k)
+    .map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0]]);
+  if (pts.length) app.map.fitBounds(pts, { padding: [50, 50], maxZoom: 10, animate: !reduceMotion });
+}
+
+// ------------------------------------------------------------------ site panel
+async function select(siteId, { fromHash = false } = {}) {
+  const m = app.markers.get(siteId);
+  if (!m) return;
+  if (app.selected && app.markers.get(app.selected)) {
+    const prev = app.markers.get(app.selected);
+    prev.setIcon(icon(prev.feature.properties.status, false));
+  }
+  app.selected = siteId;
+  m.setIcon(icon(m.feature.properties.status, true));
+  if (!app.map.getBounds().pad(-0.1).contains(m.getLatLng()) || fromHash) {
+    app.map.setView(m.getLatLng(), Math.max(app.map.getZoom(), fromHash ? 10 : app.map.getZoom()),
+                    { animate: !reduceMotion });
+  }
+  window.history.replaceState(null, "", `#site=${encodeURIComponent(siteId)}`);
+  const p = m.feature.properties;
+  $("#panel").innerHTML = `<div class="panel-inner"><p class="loading" style="padding:0">Loading ${esc(p.name)}…</p></div>`;
+  let h;
+  try { h = await loadHistory(m.feature); }
+  catch (e) { h = { samples: [], advisories: [] }; }
+  if (app.selected !== siteId) return;   // user moved on while loading
+  renderSite(p, h);
+}
+
+function deselect() {
+  if (app.selected) {
+    const m = app.markers.get(app.selected);
+    if (m) m.setIcon(icon(m.feature.properties.status, false));
+  }
+  app.selected = null;
+  window.history.replaceState(null, "", location.pathname + location.search);
+  if (app.chart) { app.chart.destroy(); app.chart = null; }
+  renderOverview();
+}
+
+function gauge(value, bav) {
+  if (value == null || !bav) return "";
+  const pos = v => Math.min(100, Math.max(0, (Math.log10(Math.max(v, 1)) / 4) * 100));
+  return `<div class="gauge" role="img" aria-label="Result ${Math.round(value)} compared with the limit of ${bav}">
+      <div class="track"><div class="ok" style="width:${pos(bav)}%"></div><div class="bad"></div></div>
+      <div class="limit" style="left:${pos(bav)}%"><span>Limit ${bav}</span></div>
+      <div class="pin" style="left:${pos(value)}%"></div>
+    </div>
+    <div class="gauge-scale">${["1", "10", "100", "1,000", "10,000"].map((t, i) => `<span style="left:${i * 25}%">${t}</span>`).join("")}</div>`;
+}
+
+function renderSite(p, h) {
+  const st = STATUS[p.status] || STATUS.unknown;
+  const src = sourceOf(p.site_id);
+  const samples = (h.samples || []).filter(s => s.indicator === (p.latest_indicator || "enterococcus"));
+  const season = samples.filter(s => s.sample_date.slice(0, 4) === (p.latest_sample_date || "").slice(0, 4));
+  const exceed = season.filter(s => s.exceeds_bav === 1).length;
+  const place = [countyName(p), STATES[p.state]].filter(Boolean).join(", ");
+  const indicatorName = p.latest_indicator === "e_coli" ? "E. coli" : "Enterococcus";
+  const reported = p.source_status && p.source_status.toLowerCase() !== st.label.toLowerCase()
+    ? ` The state lists this beach as "${esc(p.source_status)}."` : "";
+  const advs = (h.advisories || []).filter(a => a.kind !== "lift").slice(0, 6);
+
+  $("#panel").innerHTML = `<div class="panel-inner">
+    <button class="back" type="button" id="back">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
+      All beaches in view</button>
+    <h2>${esc(p.name)}</h2>
+    <p class="sub">${esc(place)}${p.water_body ? `<br>${esc(p.water_body)}` : ""}</p>
+    <div class="status-line">${shapeSVG(p.status, 22)}
+      <div><strong>${st.label}</strong><p>${st.note}${reported}</p></div></div>
+
+    <div class="reading">
+      ${p.latest_sample_date ? `
+        <div class="big">${esc(fmtVal(p.latest_value, p.latest_qualifier))}</div>
+        <div class="unit">${indicatorName} bacteria per 100 mL of water, sampled ${esc(fmtLong(p.latest_sample_date))}</div>
+        ${gauge(p.latest_value, p.bav)}` : `<p class="empty">No sample results have been published for this beach yet.</p>`}
+    </div>
+
+    <dl class="stats">
+      <div><dt>30-day average (geometric mean)</dt><dd>${p.geomean_30d != null ? Math.round(p.geomean_30d) : "Not enough samples"}</dd></div>
+      <div><dt>Samples this season</dt><dd>${season.length}</dd></div>
+      <div><dt>Results over the limit</dt><dd>${exceed}</dd></div>
+    </dl>
+
+    ${samples.length > 1 ? `<h3>${indicatorName} this season</h3>
+      <div class="chart-box"><canvas id="chart" aria-label="Sample results over time"></canvas></div>
+      <p class="chart-note">Log scale. The dashed line is ${STATES[p.state]}'s single-sample limit${p.bav ? ` of ${p.bav}` : ""}. Triangles mark results over the limit.</p>` : ""}
+
+    ${advs.length ? `<h3>Recent advisories and closures</h3><ul class="advlist">
+      ${advs.map(a => `<li><span>${esc(a.source_text || a.kind)}${a.reason ? `, ${esc(a.reason.toLowerCase())}` : ""}</span>
+        <span class="dates">${esc(fmtDate(a.start_date))}${a.end_date && a.end_date !== a.start_date ? ` to ${esc(fmtDate(a.end_date))}` : ""}</span></li>`).join("")}
+      </ul>` : ""}
+
+    ${p.detail_url ? `<a class="official" href="${esc(p.detail_url)}" target="_blank" rel="noopener">Check the official ${esc(AGENCY[src] || "state")} page</a>` : ""}
+    <p class="fineprint">Results reflect water conditions when the sample was taken. Labs typically report results a day after sampling.</p>
+  </div>`;
+
+  $("#back").addEventListener("click", deselect);
+  if (samples.length > 1) drawChart(samples, p.bav);
+  $("#panel").scrollTop = 0;
+}
+
+function drawChart(samples, bav) {
+  if (app.chart) app.chart.destroy();
+  const ink2 = css("--ink-2"), rule = css("--rule"), okC = css("--open"), badC = css("--advisory"), ink = css("--ink");
+  const pts = samples.filter(s => s.value != null).map(s => ({
+    x: new Date(s.sample_date + "T12:00:00").getTime(), y: Math.max(s.value, 1), over: s.exceeds_bav === 1, q: s.qualifier,
+  }));
+  const xs = pts.map(p => p.x);
+  const datasets = [{
+    data: pts, borderColor: rule, borderWidth: 1.5, tension: 0,
+    pointRadius: pts.map(p => p.over ? 6 : 4), pointHoverRadius: 7,
+    pointStyle: pts.map(p => p.over ? "triangle" : "circle"),
+    pointBackgroundColor: pts.map(p => p.over ? badC : okC), pointBorderColor: css("--surface"), pointBorderWidth: 1,
+  }];
+  if (bav && xs.length) datasets.push({
+    data: [{ x: Math.min(...xs), y: bav }, { x: Math.max(...xs), y: bav }],
+    borderColor: ink, borderDash: [5, 4], borderWidth: 1.25, pointRadius: 0, pointHoverRadius: 0,
+  });
+  app.chart = new Chart($("#chart"), {
+    type: "line", data: { datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false, animation: reduceMotion ? false : { duration: 250 },
+      parsing: false, normalized: true,
+      plugins: { legend: { display: false },
+        tooltip: { filter: i => i.datasetIndex === 0, displayColors: false,
+          callbacks: { title: i => new Date(i[0].raw.x).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
+                       label: i => `${i.raw.q === "<" ? "<" : ""}${Math.round(i.raw.y).toLocaleString()}${i.raw.over ? " (over limit)" : ""}` } } },
+      scales: {
+        x: { type: "linear", min: Math.min(...xs) - 3 * 864e5, max: Math.max(...xs) + 3 * 864e5, grid: { display: false }, border: { color: rule },
+             ticks: { color: ink2, maxTicksLimit: 6, callback: v => new Date(v).toLocaleDateString("en-US", { month: "short", day: "numeric" }) } },
+        y: { type: "logarithmic", min: 1, max: Math.pow(10, Math.ceil(Math.log10(Math.max(1000, ...pts.map(p => p.y)) * 1.15))), grid: { color: rule }, border: { display: false },
+             ticks: { color: ink2, callback: v => [1, 10, 100, 1000, 10000, 100000].includes(v) ? v.toLocaleString() : "" } },
+      },
+    },
+  });
+}
+
+// ------------------------------------------------------------------ boot
+async function boot() {
+  let basemap;
+  try { basemap = await loadData(); }
+  catch (e) {
+    $("#fresh").textContent = "Results could not be loaded.";
+    $("#panel").innerHTML = `<div class="panel-inner"><h2>Results aren't available right now</h2>
+      <p class="sub">The data files didn't load (${esc(e.message)}). Reload the page, or check back after the next daily update.</p></div>`;
+    return;
+  }
+  renderHeader();
+  renderControls();
+  initMap(basemap);
+  applyFilters();
+  $("#panel").addEventListener("click", e => {
+    const b = e.target.closest("[data-site]"); if (b) select(b.dataset.site);
+    const r = e.target.closest("tr[data-state]"); if (r) zoomToState(r.dataset.state);
+  });
+  $("#panel").addEventListener("keydown", e => {
+    const r = e.target.closest("tr[data-state]");
+    if (r && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); zoomToState(r.dataset.state); }
+  });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && app.selected) deselect(); });
+  const m = location.hash.match(/site=([^&]+)/);
+  if (m) select(decodeURIComponent(m[1]), { fromHash: true });
+}
+boot();
+})();
+</script>
+</body>
+</html>

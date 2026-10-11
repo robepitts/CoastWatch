@@ -1,0 +1,52 @@
+{
+ "generated_at": "2026-10-11T20:05:49+00:00",
+ "as_of": "2026-07-21",
+ "by_state": {
+  "VA": {
+   "sites": 8,
+   "statuses": {
+    "open": 6,
+    "advisory": 1,
+    "no_data": 1
+   },
+   "newest_sample": "2026-07-20"
+  },
+  "MD": {
+   "sites": 8,
+   "statuses": {
+    "open": 5,
+    "advisory": 2,
+    "no_data": 1
+   },
+   "newest_sample": "2026-07-20"
+  },
+  "DE": {
+   "sites": 8,
+   "statuses": {
+    "open": 7,
+    "resampling": 1
+   },
+   "newest_sample": "2026-07-20"
+  },
+  "NJ": {
+   "sites": 13,
+   "statuses": {
+    "open": 11,
+    "closed": 1,
+    "advisory": 1
+   },
+   "newest_sample": "2026-07-20"
+  },
+  "NY": {
+   "sites": 14,
+   "statuses": {
+    "open": 11,
+    "advisory": 2,
+    "closed": 1
+   },
+   "newest_sample": "2026-07-20"
+  }
+ },
+ "unmapped_sites": 0,
+ "sample_data": true
+}

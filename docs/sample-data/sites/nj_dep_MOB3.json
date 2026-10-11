@@ -1,0 +1,131 @@
+{
+ "site_id": "nj_dep:MOB3",
+ "name": "Keansburg Beach",
+ "state": "NJ",
+ "county": "Monmouth",
+ "water_body": "Raritan Bay",
+ "status": "advisory",
+ "source_status": "Advisory",
+ "detail_url": "https://njbeaches.org/",
+ "latest_sample_date": "2026-07-20",
+ "latest_value": 2420.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": 191.6,
+ "bav": 104,
+ "samples_count": 10,
+ "history_file": "sites/nj_dep_MOB3.json",
+ "samples": [
+  {
+   "sample_date": "2026-05-18",
+   "indicator": "enterococcus",
+   "value": 37.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-05-25",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-01",
+   "indicator": "enterococcus",
+   "value": 73.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-08",
+   "indicator": "enterococcus",
+   "value": 404.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-06-15",
+   "indicator": "enterococcus",
+   "value": 27.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-22",
+   "indicator": "enterococcus",
+   "value": 50.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-29",
+   "indicator": "enterococcus",
+   "value": 231.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-07-06",
+   "indicator": "enterococcus",
+   "value": 38.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-13",
+   "indicator": "enterococcus",
+   "value": 243.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-07-20",
+   "indicator": "enterococcus",
+   "value": 2420.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  }
+ ],
+ "advisories": [
+  {
+   "kind": "advisory",
+   "reason": "Bacteria",
+   "start_date": "2026-07-20",
+   "end_date": null,
+   "source_text": "Advisory"
+  },
+  {
+   "kind": "advisory",
+   "reason": "Bacteria",
+   "start_date": "2026-07-14",
+   "end_date": "2026-07-16",
+   "source_text": "Swimming advisory"
+  },
+  {
+   "kind": "advisory",
+   "reason": "Bacteria",
+   "start_date": "2026-06-30",
+   "end_date": "2026-07-02",
+   "source_text": "Swimming advisory"
+  },
+  {
+   "kind": "advisory",
+   "reason": "Bacteria",
+   "start_date": "2026-06-09",
+   "end_date": "2026-06-11",
+   "source_text": "Swimming advisory"
+  }
+ ]
+}

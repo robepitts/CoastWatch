@@ -1,0 +1,85 @@
+{
+ "site_id": "va_vdh:COLONIAL",
+ "name": "Colonial Beach",
+ "state": "VA",
+ "county": "Westmoreland",
+ "water_body": "Potomac River",
+ "status": "no_data",
+ "source_status": null,
+ "detail_url": "https://www.vdh.virginia.gov/waterborne-hazards-control/swimming-advisories-and-monitored-beaches-map/",
+ "latest_sample_date": "2026-06-22",
+ "latest_value": 38.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": 64.5,
+ "bav": 104,
+ "samples_count": 6,
+ "history_file": "sites/va_vdh_COLONIAL.json",
+ "samples": [
+  {
+   "sample_date": "2026-05-18",
+   "indicator": "enterococcus",
+   "value": 30.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-05-25",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-01",
+   "indicator": "enterococcus",
+   "value": 31.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-08",
+   "indicator": "enterococcus",
+   "value": 571.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-06-15",
+   "indicator": "enterococcus",
+   "value": 166.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-06-22",
+   "indicator": "enterococcus",
+   "value": 38.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": [
+  {
+   "kind": "advisory",
+   "reason": "Bacteria",
+   "start_date": "2026-06-16",
+   "end_date": "2026-06-18",
+   "source_text": "Swimming advisory"
+  },
+  {
+   "kind": "advisory",
+   "reason": "Bacteria",
+   "start_date": "2026-06-09",
+   "end_date": "2026-06-11",
+   "source_text": "Swimming advisory"
+  }
+ ]
+}
