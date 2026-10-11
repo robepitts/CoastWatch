@@ -269,6 +269,9 @@ const CONFIG = {
   tiles: !EMBED,
   tileUrl: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
   staleDays: 14,
+  // Panning stays near the mid-Atlantic (expanded to include every site).
+  region: [[36.0, -78.5], [42.0, -71.0]],
+  siteZoom: 13,   // zoom level when a beach is selected
 };
 
 const STATES = { VA: "Virginia", MD: "Maryland", DE: "Delaware", NJ: "New Jersey", NY: "New York" };
@@ -306,7 +309,7 @@ const fmtLong = iso => fmtDate(iso, { month: "long", day: "numeric", year: "nume
 const fmtVal = (v, q) => v == null ? (q === "below_detection" ? "Below detection" : "Not reported")
   : `${q === "<" || q === ">" ? q : ""}${Math.round(v).toLocaleString("en-US")}`;
 const sourceOf = id => id.split(":")[0];
-const countyName = p => !p.county ? "" : (p.state === "VA" || /county|city/i.test(p.county)) ? p.county : `${p.county} County`;
+const countyName = p => (!p.county || /^(none|null|nan|n\/a|unknown)$/i.test(p.county.trim())) ? "" : (p.state === "VA" || /county|city/i.test(p.county)) ? p.county : `${p.county} County`;
 
 function shapeSVG(status, size = 18) {
   const s = STATUS[status] || STATUS.unknown;
@@ -411,7 +414,25 @@ function initMap(basemap) {
     app.markers.set(p.site_id, m);
   }
   const pts = app.features.map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0]]);
+  const siteBounds = pts.length ? L.latLngBounds(pts) : L.latLngBounds(CONFIG.region);
+  // Allowed area: the sites plus a generous margin. OpenStreetMap covers everywhere,
+  // so this only keeps visitors near the beaches; it never causes blank edges.
+  app.limit = siteBounds.pad(0.6).extend(L.latLngBounds(CONFIG.region));
+  map.setMaxBounds(app.limit);
+  map.options.maxBoundsViscosity = 1.0;
+  const fitLimits = () => {
+    // Furthest zoom-out = the level that shows every site at once (minus a little room).
+    const z = map.getBoundsZoom(siteBounds, false, L.point(80, 80));
+    map.setMinZoom(Math.max(4, Math.floor(z * 2) / 2 - 0.5));
+  };
+  fitLimits();
   if (pts.length) map.fitBounds(pts, { padding: [40, 40] }); else map.setView([38.9, -74.9], 7);
+  // Re-measure whenever the map's container changes size (fonts loading, window
+  // resize, phone rotation); otherwise tiles only load for the original size.
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(() => { map.invalidateSize({ pan: false }); fitLimits(); }).observe($("#map"));
+  }
+  window.addEventListener("load", () => { map.invalidateSize(); fitLimits(); });
   map.on("moveend", () => { if (!app.selected) renderOverview(); });
 }
 
@@ -534,12 +555,12 @@ async function select(siteId, { fromHash = false } = {}) {
     const prev = app.markers.get(app.selected);
     prev.setIcon(icon(prev.feature.properties.status, false));
   }
+  if (!app.selected && !fromHash) app.prevView = { center: app.map.getCenter(), zoom: app.map.getZoom() };
   app.selected = siteId;
   m.setIcon(icon(m.feature.properties.status, true));
-  if (!app.map.getBounds().pad(-0.1).contains(m.getLatLng()) || fromHash) {
-    app.map.setView(m.getLatLng(), Math.max(app.map.getZoom(), fromHash ? 10 : app.map.getZoom()),
-                    { animate: !reduceMotion });
-  }
+  const z = Math.max(app.map.getZoom(), CONFIG.siteZoom);
+  if (reduceMotion) app.map.setView(m.getLatLng(), z, { animate: false });
+  else app.map.flyTo(m.getLatLng(), z, { duration: 0.8 });
   window.history.replaceState(null, "", `#site=${encodeURIComponent(siteId)}`);
   const p = m.feature.properties;
   $("#panel").innerHTML = `<div class="panel-inner"><p class="loading" style="padding:0">Loading ${esc(p.name)}…</p></div>`;
@@ -558,6 +579,12 @@ function deselect() {
   app.selected = null;
   window.history.replaceState(null, "", location.pathname + location.search);
   if (app.chart) { app.chart.destroy(); app.chart = null; }
+  if (app.prevView) {
+    const { center, zoom } = app.prevView;
+    app.prevView = null;
+    if (reduceMotion) app.map.setView(center, zoom, { animate: false });
+    else app.map.flyTo(center, zoom, { duration: 0.8 });
+  }
   renderOverview();
 }
 
@@ -589,7 +616,8 @@ function renderSite(p, h) {
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
       All beaches in view</button>
     <h2>${esc(p.name)}</h2>
-    <p class="sub">${esc(place)}${p.water_body ? `<br>${esc(p.water_body)}` : ""}</p>
+    <p class="sub">${esc(place)}${p.water_body ? `<br>${esc(p.water_body)}` : ""}${p.location_approx
+      ? `<br>Map position is approximate.` : ""}</p>
     <div class="status-line">${shapeSVG(p.status, 22)}
       <div><strong>${st.label}</strong><p>${st.note}${reported}</p></div></div>
 

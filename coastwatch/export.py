@@ -81,6 +81,7 @@ def export(store: Store, out_dir: str | Path = "docs/data", today: Optional[date
             "geomean_30d": round(gm, 1) if gm else None,
             "bav": thr["single_sample"] if thr else None,
             "samples_count": len(hist),
+            "location_approx": s["coord_source"] == "override_approx",
             "history_file": f"sites/{_fname(s['site_id'])}",
         }
         (out / "sites" / _fname(s["site_id"])).write_text(json.dumps({

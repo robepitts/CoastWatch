@@ -24,7 +24,7 @@ from bs4 import BeautifulSoup
 from openpyxl import load_workbook
 
 from ..models import Advisory, CollectorResult, Indicator, Sample, Site
-from .base import Collector, find_key, parse_date, parse_result, slug
+from .base import Collector, clean_text, find_key, nice_name, parse_date, parse_result, slug
 
 PAGE = "https://www.vdh.virginia.gov/waterborne-hazards-control/statistics/"
 
@@ -141,8 +141,8 @@ def parse_monitoring_xlsx(xlsx: bytes, detail_url: str = PAGE) -> CollectorResul
             if lon is not None and lon > 0:  # some sheets drop the minus sign
                 lon = -lon
             res.sites.append(Site(
-                source_site_id=key, name=str(rec.get(name_k) or key).strip(), state="VA",
-                county=str(rec[county_k]).strip() if county_k and rec.get(county_k) else None,
+                source_site_id=key, name=nice_name(clean_text(rec.get(name_k)) or key), state="VA",
+                county=nice_name(clean_text(rec.get(county_k)) or "") or None if county_k else None,
                 latitude=lat, longitude=lon, water_type="marine", detail_url=detail_url,
                 raw={kk: v for kk, v in rec.items() if kk not in (date_k, result_k)}))
         value, qual = parse_result(rec.get(result_k))

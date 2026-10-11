@@ -16,7 +16,7 @@ from __future__ import annotations
 from datetime import date, timedelta
 
 from ..models import CollectorResult, Indicator, Sample, Site
-from .base import Collector, parse_date, parse_result, slug
+from .base import Collector, nice_name, parse_date, parse_result, slug
 
 API = "https://data.cityofnewyork.us/resource/2xir-kwzz.json"
 
@@ -59,7 +59,7 @@ def parse_rows(rows: list[dict]) -> CollectorResult:
             seen.add(site_key)
             res.sites.append(Site(
                 source_site_id=site_key,
-                name=beach.title() + (f" ({loc})" if loc and loc != "Null" else ""),
+                name=nice_name(beach) + (f" ({loc})" if loc and loc != "Null" else ""),
                 state="NY", county=None, water_type="marine",
                 detail_url="https://a816-dohbesp.nyc.gov/IndicatorPublic/Beaches/",
                 raw={"beach_name": beach, "sample_location": loc}))

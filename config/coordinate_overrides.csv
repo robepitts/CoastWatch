@@ -1,1 +1,158 @@
-site_id,name,state,latitude,longitude
+site_id,name,state,latitude,longitude,precision
+va_vdh:assateague-island-tom-s-cove-north,Assateague Island Tom S Cove North,VA,37.893,-75.338,approximate
+va_vdh:assateague-island-tom-s-cove-south,Assateague Island Tom S Cove South,VA,37.88,-75.345,approximate
+va_vdh:guard-shore,Guard Shore,VA,37.845,-75.692,approximate
+va_vdh:kiptopeke-state-park,Kiptopeke State Park,VA,37.168,-75.986,good
+va_vdh:town-of-cape-charles-public-beach,Town Of Cape Charles Public Beach,VA,37.265,-76.022,good
+va_vdh:buckroe-north,Buckroe North,VA,37.052,-76.288,good
+va_vdh:buckroe-mid,Buckroe Mid,VA,37.044,-76.286,good
+va_vdh:buckroe-south,Buckroe South,VA,37.036,-76.285,good
+va_vdh:fort-monroe,Fort Monroe,VA,37.01,-76.301,good
+va_vdh:grandview,Grandview,VA,37.085,-76.283,approximate
+va_vdh:salt-ponds,Salt Ponds,VA,37.066,-76.29,approximate
+va_vdh:21st-bay-st-north-end-behind-ship-s-captain-restaurant,21St Bay St North End Behind Ship S Captain Restaurant,VA,36.964,-76.3,approximate
+va_vdh:5th-bay-st-north-end,5Th Bay St North End,VA,36.957,-76.287,approximate
+va_vdh:13th-view-north-end,13Th View North End,VA,36.951,-76.268,approximate
+va_vdh:10th-view-behind-quality-inn-1010-w-ocean-view-ave,10Th View Behind Quality Inn 1010 W Ocean View Ave,VA,36.9505,-76.264,approximate
+va_vdh:ocean-view-park-east-side-of-parking-lot,Ocean View Park East Side Of Parking Lot,VA,36.955,-76.25,good
+va_vdh:north-community-beach,North Community Beach,VA,36.95,-76.24,approximate
+va_vdh:sarah-constant-park-east-end,Sarah Constant Park East End,VA,36.9518,-76.2315,good
+va_vdh:capeview-ave-north-end,Capeview Ave North End,VA,36.928,-76.188,approximate
+va_vdh:captains-quarters,Captains Quarters,VA,36.926,-76.177,approximate
+va_vdh:east-community-beach-end-of-east-ocean-view-ave,East Community Beach End Of East Ocean View Ave,VA,36.921,-76.17,approximate
+va_vdh:anderson-s-beach,Anderson S Beach,VA,37.0,-76.44,approximate
+va_vdh:hilton-beach,Hilton Beach,VA,37.0255,-76.461,good
+va_vdh:huntington-beach,Huntington Beach,VA,36.994,-76.442,good
+va_vdh:king-lincoln-park,King Lincoln Park,VA,36.962,-76.41,good
+va_vdh:yorktown-beach,Yorktown Beach,VA,37.236,-76.508,good
+va_vdh:gloucester-point-beach,Gloucester Point Beach,VA,37.248,-76.499,good
+va_vdh:festival-beach,Festival Beach,VA,37.494,-76.283,approximate
+va_vdh:chesapeake-beach,Chesapeake Beach,VA,36.916,-76.11,good
+va_vdh:lesner-bridge-east,Lesner Bridge East,VA,36.911,-76.09,good
+va_vdh:chick-s-beach,Chick S Beach,VA,36.913,-76.08,good
+va_vdh:first-landing-state-park,First Landing State Park,VA,36.919,-76.05,good
+va_vdh:fort-story-south,Fort Story South,VA,36.915,-76.005,approximate
+va_vdh:78th-street,78Th Street,VA,36.902,-75.987,good
+va_vdh:63rd-street,63Rd Street,VA,36.889,-75.983,good
+va_vdh:45th-street,45Th Street,VA,36.873,-75.979,good
+va_vdh:28th-street,28Th Street,VA,36.858,-75.975,good
+va_vdh:15th-street,15Th Street,VA,36.846,-75.973,good
+va_vdh:croatan,Croatan,VA,36.822,-75.968,good
+va_vdh:camp-pendleton,Camp Pendleton,VA,36.807,-75.963,good
+va_vdh:dam-neck-north,Dam Neck North,VA,36.79,-75.957,approximate
+va_vdh:dam-neck-middle,Dam Neck Middle,VA,36.778,-75.954,approximate
+va_vdh:dam-neck-south,Dam Neck South,VA,36.766,-75.95,approximate
+va_vdh:sea-gate,Sea Gate,VA,36.744,-75.938,approximate
+va_vdh:sandbridge-north,Sandbridge North,VA,36.735,-75.935,good
+va_vdh:sandbridge-south,Sandbridge South,VA,36.715,-75.93,good
+va_vdh:little-island-beach-north,Little Island Beach North,VA,36.698,-75.922,good
+va_vdh:little-island-beach-south,Little Island Beach South,VA,36.692,-75.92,good
+va_vdh:back-bay-beach,Back Bay Beach,VA,36.672,-75.912,good
+nyc_doh:orchard-beach--left,Orchard Beach (left),NY,40.867,-73.793,good
+nyc_doh:orchard-beach--center,Orchard Beach (center),NY,40.867,-73.792,good
+nyc_doh:orchard-beach--right,Orchard Beach (right),NY,40.867,-73.791,good
+nyc_doh:manhattan-beach--left,Manhattan Beach (left),NY,40.577,-73.941,good
+nyc_doh:manhattan-beach--center,Manhattan Beach (center),NY,40.577,-73.94,good
+nyc_doh:manhattan-beach--right,Manhattan Beach (right),NY,40.577,-73.939,good
+nyc_doh:kingsborough-community-college--left,Kingsborough Community College (left),NY,40.578,-73.935,good
+nyc_doh:kingsborough-community-college--center,Kingsborough Community College (center),NY,40.578,-73.934,good
+nyc_doh:kingsborough-community-college--right,Kingsborough Community College (right),NY,40.578,-73.933,good
+nyc_doh:gerritsen-kiddie-beach--left,Gerritsen Kiddie Beach (left),NY,40.585,-73.916,good
+nyc_doh:gerritsen-kiddie-beach--center,Gerritsen Kiddie Beach (center),NY,40.585,-73.915,good
+nyc_doh:gerritsen-kiddie-beach--right,Gerritsen Kiddie Beach (right),NY,40.585,-73.914,good
+nyc_doh:south-beach--left,South Beach (left),NY,40.5835,-74.0675,good
+nyc_doh:south-beach--center,South Beach (center),NY,40.5835,-74.0665,good
+nyc_doh:south-beach--right,South Beach (right),NY,40.5835,-74.0655,good
+nyc_doh:midland-beach--left,Midland Beach (left),NY,40.573,-74.087,good
+nyc_doh:midland-beach--center,Midland Beach (center),NY,40.573,-74.086,good
+nyc_doh:midland-beach--right,Midland Beach (right),NY,40.573,-74.085,good
+nyc_doh:cedar-grove--left,Cedar Grove (left),NY,40.567,-74.1,good
+nyc_doh:cedar-grove--center,Cedar Grove (center),NY,40.567,-74.099,good
+nyc_doh:cedar-grove--right,Cedar Grove (right),NY,40.567,-74.098,good
+nyc_doh:wolfe-s-pond-beach--left,Wolfe S Pond Beach (left),NY,40.517,-74.191,good
+nyc_doh:wolfe-s-pond-beach--center,Wolfe S Pond Beach (center),NY,40.517,-74.19,good
+nyc_doh:wolfe-s-pond-beach--right,Wolfe S Pond Beach (right),NY,40.517,-74.189,good
+nyc_doh:coney-island-br-15th-6th--left,Coney Island Br 15Th 6Th (left),NY,40.577,-73.958,good
+nyc_doh:coney-island-br-15th-6th--center,Coney Island Br 15Th 6Th (center),NY,40.577,-73.957,good
+nyc_doh:coney-island-br-15th-6th--right,Coney Island Br 15Th 6Th (right),NY,40.577,-73.956,good
+nyc_doh:coney-island-br-6th-ocean-pkwy--left,Coney Island Br 6Th Ocean Pkwy (left),NY,40.5745,-73.966,good
+nyc_doh:coney-island-br-6th-ocean-pkwy--center,Coney Island Br 6Th Ocean Pkwy (center),NY,40.5745,-73.965,good
+nyc_doh:coney-island-br-6th-ocean-pkwy--right,Coney Island Br 6Th Ocean Pkwy (right),NY,40.5745,-73.964,good
+nyc_doh:coney-island-ocean-pkwy-west-8th--left,Coney Island Ocean Pkwy West 8Th (left),NY,40.573,-73.973,good
+nyc_doh:coney-island-ocean-pkwy-west-8th--center,Coney Island Ocean Pkwy West 8Th (center),NY,40.573,-73.972,good
+nyc_doh:coney-island-ocean-pkwy-west-8th--right,Coney Island Ocean Pkwy West 8Th (right),NY,40.573,-73.971,good
+nyc_doh:coney-island-west-8th-pier--left,Coney Island West 8Th Pier (left),NY,40.5725,-73.978,good
+nyc_doh:coney-island-west-8th-pier--center,Coney Island West 8Th Pier (center),NY,40.5725,-73.977,good
+nyc_doh:coney-island-west-8th-pier--right,Coney Island West 8Th Pier (right),NY,40.5725,-73.976,good
+nyc_doh:coney-island-west-16th-west-27th--left,Coney Island West 16Th West 27Th (left),NY,40.5725,-73.989,good
+nyc_doh:coney-island-west-16th-west-27th--center,Coney Island West 16Th West 27Th (center),NY,40.5725,-73.988,good
+nyc_doh:coney-island-west-16th-west-27th--right,Coney Island West 16Th West 27Th (right),NY,40.5725,-73.987,good
+nyc_doh:coney-island-west-28th-west-37th--left,Coney Island West 28Th West 37Th (left),NY,40.5735,-73.999,good
+nyc_doh:coney-island-west-28th-west-37th--center,Coney Island West 28Th West 37Th (center),NY,40.5735,-73.998,good
+nyc_doh:coney-island-west-28th-west-37th--right,Coney Island West 28Th West 37Th (right),NY,40.5735,-73.997,good
+nyc_doh:sea-gate-42nd--left,Sea Gate 42Nd (left),NY,40.577,-74.006,approximate
+nyc_doh:sea-gate-42nd--center,Sea Gate 42Nd (center),NY,40.577,-74.005,approximate
+nyc_doh:sea-gate-42nd--right,Sea Gate 42Nd (right),NY,40.577,-74.004,approximate
+nyc_doh:sea-gate-beach-club--left,Sea Gate Beach Club (left),NY,40.5775,-74.011,approximate
+nyc_doh:sea-gate-beach-club--center,Sea Gate Beach Club (center),NY,40.5775,-74.01,approximate
+nyc_doh:sea-gate-beach-club--right,Sea Gate Beach Club (right),NY,40.5775,-74.009,approximate
+nyc_doh:rockaway-beach-9th-13th--left,Rockaway Beach 9Th 13Th (left),NY,40.5945,-73.753,good
+nyc_doh:rockaway-beach-9th-13th--center,Rockaway Beach 9Th 13Th (center),NY,40.5945,-73.752,good
+nyc_doh:rockaway-beach-9th-13th--right,Rockaway Beach 9Th 13Th (right),NY,40.5945,-73.751,good
+nyc_doh:rockaway-beach-15th-22nd--left,Rockaway Beach 15Th 22Nd (left),NY,40.594,-73.759,good
+nyc_doh:rockaway-beach-15th-22nd--center,Rockaway Beach 15Th 22Nd (center),NY,40.594,-73.758,good
+nyc_doh:rockaway-beach-15th-22nd--right,Rockaway Beach 15Th 22Nd (right),NY,40.594,-73.757,good
+nyc_doh:rockaway-beach-23rd-59th--left,Rockaway Beach 23Rd 59Th (left),NY,40.589,-73.777,good
+nyc_doh:rockaway-beach-23rd-59th--center,Rockaway Beach 23Rd 59Th (center),NY,40.589,-73.776,good
+nyc_doh:rockaway-beach-23rd-59th--right,Rockaway Beach 23Rd 59Th (right),NY,40.589,-73.775,good
+nyc_doh:rockaway-beach-59th-80th--left,Rockaway Beach 59Th 80Th (left),NY,40.586,-73.801,good
+nyc_doh:rockaway-beach-59th-80th--center,Rockaway Beach 59Th 80Th (center),NY,40.586,-73.8,good
+nyc_doh:rockaway-beach-59th-80th--right,Rockaway Beach 59Th 80Th (right),NY,40.586,-73.799,good
+nyc_doh:rockaway-beach-80th-95th--left,Rockaway Beach 80Th 95Th (left),NY,40.583,-73.816,good
+nyc_doh:rockaway-beach-80th-95th--center,Rockaway Beach 80Th 95Th (center),NY,40.583,-73.815,good
+nyc_doh:rockaway-beach-80th-95th--right,Rockaway Beach 80Th 95Th (right),NY,40.583,-73.814,good
+nyc_doh:rockaway-beach-95th-116th--left,Rockaway Beach 95Th 116Th (left),NY,40.58,-73.831,good
+nyc_doh:rockaway-beach-95th-116th--center,Rockaway Beach 95Th 116Th (center),NY,40.58,-73.83,good
+nyc_doh:rockaway-beach-95th-116th--right,Rockaway Beach 95Th 116Th (right),NY,40.58,-73.829,good
+nyc_doh:rockaway-beach-116th-126th--left,Rockaway Beach 116Th 126Th (left),NY,40.577,-73.846,good
+nyc_doh:rockaway-beach-116th-126th--center,Rockaway Beach 116Th 126Th (center),NY,40.577,-73.845,good
+nyc_doh:rockaway-beach-116th-126th--right,Rockaway Beach 116Th 126Th (right),NY,40.577,-73.844,good
+nyc_doh:rockaway-beach-126th-149th--left,Rockaway Beach 126Th 149Th (left),NY,40.573,-73.859,good
+nyc_doh:rockaway-beach-126th-149th--center,Rockaway Beach 126Th 149Th (center),NY,40.573,-73.858,good
+nyc_doh:rockaway-beach-126th-149th--right,Rockaway Beach 126Th 149Th (right),NY,40.573,-73.857,good
+nyc_doh:breezy-point-reid-ave--left,Breezy Point Reid Ave (left),NY,40.558,-73.906,approximate
+nyc_doh:breezy-point-reid-ave--center,Breezy Point Reid Ave (center),NY,40.558,-73.905,approximate
+nyc_doh:breezy-point-reid-ave--right,Breezy Point Reid Ave (right),NY,40.558,-73.904,approximate
+nyc_doh:breezy-point-219th-street--left,Breezy Point 219Th Street (left),NY,40.553,-73.931,approximate
+nyc_doh:breezy-point-219th-street--center,Breezy Point 219Th Street (center),NY,40.553,-73.93,approximate
+nyc_doh:breezy-point-219th-street--right,Breezy Point 219Th Street (right),NY,40.553,-73.929,approximate
+nyc_doh:douglaston-homeowners-association--left,Douglaston Homeowners Association (left),NY,40.772,-73.752,approximate
+nyc_doh:douglaston-homeowners-association--center,Douglaston Homeowners Association (center),NY,40.772,-73.751,approximate
+nyc_doh:douglaston-homeowners-association--right,Douglaston Homeowners Association (right),NY,40.772,-73.75,approximate
+nyc_doh:whitestone-booster-civic-association--left,Whitestone Booster Civic Association (left),NY,40.797,-73.818,approximate
+nyc_doh:whitestone-booster-civic-association--center,Whitestone Booster Civic Association (center),NY,40.797,-73.817,approximate
+nyc_doh:whitestone-booster-civic-association--right,Whitestone Booster Civic Association (right),NY,40.797,-73.816,approximate
+nyc_doh:morris-yacht-and-beach-club--left,Morris Yacht And Beach Club (left),NY,40.836,-73.785,approximate
+nyc_doh:morris-yacht-and-beach-club--center,Morris Yacht And Beach Club (center),NY,40.836,-73.784,approximate
+nyc_doh:morris-yacht-and-beach-club--right,Morris Yacht And Beach Club (right),NY,40.836,-73.783,approximate
+nyc_doh:schuyler-hill-civic-association--left,Schuyler Hill Civic Association (left),NY,40.818,-73.808,approximate
+nyc_doh:schuyler-hill-civic-association--center,Schuyler Hill Civic Association (center),NY,40.818,-73.807,approximate
+nyc_doh:schuyler-hill-civic-association--right,Schuyler Hill Civic Association (right),NY,40.818,-73.806,approximate
+nyc_doh:danish-american--left,Danish American (left),NY,40.817,-73.801,approximate
+nyc_doh:danish-american--center,Danish American (center),NY,40.817,-73.8,approximate
+nyc_doh:danish-american--right,Danish American (right),NY,40.817,-73.799,approximate
+nyc_doh:american-turners--left,American Turners (left),NY,40.806,-73.797,approximate
+nyc_doh:american-turners--center,American Turners (center),NY,40.806,-73.796,approximate
+nyc_doh:american-turners--right,American Turners (right),NY,40.806,-73.795,approximate
+nyc_doh:trinity-danish--left,Trinity Danish (left),NY,40.812,-73.794,approximate
+nyc_doh:trinity-danish--center,Trinity Danish (center),NY,40.812,-73.793,approximate
+nyc_doh:trinity-danish--right,Trinity Danish (right),NY,40.812,-73.792,approximate
+nyc_doh:white-cross-fishing-club--left,White Cross Fishing Club (left),NY,40.81,-73.791,approximate
+nyc_doh:white-cross-fishing-club--center,White Cross Fishing Club (center),NY,40.81,-73.79,approximate
+nyc_doh:white-cross-fishing-club--right,White Cross Fishing Club (right),NY,40.81,-73.789,approximate
+nyc_doh:west-fordham-street-association--left,West Fordham Street Association (left),NY,40.808,-73.803,approximate
+nyc_doh:west-fordham-street-association--center,West Fordham Street Association (center),NY,40.808,-73.802,approximate
+nyc_doh:west-fordham-street-association--right,West Fordham Street Association (right),NY,40.808,-73.801,approximate
+nyc_doh:658-sunrise-club-inc--left,658 Sunrise Club Inc (left),NY,40.804,-73.8,approximate
+nyc_doh:658-sunrise-club-inc--center,658 Sunrise Club Inc (center),NY,40.804,-73.799,approximate
+nyc_doh:658-sunrise-club-inc--right,658 Sunrise Club Inc (right),NY,40.804,-73.798,approximate

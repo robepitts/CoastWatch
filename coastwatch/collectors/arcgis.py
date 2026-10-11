@@ -45,6 +45,7 @@ DEFAULT_FIELDS = {
     "result": ("enterococcus", "enterococci", "entero", "result", "bacteria", "e coli", "ecoli"),
     "county": ("county", "jurisdiction", "locality"),
     "water":  ("water body", "waterbody", "water type"),
+    "url":    ("url", "website", "web link", "link", "more info"),
 }
 
 
@@ -244,13 +245,16 @@ def parse_features(features: list[dict], state: str, field_map: Optional[dict] =
         lat, lon = _centroid(f.get("geometry"))
         county_k, water_k = _pick(props, field_map, "county"), _pick(props, field_map, "water")
         water_text = str(props.get(water_k) or "") if water_k else ""
+        url_k = _pick(props, field_map, "url")
+        url = str(props.get(url_k) or "").strip() if url_k else ""
+        site_url = url if url.startswith(("http://", "https://")) else detail_url
         res.sites.append(Site(
             source_site_id=sid, name=name or sid, state=state, latitude=lat, longitude=lon,
             county=str(props[county_k]).strip() if county_k and props.get(county_k) else None,
             water_body=water_text or None,
             water_type="fresh" if re.search(r"fresh|lake|pond|river", water_text, re.I)
             else "marine" if water_text else "unknown",
-            detail_url=detail_url, raw={**props, "_layer": layer_url}))
+            detail_url=site_url, raw={**props, "_layer": layer_url}))
 
         status_k = _pick(props, field_map, "status")
         if status_k and props.get(status_k) not in (None, ""):

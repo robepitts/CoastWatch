@@ -391,3 +391,31 @@ def test_parse_features_ignores_non_point_geometry():
     poly = {"type": "Feature", "properties": {"BeachName": "Town line"},
             "geometry": {"type": "Polygon", "coordinates": [[[-75, 38], [-75, 39], [-74, 39], [-75, 38]]]}}
     assert parse_features([poly] + MD_FEATURES, "MD").sites.__len__() == 2
+
+
+
+def test_arcgis_real_maryland_fields():
+    """Field layout observed on MDE's WSA_Healthy_Beaches_Alerts layer (Oct 2026)."""
+    f = {"type": "Feature", "geometry": {"type": "Point", "coordinates": [-76.51099, 38.989919]},
+         "properties": {"OBJECTID": 1, "Unique_ID": 222, "County": "Anne Arundel County",
+                        "Beach_Name": "Admiral Heights", "Description": "Private access community beach",
+                        "URL": "https://mde.geodata.md.gov/Beaches/222", "Latitude": 38.989919,
+                        "Longitude": -76.51099, "Status": "No Data", "Update_Datetime": 1787740104000,
+                        "GlobalID": "{6B85AA79-BACB-40AC-BD96-1DA60}"}}
+    r = parse_features([f], "MD", detail_url="https://mde.maryland.gov/x")
+    s = r.sites[0]
+    assert s.name == "Admiral Heights" and s.county == "Anne Arundel County"
+    assert s.detail_url == "https://mde.geodata.md.gov/Beaches/222"
+    assert r.statuses[0].status == Status.NO_DATA and not r.samples
+
+
+
+def test_nice_name_and_clean_text():
+    from coastwatch.collectors.base import clean_text, nice_name
+    assert nice_name("ASSATEAGUE ISLAND, TOM'S COVE NORTH") == "Assateague Island, Tom's Cove North"
+    assert nice_name("10TH VIEW, BEHIND QUALITY INN,1010 W OCEAN VIEW AVE") == \
+        "10th View, Behind Quality Inn, 1010 W Ocean View Ave"
+    assert nice_name("WOLFE'S POND BEACH") == "Wolfe's Pond Beach"
+    assert nice_name("CONEY ISLAND WEST 28TH - WEST 37TH") == "Coney Island West 28th - West 37th"
+    assert nice_name("Sandy Point State Park") == "Sandy Point State Park"
+    assert clean_text("none") is None and clean_text(" N/A ") is None and clean_text("Norfolk") == "Norfolk"

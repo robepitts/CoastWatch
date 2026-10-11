@@ -154,10 +154,12 @@ class Store:
             for row in csv.DictReader(f):
                 if not row.get("latitude") or not row.get("longitude"):
                     continue
+                src = ("override_approx" if (row.get("precision") or "").strip().lower()
+                       == "approximate" else "override")
                 cur = self.conn.execute(
-                    """UPDATE sites SET latitude=?, longitude=?, coord_source='override'
+                    """UPDATE sites SET latitude=?, longitude=?, coord_source=?
                        WHERE site_id=?""",
-                    (float(row["latitude"]), float(row["longitude"]), row["site_id"]))
+                    (float(row["latitude"]), float(row["longitude"]), src, row["site_id"]))
                 n += cur.rowcount
         return n
 

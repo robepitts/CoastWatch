@@ -111,3 +111,25 @@ def find_key(d: dict, *candidates: str) -> Optional[str]:
             if c2 and c2 in nk:
                 return k
     return None
+
+
+_PLACEHOLDERS = {"", "none", "null", "nan", "n/a", "na", "-", "unknown"}
+
+
+def clean_text(v) -> Optional[str]:
+    """None for empty/placeholder values such as 'none' or 'N/A'."""
+    if v is None:
+        return None
+    s = re.sub(r"\s+", " ", str(v)).strip()
+    return None if s.lower() in _PLACEHOLDERS else s
+
+
+def nice_name(v: str) -> str:
+    """'TOM'S COVE, 10TH ST' -> "Tom's Cove, 10th St" (no '10Th' or 'Tom'S')."""
+    s = re.sub(r"\s+", " ", str(v)).strip()
+    if not s or (s != s.upper() and s != s.title()):
+        return s                       # already mixed case: leave as published
+    s = s.lower()
+    s = re.sub(r"(?<![0-9a-z'])[a-z][a-z']*", lambda m: m.group(0)[0].upper() + m.group(0)[1:], s)
+    s = re.sub(r",(?=\S)", ", ", s)    # 'INN,1010' -> 'Inn, 1010'
+    return s
