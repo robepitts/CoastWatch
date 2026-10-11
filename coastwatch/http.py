@@ -84,7 +84,7 @@ class PoliteClient:
             time.sleep(wait)
         self._last_hit[host] = time.monotonic()
 
-    def get(self, url: str, params: dict | None = None) -> Response:
+    def get(self, url: str, params=None, timeout: float | None = None) -> Response:
         if not self._allowed(url):
             raise RobotsDisallowed(url)
         host = urlparse(url).netloc
@@ -92,7 +92,7 @@ class PoliteClient:
         for attempt in range(1, self.retries + 1):
             self._throttle(host)
             try:
-                r = self.session.get(url, params=params, timeout=self.timeout_s)
+                r = self.session.get(url, params=params, timeout=timeout or self.timeout_s)
                 if r.status_code >= 500 or r.status_code == 429:
                     raise requests.HTTPError(f"HTTP {r.status_code}")
                 if r.status_code >= 400:

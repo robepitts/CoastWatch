@@ -30,8 +30,9 @@ class Collector(ABC):
         self.client = client or PoliteClient()
         self.store = store
 
-    def get(self, url: str, params: dict | None = None):
-        resp = self.client.get(url, params=params)
+    def get(self, url: str, params=None, timeout: float | None = None):
+        resp = (self.client.get(url, params=params, timeout=timeout) if timeout
+                else self.client.get(url, params=params))
         if self.store:
             self.store.archive_raw(self.source_id, resp.url, resp.body, resp.content_type)
         return resp

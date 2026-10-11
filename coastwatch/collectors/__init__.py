@@ -13,6 +13,7 @@ from .delaware import DelawareCollector
 from .new_jersey import NewJerseyCollector
 from .nyc import NYCCollector
 from .virginia import VirginiaCollector
+from .wqp import WQPCollector
 
 log = logging.getLogger(__name__)
 CONFIG = Path(__file__).resolve().parents[2] / "config" / "sources.json"
@@ -35,6 +36,12 @@ def build(source_id: str, cfg: dict, client: PoliteClient, store: Store):
                                layer_urls=cfg.get("layer_urls"), field_map=cfg.get("field_map"),
                                homepage_url=cfg.get("homepage_url", ""),
                                layer_name_filter=cfg.get("layer_name_filter"), **kw)
+    if kind == "wqp":
+        return WQPCollector(source_id=source_id, state=cfg["state"], agency=cfg["agency"],
+                            homepage_url=cfg.get("homepage_url", ""),
+                            site_types=cfg.get("site_types"), characteristics=cfg.get("characteristics"),
+                            years_back=cfg.get("years_back", 2),
+                            exclude_org_pattern=cfg.get("exclude_org_pattern"), **kw)
     raise ValueError(f"unknown collector type {kind!r}")
 
 

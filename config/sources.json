@@ -9,7 +9,14 @@
     "_disabled_note": "Oct 2026: recwaters site redesigned; per-beach .aspx pages now 404. Re-enable once the new endpoint is wired in.",
     "collector": "delaware",
     "_seed_note": "UnitIDs confirmed from public DNREC pages; discovery adds the rest when it can.",
-    "seed_unit_ids": ["288", "292", "296", "298", "304", "363620"]
+    "seed_unit_ids": [
+      "288",
+      "292",
+      "296",
+      "298",
+      "304",
+      "363620"
+    ]
   },
   "va_vdh": {
     "enabled": true,
@@ -27,7 +34,7 @@
     "field_map": {}
   },
   "ny_doh": {
-    "enabled": true,
+    "enabled": false,
     "collector": "arcgis",
     "state": "NY",
     "agency": "New York State Dept. of Health, Coastal Beaches",
@@ -35,12 +42,65 @@
     "item_id": "301748017d7d40649bc5082fc1c5365e",
     "homepage_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
     "layer_name_filter": "beach",
-    "field_map": {}
+    "field_map": {},
+    "_disabled_note": "Oct 2026: this ArcGIS item is NYSDEC's stream and lake monitoring portal, not NYSDOH's coastal beach map. Repoint to the NYSDOH beach map when it is reactivated in season."
   },
   "nj_dep": {
     "enabled": false,
     "_disabled_note": "Oct 2026: njbeaches.org embeds no data; needs its JSON endpoint (see collectors/new_jersey.py).",
     "collector": "new_jersey",
     "api_url": null
+  },
+  "wqp_nj": {
+    "enabled": true,
+    "collector": "wqp",
+    "site_types": [
+      "Ocean",
+      "Estuary"
+    ],
+    "characteristics": [
+      "Enterococcus",
+      "Enterococci"
+    ],
+    "years_back": 2,
+    "_note": "Water Quality Portal: official results submitted to EPA, typically months behind.",
+    "state": "NJ",
+    "agency": "NJDEP beach monitoring, via the Water Quality Portal",
+    "homepage_url": "https://njbeaches.org/"
+  },
+  "wqp_ny": {
+    "enabled": true,
+    "collector": "wqp",
+    "site_types": [
+      "Ocean",
+      "Estuary"
+    ],
+    "characteristics": [
+      "Enterococcus",
+      "Enterococci"
+    ],
+    "years_back": 2,
+    "_note": "Water Quality Portal: official results submitted to EPA, typically months behind.",
+    "state": "NY",
+    "agency": "New York beach monitoring, via the Water Quality Portal",
+    "homepage_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+    "exclude_org_pattern": "new york city|nyc|dohmh|mental hygiene"
+  },
+  "wqp_de": {
+    "enabled": true,
+    "collector": "wqp",
+    "site_types": [
+      "Ocean",
+      "Estuary"
+    ],
+    "characteristics": [
+      "Enterococcus",
+      "Enterococci"
+    ],
+    "years_back": 2,
+    "_note": "Water Quality Portal: official results submitted to EPA, typically months behind.",
+    "state": "DE",
+    "agency": "Delaware DNREC beach monitoring, via the Water Quality Portal",
+    "homepage_url": "https://recwaters.dnrec.delaware.gov/"
   }
 }

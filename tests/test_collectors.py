@@ -169,7 +169,7 @@ class FakeClient:
     def __init__(self, routes):
         self.routes, self.calls = routes, []
 
-    def get(self, url, params=None):
+    def get(self, url, params=None, timeout=None):
         self.calls.append((url, params))
         for key in sorted(self.routes, key=len, reverse=True):
             if url.startswith(key):
@@ -419,3 +419,68 @@ def test_nice_name_and_clean_text():
     assert nice_name("CONEY ISLAND WEST 28TH - WEST 37TH") == "Coney Island West 28th - West 37th"
     assert nice_name("Sandy Point State Park") == "Sandy Point State Park"
     assert clean_text("none") is None and clean_text(" N/A ") is None and clean_text("Norfolk") == "Norfolk"
+
+
+
+# ------------------------------------------------------------ Water Quality Portal
+WQP_STATIONS = """OrganizationIdentifier,OrganizationFormalName,MonitoringLocationIdentifier,MonitoringLocationName,MonitoringLocationTypeName,MonitoringLocationDescriptionText,LatitudeMeasure,LongitudeMeasure,StateCode,CountyCode,ProviderName
+NJDEP_CCMP,NJDEP Cooperative Coastal Monitoring,NJDEP_CCMP-OC14,SEASIDE PARK - 5TH AVE,BEACH Program Site-Ocean,Ocean beach station,39.928,-74.077,34,029,STORET
+NJDEP_CCMP,NJDEP Cooperative Coastal Monitoring,NJDEP_CCMP-OCB7,BEACHWOOD BEACH WEST,BEACH Program Site-Estuary,,39.940,-74.191,34,029,STORET
+NJDEP_CCMP,NJDEP Cooperative Coastal Monitoring,NJDEP_CCMP-NOLOC,NO LOCATION,BEACH Program Site-Ocean,,,,34,029,STORET
+NYCDOHMH,NYC Department of Health and Mental Hygiene,NYCDOHMH-CONEY,CONEY ISLAND,BEACH Program Site-Ocean,,40.57,-73.98,36,047,STORET
+"""
+WQP_RESULTS = """OrganizationIdentifier,ActivityIdentifier,ActivityStartDate,ActivityStartTime/Time,MonitoringLocationIdentifier,ResultDetectionConditionText,CharacteristicName,ResultMeasureValue,ResultMeasure/MeasureUnitCode,DetectionQuantitationLimitMeasure/MeasureValue
+NJDEP_CCMP,A1,2025-08-25,09:15:00,NJDEP_CCMP-OC14,,Enterococcus,20,cfu/100ml,
+NJDEP_CCMP,A2,2025-09-02,09:20:00,NJDEP_CCMP-OC14,Not Detected,Enterococcus,,cfu/100ml,10
+NJDEP_CCMP,A3,2025-09-02,10:00:00,NJDEP_CCMP-OCB7,,Enterococcus,"1,200",MPN/100ml,
+NYCDOHMH,A4,2025-09-02,10:00:00,NYCDOHMH-CONEY,,Enterococcus,50,MPN/100ml,
+"""
+
+
+def _csv_rows(text):
+    import csv as _csv, io as _io
+    return list(_csv.DictReader(_io.StringIO(text)))
+
+
+def test_parse_wqp_stations_and_results():
+    import re as _re
+    from coastwatch.collectors.wqp import parse_wqp
+    r = parse_wqp(_csv_rows(WQP_STATIONS), _csv_rows(WQP_RESULTS), "NJ",
+                  exclude=_re.compile("nyc|mental hygiene", _re.I), detail_url="https://njbeaches.org/")
+    ids = {s.source_site_id for s in r.sites}
+    assert ids == {"NJDEP_CCMP-OC14", "NJDEP_CCMP-OCB7"}       # no-location and NYC excluded
+    oc = next(s for s in r.sites if s.source_site_id == "NJDEP_CCMP-OC14")
+    assert oc.name == "Seaside Park - 5th Ave" and oc.county == "Ocean" and oc.water_body == "Ocean"
+    nd = next(x for x in r.samples if x.source_sample_id == "A2")
+    assert (nd.value, nd.qualifier) == (10.0, "<")
+    big = next(x for x in r.samples if x.source_sample_id == "A3")
+    assert big.value == 1200 and big.units == "MPN/100mL" and big.sample_time == "10:00"
+    assert len(r.samples) == 3
+
+
+def test_wqp_collector_queries_and_filters():
+    from coastwatch.collectors.wqp import WQPCollector
+    client = FakeClient({"https://www.waterqualitydata.us/data/Station/search": WQP_STATIONS,
+                         "https://www.waterqualitydata.us/data/Result/search": WQP_RESULTS})
+    col = WQPCollector("wqp_nj", "NJ", "NJDEP", client=client,
+                       exclude_org_pattern="nyc|mental hygiene")
+    r = col.collect()
+    assert len(r.sites) == 2 and len(r.samples) == 3 and not r.warnings
+    params = client.calls[0][1]
+    assert ("statecode", "US:34") in params
+    assert ("siteType", "Ocean") in params and ("siteType", "Estuary") in params
+    assert ("characteristicName", "Enterococcus") in params
+
+
+def test_wqp_store_and_export(tmp_path):
+    import re as _re
+    from coastwatch.collectors.wqp import parse_wqp
+    store = Store(tmp_path / "t.db")
+    store.save("wqp_nj", "NJ", parse_wqp(_csv_rows(WQP_STATIONS), _csv_rows(WQP_RESULTS), "NJ",
+                                        exclude=_re.compile("nyc", _re.I)))
+    summary = export(store, tmp_path / "out", today=date(2026, 7, 20))
+    gj = json.loads((tmp_path / "out" / "sites.geojson").read_text())
+    props = {f["properties"]["name"]: f["properties"] for f in gj["features"]}
+    # results from last year are reported, but status must not claim current conditions
+    assert props["Seaside Park - 5th Ave"]["status"] == "no_data"
+    assert props["Beachwood Beach West"]["latest_value"] == 1200

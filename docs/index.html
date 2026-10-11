@@ -946,7 +946,12 @@ const AGENCY = {
   va_vdh: "Virginia Department of Health", md_mde: "Maryland Department of the Environment",
   de_dnrec: "Delaware DNREC", nj_dep: "New Jersey DEP", ny_doh: "New York State Department of Health",
   nyc_doh: "NYC Health",
+  wqp_nj: "New Jersey DEP beach", wqp_ny: "New York State Health Department beach", wqp_de: "Delaware DNREC beach",
 };
+// Sources whose results arrive with a delay (national Water Quality Portal).
+const DELAYED = new Set(["wqp_nj", "wqp_ny", "wqp_de"]);
+const DELAYED_NOTE = "These are the latest results reported to the national Water Quality Portal. " +
+  "States submit results there with a delay, often several months, so check the official page for current conditions.";
 const STATUS = {
   closed:     { label: "Closed", rank: 0, color: "--closed", shape: "square",
                 note: "Closed to swimming by the local health authority." },
@@ -1173,7 +1178,9 @@ function renderOverview() {
     const p = f.properties;
     const place = [countyName(p), p.state].filter(Boolean).join(", ");
     const val = p.latest_value != null || p.latest_qualifier
-      ? `<b>${esc(fmtVal(p.latest_value, p.latest_qualifier))}</b><span class="pl">${esc(fmtDate(p.latest_sample_date))}</span>`
+      ? `<b>${esc(fmtVal(p.latest_value, p.latest_qualifier))}</b><span class="pl">${esc(
+          DELAYED.has(sourceOf(p.site_id)) ? fmtDate(p.latest_sample_date, { month: "short", year: "numeric" })
+                                           : fmtDate(p.latest_sample_date))}</span>`
       : `<span class="pl">${STATUS_ONLY[sourceOf(p.site_id)] ? "Status only" : "No results yet"}</span>`;
     return `<li><button type="button" data-site="${esc(p.site_id)}">${shapeSVG(p.status, 16)}
       <span><span class="nm">${esc(p.name)}</span><span class="pl">${esc(place)}</span></span>
@@ -1291,6 +1298,7 @@ function renderSite(p, h) {
       ? `<br>Map position is approximate.` : ""}</p>
     <div class="status-line">${shapeSVG(p.status, 22)}
       <div><strong>${st.label}</strong><p>${st.note}${reported}</p></div></div>
+    ${DELAYED.has(src) ? `<p class="note">${DELAYED_NOTE}</p>` : ""}
 
     ${!samples.length ? `<p class="note">${esc(STATUS_ONLY[src] ||
         "No sample results have been published for this beach yet.")}</p>` : `

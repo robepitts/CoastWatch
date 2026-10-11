@@ -88,14 +88,17 @@ The workflow runs once a day at 22:10 UTC (evening Eastern time), commits the da
 
 ## Sources (investigated October 2026)
 
-| Source ID | State | Method | Confidence |
+| Source ID | State | Method | Status |
 |---|---|---|---|
-| `nyc_doh` | NY (NYC) | NYC Open Data Socrata API, dataset `2xir-kwzz` | **High**: documented public API, schema confirmed |
-| `de_dnrec` | DE | HTML of `RecWaterSitePublic.aspx?UnitID=<id>` | **High** for parsing; site discovery partial |
-| `va_vdh` | VA | Yearly Excel workbooks on VDH Beach Data page | **Medium**: links confirmed, column names unverified |
-| `md_mde` | MD | ArcGIS web map `724261e6ba0746bc9fa501f2d4f21de0` | **Medium**: item confirmed, field names unverified |
-| `ny_doh` | NY (state) | ArcGIS Experience `301748017d7d40649bc5082fc1c5365e` | **Medium**: item confirmed, field names unverified |
-| `nj_dep` | NJ | Data embedded in njbeaches.org (Next.js) | **Low/experimental**: no public API found |
+| `nyc_doh` | NY (NYC) | NYC Open Data Socrata API, dataset `2xir-kwzz` | **Working**: results |
+| `va_vdh` | VA | Yearly Excel workbooks on VDH Beach Data page | **Working**: results and advisories |
+| `md_mde` | MD | ArcGIS layer `WSA_Healthy_Beaches_Alerts` (MDE) | **Working**: status per beach; no sample results |
+| `wqp_nj` | NJ | Water Quality Portal (EPA WQX) | **New**: official results, delayed (often months) |
+| `wqp_ny` | NY (state) | Water Quality Portal, excluding NYC Health | **New**: official results, delayed |
+| `wqp_de` | DE | Water Quality Portal | **New**: official results, delayed |
+| `ny_doh` | NY (state) | ArcGIS item `3017…365e` | **Disabled**: this is NYSDEC's stream and lake portal, not a beach map |
+| `de_dnrec` | DE | HTML of `RecWaterSitePublic.aspx?UnitID=<id>` | **Disabled**: site redesigned Oct 2026; pages now 404 |
+| `nj_dep` | NJ | Data embedded in njbeaches.org (Next.js) | **Disabled**: no embedded data; needs JSON endpoint |
 
 Notes per source:
 
@@ -104,7 +107,9 @@ Notes per source:
 - **Virginia**'s map is a Tableau dashboard, but the same data is published as `BeachMonitoringData_<stamp>.xlsx` and `BeachActivityReport_<stamp>.xlsx`. File names change on each update, so the collector finds the link labeled with the current year. Columns are matched by fuzzy name.
 - **Maryland and NY State** use the generic ArcGIS collector, which walks app → web map → feature layers at run time instead of hard-coding layer URLs. Only **point** layers are ever collected: boundaries, basemaps and other polygon or line layers are skipped regardless of name, and non-point features are discarded. `layer_name_filter` then keeps only layers whose name or address matches (default `beach`). The run log lists skipped layers and the field names of each collected layer. If guessed fields are wrong, set `field_map` in `config/sources.json`, for example `{"name": "BEACH_NAME", "status": "STATUS", "date": "SAMPLE_DT"}`.
 - **New Jersey** has no documented API. The collector looks for station data embedded in the page. If `probe` reports `embedded_records: 0`, the data is fetched by JavaScript and its endpoint needs to be found (below).
-- **Also available, not yet added:** NYS Parks beach results (separate ArcGIS map), and EPA's Water Quality Portal for multi-year historical backfill.
+- **Water Quality Portal** (`coastwatch/collectors/wqp.py`) queries the national portal by state, site type (Ocean, Estuary) and Enterococcus, so beach stations are found whichever agency account submitted them. Stations come with official coordinates. Results are delayed because agencies submit periodically; the website labels these sources as latest reported results, shows month and year in the list, and status falls to "no recent data" or "off season" rather than implying current conditions. Agencies already covered directly (NYC Health) are excluded with `exclude_org_pattern`.
+- **Considered, not used:** NJDEP continuous sensors, NYSDEC's stream and lake portal, HRECOS (Hudson River sensors) and USGS real-time stations measure physical conditions (temperature, oxygen, chlorophyll), not beach bacteria. USGS rainfall and water temperature, and Riverkeeper's community Enterococcus sampling, are candidates for later add-ons.
+- **Next:** attach Water Quality Portal history to Maryland's existing beaches (match stations to MDE beaches by name and distance); repoint New York State to the NYSDOH coastal beach map when it reactivates in season.
 - `ny.healthinspections.us` disallows automated access in robots.txt and is deliberately not used.
 
 ## Thresholds
