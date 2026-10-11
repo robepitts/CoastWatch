@@ -23,6 +23,7 @@ from typing import Optional
 
 from bs4 import BeautifulSoup
 
+from ..http import ClientError
 from ..models import (Advisory, CollectorResult, Indicator, Sample, Site, Status,
                       StatusReport, normalize_status)
 from .base import Collector, parse_date, parse_result
@@ -67,6 +68,13 @@ class DelawareCollector(Collector):
                     s.latitude = s.latitude or coords.get("lat")
                     s.longitude = s.longitude or coords.get("lon")
                 result.extend(r)
+            except ClientError as e:
+                if e.status == 404:
+                    result.warnings.append(
+                        "DE: per-beach pages return 404 (site redesigned, 'Lighthouse'). "
+                        "Find the new data endpoint and update this collector.")
+                    break
+                result.warnings.append(f"DE UnitID {uid}: {e}")
             except Exception as e:
                 result.warnings.append(f"DE UnitID {uid}: {e}")
         return result

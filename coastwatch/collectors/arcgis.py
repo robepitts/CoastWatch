@@ -20,12 +20,17 @@ All original attributes are retained in raw_json.
 """
 from __future__ import annotations
 
+import json
 import re
 from typing import Any, Iterable, Optional
 
 from ..models import (CollectorResult, Indicator, Sample, Site, StatusReport,
                       normalize_status)
+import logging
+
 from .base import Collector, find_key, parse_date, parse_result, slug
+
+log = logging.getLogger(__name__)
 
 DEFAULT_FIELDS = {
     "id":     ("beach id", "beachid", "station id", "stationid", "site id", "siteid",
@@ -94,13 +99,17 @@ class ArcGISCollector(Collector):
         return [f"{url}/{lyr['id']}" for lyr in meta.get("layers", [])
                 if not self.layer_name_filter or self.layer_name_filter.search(lyr.get("name", ""))]
 
-    def query_layer(self, layer_url: str, page: int = 1000) -> list[dict]:
-        feats, offset = [], 0
-        while True:
+    def query_layer(self, layer_url: str, page: int = 1000, max_pages: int = 50) -> list[dict]:
+        feats, offset, seen = [], 0, set()
+        for _ in range(max_pages):
             data = self.get(f"{layer_url}/query", params={
                 "where": "1=1", "outFields": "*", "outSR": 4326, "f": "geojson",
                 "resultOffset": offset, "resultRecordCount": page}).json()
             batch = data.get("features", [])
+            sig = json.dumps(batch[:1], sort_keys=True, default=str)
+            if batch and sig in seen:   # server ignored resultOffset; stop
+                break
+            seen.add(sig)
             feats += batch
             exceeded = data.get("exceededTransferLimit") or \
                 data.get("properties", {}).get("exceededTransferLimit")
@@ -117,7 +126,9 @@ class ArcGISCollector(Collector):
         urls = list(dict.fromkeys(urls))
         if not urls:
             res.warnings.append(f"{self.source_id}: no feature layers discovered")
+        log.info("%s: %d layer(s) to query", self.source_id, len(urls))
         for u in urls:
+            log.info("%s: querying %s", self.source_id, u)
             try:
                 res.extend(parse_features(self.query_layer(u), self.state,
                                           self.field_map, layer_url=u,

@@ -46,6 +46,7 @@ def run(store: Store, only: list[str] | None = None, client: PoliteClient | None
         if not cfg.get("enabled", True) or (only and source_id not in only):
             continue
         col = build(source_id, cfg, client, store)
+        log.info("collecting %s ...", source_id)
         store.register_source(source_id, col.state, col.agency, col.homepage_url)
         run_id = store.start_run(source_id)
         try:
@@ -55,6 +56,8 @@ def run(store: Store, only: list[str] | None = None, client: PoliteClient | None
             store.finish_run(run_id, ok=bool(result.sites), error=err, **counts)
             summaries.append({"source": source_id, "ok": bool(result.sites), **counts,
                               "warnings": result.warnings})
+            log.info("finished %s: %d sites, %d new samples, %d warnings", source_id,
+                     counts["sites_seen"], counts["samples_new"], len(result.warnings))
         except Exception as e:
             log.exception("collector %s failed", source_id)
             store.finish_run(run_id, ok=False, error=f"{e}\n{traceback.format_exc()}"[:4000])
