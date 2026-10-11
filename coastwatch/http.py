@@ -24,6 +24,13 @@ class RobotsDisallowed(Exception):
     pass
 
 
+class ClientError(Exception):
+    """4xx response: the request itself is wrong (e.g. page moved); retrying won't help."""
+    def __init__(self, url: str, status: int):
+        super().__init__(f"HTTP {status} for {url}")
+        self.url, self.status = url, status
+
+
 @dataclass
 class Response:
     url: str
@@ -88,7 +95,8 @@ class PoliteClient:
                 r = self.session.get(url, params=params, timeout=self.timeout_s)
                 if r.status_code >= 500 or r.status_code == 429:
                     raise requests.HTTPError(f"HTTP {r.status_code}")
-                r.raise_for_status()
+                if r.status_code >= 400:
+                    raise ClientError(r.url, r.status_code)  # not retried
                 return Response(r.url, r.status_code,
                                 r.headers.get("Content-Type", ""), r.content)
             except requests.RequestException as e:

@@ -40,7 +40,7 @@ def main() -> None:
     if args.cmd == "collect":
         from .collectors import run
         for s in run(store, only=args.only):
-            print(json.dumps(s, default=str))
+            print(json.dumps(s, default=str), flush=True)
         n = store.apply_coordinate_overrides(OVERRIDES)
         if n:
             print(f"applied {n} coordinate overrides")
