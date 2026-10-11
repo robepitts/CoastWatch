@@ -15,6 +15,7 @@
  "geomean_30d": 29.6,
  "bav": 104,
  "samples_count": 15,
+ "location_approx": false,
  "history_file": "sites/nyc_doh_cedar-grove--left.json",
  "samples": [
   {

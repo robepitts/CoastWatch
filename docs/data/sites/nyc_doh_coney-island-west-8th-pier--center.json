@@ -1,6 +1,6 @@
 {
  "site_id": "nyc_doh:coney-island-west-8th-pier--center",
- "name": "Coney Island West 8Th - Pier (Center)",
+ "name": "Coney Island West 8th - Pier (Center)",
  "state": "NY",
  "county": null,
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 9.9,
  "bav": 104,
  "samples_count": 14,
+ "location_approx": false,
  "history_file": "sites/nyc_doh_coney-island-west-8th-pier--center.json",
  "samples": [
   {

@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:sarah-constant-park-east-end",
- "name": "SARAH CONSTANT PARK, EAST END",
+ "name": "Sarah Constant Park, East End",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 15.3,
  "bav": 104,
  "samples_count": 18,
+ "location_approx": false,
  "history_file": "sites/va_vdh_sarah-constant-park-east-end.json",
  "samples": [
   {

@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:lesner-bridge-east",
- "name": "LESNER BRIDGE EAST",
+ "name": "Lesner Bridge East",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 29.9,
  "bav": 104,
  "samples_count": 23,
+ "location_approx": false,
  "history_file": "sites/va_vdh_lesner-bridge-east.json",
  "samples": [
   {

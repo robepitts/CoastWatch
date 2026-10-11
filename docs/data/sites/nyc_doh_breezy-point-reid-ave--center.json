@@ -15,6 +15,7 @@
  "geomean_30d": null,
  "bav": 104,
  "samples_count": 6,
+ "location_approx": true,
  "history_file": "sites/nyc_doh_breezy-point-reid-ave--center.json",
  "samples": [
   {

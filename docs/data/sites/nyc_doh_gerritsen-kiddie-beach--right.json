@@ -15,6 +15,7 @@
  "geomean_30d": 31.9,
  "bav": 104,
  "samples_count": 12,
+ "location_approx": false,
  "history_file": "sites/nyc_doh_gerritsen-kiddie-beach--right.json",
  "samples": [
   {

@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:huntington-beach",
- "name": "HUNTINGTON BEACH",
+ "name": "Huntington Beach",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 23.7,
  "bav": 104,
  "samples_count": 22,
+ "location_approx": false,
  "history_file": "sites/va_vdh_huntington-beach.json",
  "samples": [
   {

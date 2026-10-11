@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:10th-view-behind-quality-inn-1010-w-ocean-view-ave",
- "name": "10TH VIEW, BEHIND QUALITY INN,1010 W OCEAN VIEW AVE",
+ "name": "10th View, Behind Quality Inn, 1010 W Ocean View Ave",
  "state": "VA",
  "county": "Norfolk City",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 10.0,
  "bav": 104,
  "samples_count": 19,
+ "location_approx": true,
  "history_file": "sites/va_vdh_10th-view-behind-quality-inn-1010-w-ocean-view-ave.json",
  "samples": [
   {

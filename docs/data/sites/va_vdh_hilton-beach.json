@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:hilton-beach",
- "name": "HILTON BEACH",
+ "name": "Hilton Beach",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 53.6,
  "bav": 104,
  "samples_count": 22,
+ "location_approx": false,
  "history_file": "sites/va_vdh_hilton-beach.json",
  "samples": [
   {

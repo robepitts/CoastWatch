@@ -15,6 +15,7 @@
  "geomean_30d": 24.9,
  "bav": 104,
  "samples_count": 14,
+ "location_approx": true,
  "history_file": "sites/nyc_doh_danish-american--left.json",
  "samples": [
   {

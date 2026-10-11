@@ -15,6 +15,7 @@
  "geomean_30d": 109.0,
  "bav": 104,
  "samples_count": 13,
+ "location_approx": true,
  "history_file": "sites/nyc_doh_douglaston-homeowners-association--right.json",
  "samples": [
   {

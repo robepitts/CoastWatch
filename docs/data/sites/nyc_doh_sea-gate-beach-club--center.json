@@ -15,6 +15,7 @@
  "geomean_30d": 14.4,
  "bav": 104,
  "samples_count": 16,
+ "location_approx": true,
  "history_file": "sites/nyc_doh_sea-gate-beach-club--center.json",
  "samples": [
   {

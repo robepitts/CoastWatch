@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:guard-shore",
- "name": "GUARD SHORE",
+ "name": "Guard Shore",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 10.0,
  "bav": 104,
  "samples_count": 16,
+ "location_approx": true,
  "history_file": "sites/va_vdh_guard-shore.json",
  "samples": [
   {

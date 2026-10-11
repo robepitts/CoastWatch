@@ -15,6 +15,7 @@
  "geomean_30d": 17.6,
  "bav": 104,
  "samples_count": 14,
+ "location_approx": false,
  "history_file": "sites/nyc_doh_orchard-beach--right.json",
  "samples": [
   {

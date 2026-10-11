@@ -1,6 +1,6 @@
 {
  "site_id": "nyc_doh:rockaway-beach-9th-13th--center",
- "name": "Rockaway Beach 9Th - 13Th (Center)",
+ "name": "Rockaway Beach 9th - 13th (Center)",
  "state": "NY",
  "county": null,
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": null,
  "bav": 104,
  "samples_count": 6,
+ "location_approx": false,
  "history_file": "sites/nyc_doh_rockaway-beach-9th-13th--center.json",
  "samples": [
   {

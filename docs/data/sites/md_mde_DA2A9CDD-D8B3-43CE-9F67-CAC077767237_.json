@@ -6,7 +6,7 @@
  "water_body": null,
  "status": "no_data",
  "source_status": "No Data",
- "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "detail_url": "https://mde.geodata.md.gov/Beaches/Photos/AnneArundel/Sandy_Point_State_Park_East_Beach.JPG",
  "latest_sample_date": null,
  "latest_value": null,
  "latest_qualifier": null,
@@ -15,6 +15,7 @@
  "geomean_30d": null,
  "bav": 104,
  "samples_count": 0,
+ "location_approx": false,
  "history_file": "sites/md_mde_DA2A9CDD-D8B3-43CE-9F67-CAC077767237_.json",
  "samples": [],
  "advisories": []

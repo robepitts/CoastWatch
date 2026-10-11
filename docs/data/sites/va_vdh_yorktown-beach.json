@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:yorktown-beach",
- "name": "YORKTOWN BEACH",
+ "name": "Yorktown Beach",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 10.0,
  "bav": 104,
  "samples_count": 15,
+ "location_approx": false,
  "history_file": "sites/va_vdh_yorktown-beach.json",
  "samples": [
   {

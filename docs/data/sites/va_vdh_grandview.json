@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:grandview",
- "name": "GRANDVIEW",
+ "name": "Grandview",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 13.2,
  "bav": 104,
  "samples_count": 15,
+ "location_approx": true,
  "history_file": "sites/va_vdh_grandview.json",
  "samples": [
   {

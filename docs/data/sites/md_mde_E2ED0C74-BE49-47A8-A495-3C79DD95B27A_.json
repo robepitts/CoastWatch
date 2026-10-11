@@ -6,7 +6,7 @@
  "water_body": null,
  "status": "no_data",
  "source_status": "No Data",
- "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "detail_url": "https://mde.geodata.md.gov/Beaches/Photos/QueenAnnes/Campwright.JPG",
  "latest_sample_date": null,
  "latest_value": null,
  "latest_qualifier": null,
@@ -15,6 +15,7 @@
  "geomean_30d": null,
  "bav": 104,
  "samples_count": 0,
+ "location_approx": false,
  "history_file": "sites/md_mde_E2ED0C74-BE49-47A8-A495-3C79DD95B27A_.json",
  "samples": [],
  "advisories": []

@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:first-landing-state-park",
- "name": "FIRST LANDING STATE PARK",
+ "name": "First Landing State Park",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 13.3,
  "bav": 104,
  "samples_count": 21,
+ "location_approx": false,
  "history_file": "sites/va_vdh_first-landing-state-park.json",
  "samples": [
   {

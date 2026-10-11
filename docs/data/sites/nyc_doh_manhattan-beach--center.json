@@ -15,6 +15,7 @@
  "geomean_30d": 9.9,
  "bav": 104,
  "samples_count": 14,
+ "location_approx": false,
  "history_file": "sites/nyc_doh_manhattan-beach--center.json",
  "samples": [
   {

@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:gloucester-point-beach",
- "name": "GLOUCESTER POINT BEACH",
+ "name": "Gloucester Point Beach",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 16.5,
  "bav": 104,
  "samples_count": 15,
+ "location_approx": false,
  "history_file": "sites/va_vdh_gloucester-point-beach.json",
  "samples": [
   {

@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:buckroe-south",
- "name": "BUCKROE SOUTH",
+ "name": "Buckroe South",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 62.0,
  "bav": 104,
  "samples_count": 23,
+ "location_approx": false,
  "history_file": "sites/va_vdh_buckroe-south.json",
  "samples": [
   {

@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:dam-neck-south",
- "name": "DAM NECK SOUTH",
+ "name": "Dam Neck South",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 16.4,
  "bav": 104,
  "samples_count": 18,
+ "location_approx": true,
  "history_file": "sites/va_vdh_dam-neck-south.json",
  "samples": [
   {

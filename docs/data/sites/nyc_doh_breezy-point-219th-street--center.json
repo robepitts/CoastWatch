@@ -1,6 +1,6 @@
 {
  "site_id": "nyc_doh:breezy-point-219th-street--center",
- "name": "Breezy Point - 219Th Street. (Center)",
+ "name": "Breezy Point - 219th Street. (Center)",
  "state": "NY",
  "county": null,
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": null,
  "bav": 104,
  "samples_count": 6,
+ "location_approx": true,
  "history_file": "sites/nyc_doh_breezy-point-219th-street--center.json",
  "samples": [
   {

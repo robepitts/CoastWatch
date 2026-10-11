@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:festival-beach",
- "name": "FESTIVAL  BEACH",
+ "name": "Festival Beach",
  "state": "VA",
  "county": "Three Rivers",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 10.0,
  "bav": 104,
  "samples_count": 15,
+ "location_approx": true,
  "history_file": "sites/va_vdh_festival-beach.json",
  "samples": [
   {

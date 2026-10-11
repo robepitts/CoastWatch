@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:assateague-island-tom-s-cove-north",
- "name": "ASSATEAGUE ISLAND, TOM'S COVE NORTH",
+ "name": "Assateague Island, Tom's Cove North",
  "state": "VA",
  "county": "Eastern Shore",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 12.5,
  "bav": 104,
  "samples_count": 16,
+ "location_approx": true,
  "history_file": "sites/va_vdh_assateague-island-tom-s-cove-north.json",
  "samples": [
   {

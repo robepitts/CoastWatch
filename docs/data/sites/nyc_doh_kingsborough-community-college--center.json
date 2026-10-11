@@ -15,6 +15,7 @@
  "geomean_30d": 25.0,
  "bav": 104,
  "samples_count": 12,
+ "location_approx": false,
  "history_file": "sites/nyc_doh_kingsborough-community-college--center.json",
  "samples": [
   {

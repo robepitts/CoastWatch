@@ -1,6 +1,6 @@
 {
  "site_id": "nyc_doh:whitestone-booster-civic-association--right",
- "name": "Whitestone Booster Civic  Association (Right)",
+ "name": "Whitestone Booster Civic Association (Right)",
  "state": "NY",
  "county": null,
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 18.3,
  "bav": 104,
  "samples_count": 14,
+ "location_approx": true,
  "history_file": "sites/nyc_doh_whitestone-booster-civic-association--right.json",
  "samples": [
   {

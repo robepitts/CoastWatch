@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:fort-story-south",
- "name": "FORT STORY SOUTH",
+ "name": "Fort Story South",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": null,
  "bav": 104,
  "samples_count": 20,
+ "location_approx": true,
  "history_file": "sites/va_vdh_fort-story-south.json",
  "samples": [
   {

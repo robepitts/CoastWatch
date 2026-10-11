@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:town-of-cape-charles-public-beach",
- "name": "TOWN OF CAPE CHARLES PUBLIC BEACH",
+ "name": "Town Of Cape Charles Public Beach",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 30.9,
  "bav": 104,
  "samples_count": 18,
+ "location_approx": false,
  "history_file": "sites/va_vdh_town-of-cape-charles-public-beach.json",
  "samples": [
   {

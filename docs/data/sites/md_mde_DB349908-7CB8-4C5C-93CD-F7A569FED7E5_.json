@@ -6,7 +6,7 @@
  "water_body": null,
  "status": "no_data",
  "source_status": "No Data",
- "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "detail_url": "https://mde.geodata.md.gov/Beaches/Photos/Kent/TolchesterMarinaandBeach.JPG",
  "latest_sample_date": null,
  "latest_value": null,
  "latest_qualifier": null,
@@ -15,6 +15,7 @@
  "geomean_30d": null,
  "bav": 104,
  "samples_count": 0,
+ "location_approx": false,
  "history_file": "sites/md_mde_DB349908-7CB8-4C5C-93CD-F7A569FED7E5_.json",
  "samples": [],
  "advisories": []

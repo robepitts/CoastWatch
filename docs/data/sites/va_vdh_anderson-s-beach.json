@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:anderson-s-beach",
- "name": "ANDERSON'S BEACH",
+ "name": "Anderson's Beach",
  "state": "VA",
  "county": "Peninsula",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 15.2,
  "bav": 104,
  "samples_count": 15,
+ "location_approx": true,
  "history_file": "sites/va_vdh_anderson-s-beach.json",
  "samples": [
   {

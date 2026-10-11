@@ -15,6 +15,7 @@
  "geomean_30d": null,
  "bav": 104,
  "samples_count": 0,
+ "location_approx": false,
  "history_file": "sites/md_mde_E020E6FA-FFD4-4EB5-A6C5-C243010DB8CA_.json",
  "samples": [],
  "advisories": []

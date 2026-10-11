@@ -1,6 +1,6 @@
 {
  "site_id": "nyc_doh:coney-island-west-28th-west-37th--center",
- "name": "Coney Island West 28Th - West 37Th (Center)",
+ "name": "Coney Island West 28th - West 37th (Center)",
  "state": "NY",
  "county": null,
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 15.2,
  "bav": 104,
  "samples_count": 14,
+ "location_approx": false,
  "history_file": "sites/nyc_doh_coney-island-west-28th-west-37th--center.json",
  "samples": [
   {

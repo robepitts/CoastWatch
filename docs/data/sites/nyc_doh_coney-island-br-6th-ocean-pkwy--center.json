@@ -1,6 +1,6 @@
 {
  "site_id": "nyc_doh:coney-island-br-6th-ocean-pkwy--center",
- "name": "Coney Island Br. 6Th - Ocean Pkwy (Center)",
+ "name": "Coney Island Br. 6th - Ocean Pkwy (Center)",
  "state": "NY",
  "county": null,
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 15.9,
  "bav": 104,
  "samples_count": 14,
+ "location_approx": false,
  "history_file": "sites/nyc_doh_coney-island-br-6th-ocean-pkwy--center.json",
  "samples": [
   {

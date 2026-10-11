@@ -1,6 +1,6 @@
 {
  "site_id": "nyc_doh:wolfe-s-pond-beach--right",
- "name": "Wolfe'S Pond Beach (Right)",
+ "name": "Wolfe's Pond Beach (Right)",
  "state": "NY",
  "county": null,
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 31.3,
  "bav": 104,
  "samples_count": 13,
+ "location_approx": false,
  "history_file": "sites/nyc_doh_wolfe-s-pond-beach--right.json",
  "samples": [
   {

@@ -1,6 +1,6 @@
 {
  "site_id": "va_vdh:captains-quarters",
- "name": "CAPTAINS QUARTERS",
+ "name": "Captains Quarters",
  "state": "VA",
  "county": "none",
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 15.2,
  "bav": 104,
  "samples_count": 17,
+ "location_approx": true,
  "history_file": "sites/va_vdh_captains-quarters.json",
  "samples": [
   {

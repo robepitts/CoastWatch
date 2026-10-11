@@ -1,6 +1,6 @@
 {
  "site_id": "nyc_doh:sea-gate-42nd--right",
- "name": "Sea Gate 42Nd (Right)",
+ "name": "Sea Gate 42nd (Right)",
  "state": "NY",
  "county": null,
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 23.9,
  "bav": 104,
  "samples_count": 12,
+ "location_approx": true,
  "history_file": "sites/nyc_doh_sea-gate-42nd--right.json",
  "samples": [
   {

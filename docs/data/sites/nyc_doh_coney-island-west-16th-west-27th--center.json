@@ -1,6 +1,6 @@
 {
  "site_id": "nyc_doh:coney-island-west-16th-west-27th--center",
- "name": "Coney Island West 16Th - West 27Th (Center)",
+ "name": "Coney Island West 16th - West 27th (Center)",
  "state": "NY",
  "county": null,
  "water_body": null,
@@ -15,6 +15,7 @@
  "geomean_30d": 19.5,
  "bav": 104,
  "samples_count": 14,
+ "location_approx": false,
  "history_file": "sites/nyc_doh_coney-island-west-16th-west-27th--center.json",
  "samples": [
   {
