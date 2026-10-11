@@ -1,0 +1,21 @@
+{
+ "site_id": "md_mde:{9981CA0B-AD1F-45FF-8394-A59B4A70A917}",
+ "name": "Catoctin Quaker Camp",
+ "state": "MD",
+ "county": "Frederick County",
+ "water_body": null,
+ "status": "no_data",
+ "source_status": "No Data",
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "latest_sample_date": null,
+ "latest_value": null,
+ "latest_qualifier": null,
+ "latest_indicator": null,
+ "units": null,
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 0,
+ "history_file": "sites/md_mde_9981CA0B-AD1F-45FF-8394-A59B4A70A917_.json",
+ "samples": [],
+ "advisories": []
+}

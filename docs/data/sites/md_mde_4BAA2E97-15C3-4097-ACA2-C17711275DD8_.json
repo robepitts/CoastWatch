@@ -1,0 +1,21 @@
+{
+ "site_id": "md_mde:{4BAA2E97-15C3-4097-ACA2-C17711275DD8}",
+ "name": "YMCA Camp Tockwogh",
+ "state": "MD",
+ "county": "Kent County",
+ "water_body": null,
+ "status": "no_data",
+ "source_status": "No Data",
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "latest_sample_date": null,
+ "latest_value": null,
+ "latest_qualifier": null,
+ "latest_indicator": null,
+ "units": null,
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 0,
+ "history_file": "sites/md_mde_4BAA2E97-15C3-4097-ACA2-C17711275DD8_.json",
+ "samples": [],
+ "advisories": []
+}

@@ -1,0 +1,118 @@
+{
+ "site_id": "nyc_doh:sea-gate-42nd--left",
+ "name": "Sea Gate 42Nd (Left)",
+ "state": "NY",
+ "county": null,
+ "water_body": null,
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://a816-dohbesp.nyc.gov/IndicatorPublic/Beaches/",
+ "latest_sample_date": "2026-08-31",
+ "latest_value": 41.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": 19.1,
+ "bav": 104,
+ "samples_count": 12,
+ "history_file": "sites/nyc_doh_sea-gate-42nd--left.json",
+ "samples": [
+  {
+   "sample_date": "2026-06-15",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-22",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-29",
+   "indicator": "enterococcus",
+   "value": 146.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-07-06",
+   "indicator": "enterococcus",
+   "value": 368.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-07-13",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-20",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-27",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-04",
+   "indicator": "enterococcus",
+   "value": 31.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-10",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-17",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-24",
+   "indicator": "enterococcus",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-31",
+   "indicator": "enterococcus",
+   "value": 41.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

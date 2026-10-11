@@ -1,0 +1,190 @@
+{
+ "site_id": "va_vdh:sandbridge-north",
+ "name": "SANDBRIDGE NORTH",
+ "state": "VA",
+ "county": "none",
+ "water_body": null,
+ "status": "open",
+ "source_status": null,
+ "detail_url": "https://www.vdh.virginia.gov/waterborne-hazards-control/statistics/",
+ "latest_sample_date": "2026-09-29",
+ "latest_value": 10.0,
+ "latest_qualifier": "<",
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": 10.0,
+ "bav": 104,
+ "samples_count": 21,
+ "history_file": "sites/va_vdh_sandbridge-north.json",
+ "samples": [
+  {
+   "sample_date": "2026-05-12",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-05-19",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-05-26",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-02",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-09",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-16",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-23",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-30",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-07",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-15",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-21",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-28",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-04",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-11",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-18",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-25",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-01",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-08",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-15",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-22",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-29",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

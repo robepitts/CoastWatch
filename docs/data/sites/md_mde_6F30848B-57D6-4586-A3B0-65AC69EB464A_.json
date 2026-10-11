@@ -1,0 +1,21 @@
+{
+ "site_id": "md_mde:{6F30848B-57D6-4586-A3B0-65AC69EB464A}",
+ "name": "Camp Milldale Pond",
+ "state": "MD",
+ "county": "Baltimore County",
+ "water_body": null,
+ "status": "no_data",
+ "source_status": "No Data",
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "latest_sample_date": null,
+ "latest_value": null,
+ "latest_qualifier": null,
+ "latest_indicator": null,
+ "units": null,
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 0,
+ "history_file": "sites/md_mde_6F30848B-57D6-4586-A3B0-65AC69EB464A_.json",
+ "samples": [],
+ "advisories": []
+}

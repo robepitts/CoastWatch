@@ -1,0 +1,21 @@
+{
+ "site_id": "md_mde:{395DAAF2-4DBE-4A02-AE3D-F978194352AB}",
+ "name": "Carrollton Manor",
+ "state": "MD",
+ "county": "Anne Arundel County",
+ "water_body": null,
+ "status": "no_data",
+ "source_status": "No Data",
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "latest_sample_date": null,
+ "latest_value": null,
+ "latest_qualifier": null,
+ "latest_indicator": null,
+ "units": null,
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 0,
+ "history_file": "sites/md_mde_395DAAF2-4DBE-4A02-AE3D-F978194352AB_.json",
+ "samples": [],
+ "advisories": []
+}

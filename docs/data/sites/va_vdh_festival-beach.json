@@ -1,0 +1,142 @@
+{
+ "site_id": "va_vdh:festival-beach",
+ "name": "FESTIVAL  BEACH",
+ "state": "VA",
+ "county": "Three Rivers",
+ "water_body": null,
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://www.vdh.virginia.gov/waterborne-hazards-control/statistics/",
+ "latest_sample_date": "2026-08-25",
+ "latest_value": 10.0,
+ "latest_qualifier": "<",
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": 10.0,
+ "bav": 104,
+ "samples_count": 15,
+ "history_file": "sites/va_vdh_festival-beach.json",
+ "samples": [
+  {
+   "sample_date": "2026-05-19",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-05-26",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-02",
+   "indicator": "enterococcus",
+   "value": 98.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-09",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-16",
+   "indicator": "enterococcus",
+   "value": 51.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-23",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-30",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-07",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-14",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-21",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-28",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-04",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-12",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-18",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-25",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

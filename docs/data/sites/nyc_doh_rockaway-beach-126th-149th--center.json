@@ -1,0 +1,78 @@
+{
+ "site_id": "nyc_doh:rockaway-beach-126th-149th--center",
+ "name": "Rockaway Beach 126Th - 149Th (Center)",
+ "state": "NY",
+ "county": null,
+ "water_body": null,
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://a816-dohbesp.nyc.gov/IndicatorPublic/Beaches/",
+ "latest_sample_date": "2026-09-04",
+ "latest_value": 9.9,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 7,
+ "history_file": "sites/nyc_doh_rockaway-beach-126th-149th--center.json",
+ "samples": [
+  {
+   "sample_date": "2026-06-24",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-09",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-22",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-05",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-19",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-02",
+   "indicator": "enterococcus",
+   "value": 435.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-09-04",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

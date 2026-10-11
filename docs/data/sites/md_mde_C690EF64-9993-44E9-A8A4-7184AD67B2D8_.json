@@ -1,0 +1,21 @@
+{
+ "site_id": "md_mde:{C690EF64-9993-44E9-A8A4-7184AD67B2D8}",
+ "name": "Janes Island State Park",
+ "state": "MD",
+ "county": "Somerset County",
+ "water_body": null,
+ "status": "no_data",
+ "source_status": "No Data",
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "latest_sample_date": null,
+ "latest_value": null,
+ "latest_qualifier": null,
+ "latest_indicator": null,
+ "units": null,
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 0,
+ "history_file": "sites/md_mde_C690EF64-9993-44E9-A8A4-7184AD67B2D8_.json",
+ "samples": [],
+ "advisories": []
+}

@@ -1,0 +1,21 @@
+{
+ "site_id": "md_mde:{DB349908-7CB8-4C5C-93CD-F7A569FED7E5}",
+ "name": "Tolchester Marina and Beach",
+ "state": "MD",
+ "county": "Kent County",
+ "water_body": null,
+ "status": "no_data",
+ "source_status": "No Data",
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "latest_sample_date": null,
+ "latest_value": null,
+ "latest_qualifier": null,
+ "latest_indicator": null,
+ "units": null,
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 0,
+ "history_file": "sites/md_mde_DB349908-7CB8-4C5C-93CD-F7A569FED7E5_.json",
+ "samples": [],
+ "advisories": []
+}

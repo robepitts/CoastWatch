@@ -1,0 +1,134 @@
+{
+ "site_id": "nyc_doh:coney-island-west-28th-west-37th--center",
+ "name": "Coney Island West 28Th - West 37Th (Center)",
+ "state": "NY",
+ "county": null,
+ "water_body": null,
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://a816-dohbesp.nyc.gov/IndicatorPublic/Beaches/",
+ "latest_sample_date": "2026-09-08",
+ "latest_value": 9.9,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": 15.2,
+ "bav": 104,
+ "samples_count": 14,
+ "history_file": "sites/nyc_doh_coney-island-west-28th-west-37th--center.json",
+ "samples": [
+  {
+   "sample_date": "2026-06-15",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-22",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-29",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-06",
+   "indicator": "enterococcus",
+   "value": 275.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-07-08",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-13",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-20",
+   "indicator": "enterococcus",
+   "value": 31.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-27",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-04",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-10",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-17",
+   "indicator": "enterococcus",
+   "value": 85.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-24",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-31",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-08",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

@@ -1,0 +1,21 @@
+{
+ "site_id": "md_mde:{6BCB9E04-6BD8-4324-A3AA-872675F6109D}",
+ "name": "Western MD 4H Center, Private",
+ "state": "MD",
+ "county": "Garrett County",
+ "water_body": null,
+ "status": "no_data",
+ "source_status": "No Data",
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "latest_sample_date": null,
+ "latest_value": null,
+ "latest_qualifier": null,
+ "latest_indicator": null,
+ "units": null,
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 0,
+ "history_file": "sites/md_mde_6BCB9E04-6BD8-4324-A3AA-872675F6109D_.json",
+ "samples": [],
+ "advisories": []
+}

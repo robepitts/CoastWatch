@@ -1,0 +1,134 @@
+{
+ "site_id": "nyc_doh:orchard-beach--left",
+ "name": "Orchard Beach (Left)",
+ "state": "NY",
+ "county": null,
+ "water_body": null,
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://a816-dohbesp.nyc.gov/IndicatorPublic/Beaches/",
+ "latest_sample_date": "2026-09-09",
+ "latest_value": 9.9,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": 10.0,
+ "bav": 104,
+ "samples_count": 14,
+ "history_file": "sites/nyc_doh_orchard-beach--left.json",
+ "samples": [
+  {
+   "sample_date": "2026-06-16",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-23",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-30",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-07",
+   "indicator": "enterococcus",
+   "value": 175.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-07-09",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-14",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-21",
+   "indicator": "enterococcus",
+   "value": 30.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-28",
+   "indicator": "enterococcus",
+   "value": 31.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-05",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-11",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-18",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-25",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-01",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-09",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

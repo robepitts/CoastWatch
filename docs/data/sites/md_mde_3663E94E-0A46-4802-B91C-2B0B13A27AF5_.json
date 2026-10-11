@@ -1,0 +1,21 @@
+{
+ "site_id": "md_mde:{3663E94E-0A46-4802-B91C-2B0B13A27AF5}",
+ "name": "Matapeake",
+ "state": "MD",
+ "county": "Queen Anne's County",
+ "water_body": null,
+ "status": "no_data",
+ "source_status": "No Data",
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "latest_sample_date": null,
+ "latest_value": null,
+ "latest_qualifier": null,
+ "latest_indicator": null,
+ "units": null,
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 0,
+ "history_file": "sites/md_mde_3663E94E-0A46-4802-B91C-2B0B13A27AF5_.json",
+ "samples": [],
+ "advisories": []
+}

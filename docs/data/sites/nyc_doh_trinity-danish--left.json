@@ -1,0 +1,126 @@
+{
+ "site_id": "nyc_doh:trinity-danish--left",
+ "name": "Trinity Danish (Left)",
+ "state": "NY",
+ "county": null,
+ "water_body": null,
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://a816-dohbesp.nyc.gov/IndicatorPublic/Beaches/",
+ "latest_sample_date": "2026-09-01",
+ "latest_value": 52.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": 35.2,
+ "bav": 104,
+ "samples_count": 13,
+ "history_file": "sites/nyc_doh_trinity-danish--left.json",
+ "samples": [
+  {
+   "sample_date": "2026-06-16",
+   "indicator": "enterococcus",
+   "value": 41.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-23",
+   "indicator": "enterococcus",
+   "value": 262.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-06-30",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-07",
+   "indicator": "enterococcus",
+   "value": 109.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-07-14",
+   "indicator": "enterococcus",
+   "value": null,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": null
+  },
+  {
+   "sample_date": "2026-07-17",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-21",
+   "indicator": "enterococcus",
+   "value": 30.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-28",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-05",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-11",
+   "indicator": "enterococcus",
+   "value": 173.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-08-18",
+   "indicator": "enterococcus",
+   "value": 61.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-25",
+   "indicator": "enterococcus",
+   "value": 9.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-01",
+   "indicator": "enterococcus",
+   "value": 52.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

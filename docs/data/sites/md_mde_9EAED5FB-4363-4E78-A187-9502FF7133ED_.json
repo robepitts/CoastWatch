@@ -1,0 +1,21 @@
+{
+ "site_id": "md_mde:{9EAED5FB-4363-4E78-A187-9502FF7133ED}",
+ "name": "Cedar Cove Community Beach",
+ "state": "MD",
+ "county": "St. Mary's County",
+ "water_body": null,
+ "status": "no_data",
+ "source_status": "No Data",
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "latest_sample_date": null,
+ "latest_value": null,
+ "latest_qualifier": null,
+ "latest_indicator": null,
+ "units": null,
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 0,
+ "history_file": "sites/md_mde_9EAED5FB-4363-4E78-A187-9502FF7133ED_.json",
+ "samples": [],
+ "advisories": []
+}

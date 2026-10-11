@@ -1,0 +1,21 @@
+{
+ "site_id": "md_mde:{597A7DB8-C126-4F5D-972B-439EAFD45A43}",
+ "name": "Elm's Beach",
+ "state": "MD",
+ "county": "St. Mary's County",
+ "water_body": null,
+ "status": "no_data",
+ "source_status": "No Data",
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "latest_sample_date": null,
+ "latest_value": null,
+ "latest_qualifier": null,
+ "latest_indicator": null,
+ "units": null,
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 0,
+ "history_file": "sites/md_mde_597A7DB8-C126-4F5D-972B-439EAFD45A43_.json",
+ "samples": [],
+ "advisories": []
+}

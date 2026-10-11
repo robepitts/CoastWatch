@@ -1,0 +1,174 @@
+{
+ "site_id": "va_vdh:sarah-constant-park-east-end",
+ "name": "SARAH CONSTANT PARK, EAST END",
+ "state": "VA",
+ "county": "none",
+ "water_body": null,
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://www.vdh.virginia.gov/waterborne-hazards-control/statistics/",
+ "latest_sample_date": "2026-09-08",
+ "latest_value": 10.0,
+ "latest_qualifier": "<",
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": 15.3,
+ "bav": 104,
+ "samples_count": 18,
+ "history_file": "sites/va_vdh_sarah-constant-park-east-end.json",
+ "samples": [
+  {
+   "sample_date": "2026-05-18",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-05-26",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-01",
+   "indicator": "enterococcus",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-08",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-15",
+   "indicator": "enterococcus",
+   "value": 74.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-22",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-29",
+   "indicator": "enterococcus",
+   "value": 474.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-06-30",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-06",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-13",
+   "indicator": "enterococcus",
+   "value": 85.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-20",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-27",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-03",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-10",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-17",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-24",
+   "indicator": "enterococcus",
+   "value": 84.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-31",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-08",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": [
+  {
+   "kind": "advisory",
+   "reason": null,
+   "start_date": "2026-06-30",
+   "end_date": "2026-07-01",
+   "source_text": "advisory"
+  }
+ ]
+}
