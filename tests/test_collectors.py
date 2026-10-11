@@ -194,6 +194,7 @@ def test_arcgis_resolves_experience_to_features():
         P + wm + "/data": {"operationalLayers": [{"url": svc}]},
         P + wm: {"type": "Web Map"},
         svc + "/0/query": {"type": "FeatureCollection", "features": MD_FEATURES},
+        svc + "/0": {"name": "Coastal Beaches", "geometryType": "esriGeometryPoint"},
         svc: {"layers": [{"id": 0, "name": "Coastal Beaches"}, {"id": 1, "name": "Counties"}]},
     })
     col = ArcGISCollector("ny_doh", "NY", "NYSDOH", "https://www.arcgis.com", item_id=exp,
@@ -310,3 +311,83 @@ def test_probe_with_fake_network(monkeypatch):
     assert rep["de_dnrec"]["discovered_unit_ids"] == ["304"]
     assert rep["de_dnrec"]["script_srcs"] == ["/app.js"]
     assert rep["nj_dep"]["ok"] and rep["nj_dep"]["has_rsc_payload"]
+
+
+# ------------------------------------------------- regressions from first live run
+def test_http_does_not_retry_404(monkeypatch):
+    from coastwatch import http as h
+    calls = []
+    class R:
+        status_code, url, headers, content = 404, "https://x/y", {}, b""
+    client = h.PoliteClient(min_interval_s=0, respect_robots=False)
+    monkeypatch.setattr(client.session, "get", lambda *a, **k: calls.append(1) or R())
+    with pytest.raises(h.ClientError):
+        client.get("https://x/y")
+    assert len(calls) == 1
+
+
+def test_delaware_stops_after_first_404(tmp_path):
+    from coastwatch.http import ClientError
+    class NotFound(FakeClient):
+        def get(self, url, params=None):
+            self.calls.append((url, params))
+            if "RecWaterSitePublic" in url:
+                raise ClientError(url, 404)
+            return Response(url, 200, "", b"<html></html>")
+    client = NotFound({})
+    col = DelawareCollector(seed_unit_ids=["288", "292", "296", "298"], client=client)
+    r = col.collect()
+    assert sum("RecWaterSitePublic" in u for u, _ in client.calls) == 1
+    assert any("redesigned" in w for w in r.warnings)
+
+
+def test_arcgis_stops_when_server_ignores_offset():
+    page = {"type": "FeatureCollection", "exceededTransferLimit": True, "features": MD_FEATURES}
+    client = FakeClient({"https://x/FeatureServer/0/query": page})
+    col = ArcGISCollector("md_mde", "MD", "MDE", "https://p", client=client)
+    feats = col.query_layer("https://x/FeatureServer/0")
+    assert len(feats) == 2 and len(client.calls) == 2
+
+
+def test_arcgis_name_filter_applies_to_webmap_layers():
+    P = "https://www.arcgis.com/sharing/rest/content/items/"
+    wm = "b" * 32
+    beach = "https://x/arcgis/rest/services/Health/FeatureServer/3"
+    chem = "https://y/arcgis/rest/services/parquet_portal_chemistry/FeatureServer/12"
+    client = FakeClient({
+        P + wm + "/data": {"operationalLayers": [{"url": beach}, {"url": chem}]},
+        P + wm: {"type": "Web Map"},
+        beach + "/query": {"type": "FeatureCollection", "features": MD_FEATURES},
+        beach: {"name": "Coastal Beaches", "geometryType": "esriGeometryPoint"},
+        chem: {"name": "Chemistry Results", "geometryType": "esriGeometryPoint"},
+    })
+    col = ArcGISCollector("ny_doh", "NY", "NYSDOH", "https://www.arcgis.com", item_id=wm,
+                          layer_name_filter="beach", client=client)
+    r = col.collect()
+    assert len(r.sites) == 2
+    assert not any(u.startswith(chem + "/query") for u, _ in client.calls)
+
+
+
+def test_arcgis_skips_polygon_layers_even_if_named_beach():
+    P = "https://www.arcgis.com/sharing/rest/content/items/"
+    wm = "c" * 32
+    pts = "https://x/arcgis/rest/services/Beaches/FeatureServer/0"
+    poly = "https://x/arcgis/rest/services/Beaches/FeatureServer/1"
+    client = FakeClient({
+        P + wm + "/data": {"operationalLayers": [{"url": pts}, {"url": poly}]},
+        P + wm: {"type": "Web Map"},
+        pts + "/query": {"type": "FeatureCollection", "features": MD_FEATURES},
+        pts: {"name": "Beach Sites", "geometryType": "esriGeometryPoint"},
+        poly: {"name": "Beach Areas", "geometryType": "esriGeometryPolygon"},
+    })
+    r = ArcGISCollector("md_mde", "MD", "MDE", "https://www.arcgis.com", item_id=wm,
+                        layer_name_filter="beach", client=client).collect()
+    assert len(r.sites) == 2
+    assert not any(u.startswith(poly + "/query") for u, _ in client.calls)
+
+
+def test_parse_features_ignores_non_point_geometry():
+    poly = {"type": "Feature", "properties": {"BeachName": "Town line"},
+            "geometry": {"type": "Polygon", "coordinates": [[[-75, 38], [-75, 39], [-74, 39], [-75, 38]]]}}
+    assert parse_features([poly] + MD_FEATURES, "MD").sites.__len__() == 2

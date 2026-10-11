@@ -756,6 +756,11 @@ a:hover { text-decoration-color: currentColor; }
 .leaflet-bar a { background: var(--surface); color: var(--ink); border-bottom-color: var(--rule); }
 .leaflet-bar a:hover { background: var(--surface-2); }
 .leaflet-bar { border: 1px solid var(--rule) !important; box-shadow: none !important; }
+.leaflet-tile-pane { transition: filter .2s; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .leaflet-tile-pane { filter: brightness(.72) contrast(1.08) saturate(.75); }
+}
+:root[data-theme="dark"] .leaflet-tile-pane { filter: brightness(.72) contrast(1.08) saturate(.75); }
 .cw-marker { background: none; border: 0; }
 .cw-marker svg { display: block; overflow: visible; filter: drop-shadow(0 1px 1px rgba(10, 30, 40, .35)); }
 .cw-marker.is-selected svg { transform: scale(1.45); transform-origin: 50% 50%; }
@@ -920,9 +925,10 @@ const params = new URLSearchParams(location.search);
 const CONFIG = {
   dataBase: params.has("sample") ? "sample-data/" : "data/",
   fallbackBase: "sample-data/",
-  // Street-level tiles only when zoomed in; the regional view uses the drawn coastline.
+  // Basemap: OpenStreetMap tiles. The self-contained preview can't load remote
+  // images, so it draws state outlines instead.
   tiles: !EMBED,
-  tileMinZoom: 10,
+  tileUrl: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
   staleDays: 14,
 };
 
@@ -1008,7 +1014,7 @@ async function loadData() {
     app.summary = await getJSON(app.base + "summary.json");
   }
   app.features = sites.features;
-  return getJSON("basemap.json").catch(() => null);
+  return null;   // live site uses OpenStreetMap tiles
 }
 
 async function loadHistory(f) {
@@ -1039,8 +1045,8 @@ function initMap(basemap) {
                                        zoomSnap: 0.5, worldCopyJump: false });
   L.control.zoom({ position: "topright" }).addTo(map);
   map.attributionControl.setPrefix(false);
-  map.attributionControl.addAttribution("Boundaries: U.S. Census Bureau");
-  if (basemap) {
+  if (basemap && !CONFIG.tiles) {
+    map.attributionControl.addAttribution("Boundaries: U.S. Census Bureau");
     L.geoJSON(basemap, {
       interactive: false,
       style: f => ({ fillColor: f.properties.focus ? css("--land") : css("--land-context"), fillOpacity: 1,
@@ -1048,13 +1054,10 @@ function initMap(basemap) {
     }).addTo(map);
   }
   if (CONFIG.tiles) {
-    const dark = matchMedia("(prefers-color-scheme: dark)").matches;
-    const tiles = L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark ? "dark_all" : "light_all"}/{z}/{x}/{y}{r}.png`, {
-      subdomains: "abcd", maxZoom: 19,
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    });
-    const sync = () => map.getZoom() >= CONFIG.tileMinZoom ? tiles.addTo(map) : tiles.remove();
-    map.on("zoomend", sync);
+    L.tileLayer(CONFIG.tileUrl, {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
   }
   app.markerLayer = L.layerGroup().addTo(map);
   for (const f of app.features) {

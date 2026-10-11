@@ -67,7 +67,7 @@ Views `latest_samples` and `latest_status` drive the map popups. The schema is p
 
 `site/index.template.html` is a single self-contained page; `scripts/build_site.py` turns it into `docs/index.html`. No build tools or frameworks are needed. It loads Leaflet and Chart.js from jsDelivr and Public Sans from Google Fonts.
 
-- **Map:** the regional view draws state outlines (U.S. Census boundaries) in a nautical-chart style. Street-level tiles from CARTO appear from zoom level 10, so individual beaches can be located.
+- **Map:** OpenStreetMap tiles at every zoom level, credited as OSM requires. (The all-in-one preview build can't load remote images, so it draws U.S. Census state outlines instead.) Dark mode dims the tiles slightly.
 - **Markers** differ in shape as well as color (circle meets standard, triangle advisory, square closed, diamond resampling, hollow ring off season or no recent data), so status is readable without relying on color.
 - **Side panel:** with nothing selected, it lists beaches in the current map view, most urgent first, with a status breakdown and a per-state table (click a state to zoom to it). Selecting a beach shows its status in plain language, the latest result against the state limit, the 30-day geometric mean, a season chart, recent advisories and a link to the official page.
 - **Filters:** states, name search, and "only advisories and closures".
@@ -100,7 +100,7 @@ Notes per source:
 - **NYC** publishes enterococci results with no coordinates and no status. Coordinates come from `config/coordinate_overrides.csv`; status is derived from results. "Result below detection limit" is stored as `qualifier='below_detection'` with a null value.
 - **Delaware** pages contain the full season's results, geomeans, and active/historical advisories. Six UnitIDs are seeded; the homepage loads its full beach list via JavaScript, which `discover_sites()` only partly captures.
 - **Virginia**'s map is a Tableau dashboard, but the same data is published as `BeachMonitoringData_<stamp>.xlsx` and `BeachActivityReport_<stamp>.xlsx`. File names change on each update, so the collector finds the link labeled with the current year. Columns are matched by fuzzy name.
-- **Maryland and NY State** use the generic ArcGIS collector, which walks app → web map → feature layers at run time instead of hard-coding layer URLs. `layer_name_filter` keeps only layers whose name matches (default `beach`). If guessed fields are wrong, set `field_map` in `config/sources.json`, for example `{"name": "BEACH_NAME", "status": "STATUS", "date": "SAMPLE_DT"}`.
+- **Maryland and NY State** use the generic ArcGIS collector, which walks app → web map → feature layers at run time instead of hard-coding layer URLs. Only **point** layers are ever collected: boundaries, basemaps and other polygon or line layers are skipped regardless of name, and non-point features are discarded. `layer_name_filter` then keeps only layers whose name or address matches (default `beach`). The run log lists skipped layers and the field names of each collected layer. If guessed fields are wrong, set `field_map` in `config/sources.json`, for example `{"name": "BEACH_NAME", "status": "STATUS", "date": "SAMPLE_DT"}`.
 - **New Jersey** has no documented API. The collector looks for station data embedded in the page. If `probe` reports `embedded_records: 0`, the data is fetched by JavaScript and its endpoint needs to be found (below).
 - **Also available, not yet added:** NYS Parks beach results (separate ArcGIS map), and EPA's Water Quality Portal for multi-year historical backfill.
 - `ny.healthinspections.us` disallows automated access in robots.txt and is deliberately not used.
@@ -132,13 +132,13 @@ coastwatch/
   collectors/          one module per source + generic ArcGIS
 site/
   index.template.html  the website (HTML, CSS, JS in one file)
-  basemap.json         state outlines for the regional map
+  basemap.json         state outlines (preview build only)
   vendor/leaflet.css
 scripts/
   build_site.py        builds docs/ (and an all-in-one preview)
   make_sample_data.py  simulated data through the real pipeline
 docs/                  what GitHub Pages serves
-  index.html, basemap.json, data/ (daily), sample-data/
+  index.html, data/ (daily), sample-data/
 config/
   sources.json         per-source settings
   standards.json       state thresholds

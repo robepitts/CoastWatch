@@ -32,6 +32,8 @@ from .base import Collector, find_key, parse_date, parse_result, slug
 
 log = logging.getLogger(__name__)
 
+POINT_GEOMETRIES = {"esriGeometryPoint", "esriGeometryMultipoint"}
+
 DEFAULT_FIELDS = {
     "id":     ("beach id", "beachid", "station id", "stationid", "site id", "siteid",
                "globalid", "objectid", "fid"),
@@ -126,12 +128,31 @@ class ArcGISCollector(Collector):
         urls = list(dict.fromkeys(urls))
         if not urls:
             res.warnings.append(f"{self.source_id}: no feature layers discovered")
-        log.info("%s: %d layer(s) to query", self.source_id, len(urls))
+        log.info("%s: %d layer(s) found", self.source_id, len(urls))
         for u in urls:
-            log.info("%s: querying %s", self.source_id, u)
+            name, geom = "", ""
             try:
-                res.extend(parse_features(self.query_layer(u), self.state,
-                                          self.field_map, layer_url=u,
+                meta = self.get(u, params={"f": "json"}).json()
+                name, geom = meta.get("name", ""), meta.get("geometryType", "")
+            except Exception:
+                pass
+            # Only monitoring-site points: never ingest boundaries, basemaps or other polygons/lines.
+            if geom not in POINT_GEOMETRIES:
+                log.info("%s: skipping non-point layer %r (%s, %s)", self.source_id, name,
+                         geom or "no geometry", u)
+                continue
+            if self.layer_name_filter and not (self.layer_name_filter.search(name)
+                                               or self.layer_name_filter.search(u)):
+                log.info("%s: skipping layer %r (%s)", self.source_id, name, u)
+                continue
+            log.info("%s: querying layer %r (%s)", self.source_id, name, u)
+            try:
+                feats = self.query_layer(u)
+                if feats:
+                    props = feats[0].get("properties") or {}
+                    log.info("%s: %d features; fields: %s", self.source_id, len(feats),
+                             ", ".join(f"{k}={str(v)[:30]!r}" for k, v in props.items())[:1500])
+                res.extend(parse_features(feats, self.state, self.field_map, layer_url=u,
                                           detail_url=self.homepage_url))
             except Exception as e:
                 res.warnings.append(f"{self.source_id} layer {u}: {e}")
@@ -212,8 +233,9 @@ def parse_features(features: list[dict], state: str, field_map: Optional[dict] =
     res = CollectorResult()
     for f in features:
         props = f.get("properties") or {}
-        if not props:
-            continue
+        gtype = (f.get("geometry") or {}).get("type")
+        if not props or gtype not in ("Point", "MultiPoint"):
+            continue   # sites must be points
         id_k, name_k = _pick(props, field_map, "id"), _pick(props, field_map, "name")
         name = str(props.get(name_k) or "").strip() if name_k else ""
         sid = str(props.get(id_k)) if id_k and props.get(id_k) not in (None, "") else slug(name)

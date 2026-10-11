@@ -1,6 +1,6 @@
 """Build the website.
 
-    python scripts/build_site.py              # docs/index.html + docs/basemap.json
+    python scripts/build_site.py              # docs/index.html
     python scripts/build_site.py --preview    # also dist/preview.html (all data embedded)
 
 docs/ is what GitHub Pages serves. The page loads docs/data/ (written daily by
@@ -11,7 +11,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -48,7 +47,6 @@ def main() -> None:
     DOCS.mkdir(exist_ok=True)
     html = render()
     (DOCS / "index.html").write_text(html)
-    shutil.copy(SITE / "basemap.json", DOCS / "basemap.json")
     (DOCS / ".nojekyll").write_text("")  # serve files as-is on GitHub Pages
     print("wrote docs/index.html")
     if args.preview:
