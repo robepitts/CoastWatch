@@ -1,0 +1,43 @@
+yaml
+# Once a day: collect from all sources, export JSON for the website, rebuild
+# the page, and commit the results. GitHub Pages serves docs/.
+name: collect
+
+on:
+  schedule:
+    # 22:10 UTC = 6:10 pm EDT / 5:10 pm EST.
+    - cron: "10 22 * * *"
+  workflow_dispatch: {}   # adds a "Run workflow" button for manual runs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q
+      - name: Collect
+        run: python -m coastwatch collect
+        continue-on-error: true   # one broken source shouldn't block the export
+      - run: python -m coastwatch export
+      - run: python scripts/build_site.py
+      - run: python -m coastwatch status
+      - name: Commit results
+        run: |
+          git config user.name  "coastwatch-bot"
+          git config user.email "coastwatch-bot@users.noreply.github.com"
+          git add data/coastwatch.db docs/
+          git diff --cached --quiet || git commit -m "data: daily update $(date -u +%F)"
+          git push
