@@ -1,0 +1,47 @@
+{
+ "site_id": "wqp_nj:21NJBCH-OC0119W1",
+ "name": "Ocean Gate Borough at Wildwood W1",
+ "state": "NJ",
+ "county": "Ocean",
+ "water_body": null,
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://njbeaches.org/",
+ "latest_sample_date": "2025-07-16",
+ "latest_value": 10.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 3,
+ "location_approx": false,
+ "history_file": "sites/wqp_nj_21NJBCH-OC0119W1.json",
+ "samples": [
+  {
+   "sample_date": "2025-06-03",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-15",
+   "indicator": "enterococcus",
+   "value": 150.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-07-16",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

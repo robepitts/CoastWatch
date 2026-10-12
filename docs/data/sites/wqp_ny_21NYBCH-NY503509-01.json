@@ -1,0 +1,431 @@
+{
+ "site_id": "wqp_ny:21NYBCH-NY503509-01",
+ "name": "Centre Island - Sound Beach",
+ "state": "NY",
+ "county": "Nassau",
+ "water_body": "Ocean",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "latest_sample_date": "2025-08-27",
+ "latest_value": 8.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": 1.4,
+ "bav": 104,
+ "samples_count": 51,
+ "location_approx": false,
+ "history_file": "sites/wqp_ny_21NYBCH-NY503509-01.json",
+ "samples": [
+  {
+   "sample_date": "2025-04-15",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-04-22",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-04-29",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-06",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-12",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-13",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-14",
+   "indicator": "enterococcus",
+   "value": 7.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-19",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-20",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-21",
+   "indicator": "enterococcus",
+   "value": 4.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-27",
+   "indicator": "enterococcus",
+   "value": 18.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-28",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-02",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-03",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-04",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-09",
+   "indicator": "enterococcus",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-10",
+   "indicator": "enterococcus",
+   "value": 9.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-11",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-16",
+   "indicator": "enterococcus",
+   "value": 2.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-17",
+   "indicator": "enterococcus",
+   "value": 18.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-18",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-23",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-24",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-25",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-30",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-01",
+   "indicator": "enterococcus",
+   "value": 2.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-02",
+   "indicator": "enterococcus",
+   "value": 2.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-07",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-08",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-09",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-14",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-15",
+   "indicator": "enterococcus",
+   "value": 2.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-16",
+   "indicator": "enterococcus",
+   "value": 4.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-21",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-22",
+   "indicator": "enterococcus",
+   "value": 196.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-07-23",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-28",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-29",
+   "indicator": "enterococcus",
+   "value": 7.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-30",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-04",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-05",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-06",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-11",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-12",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-13",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-18",
+   "indicator": "enterococcus",
+   "value": 2.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-19",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-20",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-25",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-26",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-27",
+   "indicator": "enterococcus",
+   "value": 8.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

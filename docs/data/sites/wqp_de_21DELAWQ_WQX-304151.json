@@ -1,0 +1,71 @@
+{
+ "site_id": "wqp_de:21DELAWQ_WQX-304151",
+ "name": "Nanticoke River @ Buoy 66 (mouth of DuPont Gut)",
+ "state": "DE",
+ "county": "Sussex",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "latest_sample_date": "2026-07-28",
+ "latest_value": 167.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 6,
+ "location_approx": false,
+ "history_file": "sites/wqp_de_21DELAWQ_WQX-304151.json",
+ "samples": [
+  {
+   "sample_date": "2025-01-28",
+   "indicator": "enterococcus",
+   "value": 60.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-02-25",
+   "indicator": "enterococcus",
+   "value": 39.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-03-18",
+   "indicator": "enterococcus",
+   "value": 147.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-04-29",
+   "indicator": "enterococcus",
+   "value": 582.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-05-20",
+   "indicator": "enterococcus",
+   "value": 922.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2026-07-28",
+   "indicator": "enterococcus",
+   "value": 167.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  }
+ ],
+ "advisories": []
+}

@@ -1,0 +1,103 @@
+{
+ "site_id": "wqp_nj:DRBC-MO_NJ",
+ "name": "Mo_Nj",
+ "state": "NJ",
+ "county": null,
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://njbeaches.org/",
+ "latest_sample_date": "2025-09-23",
+ "latest_value": 4.1,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": 17.5,
+ "bav": 104,
+ "samples_count": 10,
+ "location_approx": false,
+ "history_file": "sites/wqp_nj_DRBC-MO_NJ.json",
+ "samples": [
+  {
+   "sample_date": "2025-09-16",
+   "indicator": "enterococcus",
+   "value": 17.5,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-16",
+   "indicator": "enterococcus",
+   "value": 29.4,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-16",
+   "indicator": "enterococcus",
+   "value": 13.1,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-16",
+   "indicator": "enterococcus",
+   "value": 21.6,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-16",
+   "indicator": "enterococcus",
+   "value": 32.2,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-23",
+   "indicator": "enterococcus",
+   "value": 26.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-23",
+   "indicator": "enterococcus",
+   "value": 16.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-23",
+   "indicator": "enterococcus",
+   "value": 40.5,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-23",
+   "indicator": "enterococcus",
+   "value": 7.4,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-23",
+   "indicator": "enterococcus",
+   "value": 4.1,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

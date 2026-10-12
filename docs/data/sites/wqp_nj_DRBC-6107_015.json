@@ -1,0 +1,71 @@
+{
+ "site_id": "wqp_nj:DRBC-6107_015",
+ "name": "6107_015",
+ "state": "NJ",
+ "county": "Burlington",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://njbeaches.org/",
+ "latest_sample_date": "2025-08-18",
+ "latest_value": 579.4,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": 59.2,
+ "bav": 104,
+ "samples_count": 6,
+ "location_approx": false,
+ "history_file": "sites/wqp_nj_DRBC-6107_015.json",
+ "samples": [
+  {
+   "sample_date": "2025-07-28",
+   "indicator": "enterococcus",
+   "value": 21.6,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-30",
+   "indicator": "enterococcus",
+   "value": 19.5,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-04",
+   "indicator": "enterococcus",
+   "value": 20.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-06",
+   "indicator": "enterococcus",
+   "value": 140.8,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-08-13",
+   "indicator": "enterococcus",
+   "value": 59.8,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-18",
+   "indicator": "enterococcus",
+   "value": 579.4,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  }
+ ],
+ "advisories": []
+}

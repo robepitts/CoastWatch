@@ -1,0 +1,167 @@
+{
+ "site_id": "wqp_de:21DELAWQ_WQX-DE047813",
+ "name": "Silver Lake (Dover) Beach",
+ "state": "DE",
+ "county": "Kent",
+ "water_body": null,
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "latest_sample_date": "2025-10-01",
+ "latest_value": 55.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": 196.0,
+ "bav": 104,
+ "samples_count": 18,
+ "location_approx": false,
+ "history_file": "sites/wqp_de_21DELAWQ_WQX-DE047813.json",
+ "samples": [
+  {
+   "sample_date": "2025-05-28",
+   "indicator": "enterococcus",
+   "value": 214.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-06-04",
+   "indicator": "enterococcus",
+   "value": 62.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-11",
+   "indicator": "enterococcus",
+   "value": 203.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-06-17",
+   "indicator": "enterococcus",
+   "value": 291.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-06-25",
+   "indicator": "enterococcus",
+   "value": 26.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-02",
+   "indicator": "enterococcus",
+   "value": 816.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-07-09",
+   "indicator": "enterococcus",
+   "value": 108.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-07-16",
+   "indicator": "enterococcus",
+   "value": 2420.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-07-23",
+   "indicator": "enterococcus",
+   "value": 157.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-07-30",
+   "indicator": "enterococcus",
+   "value": 12.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-06",
+   "indicator": "enterococcus",
+   "value": 56.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-13",
+   "indicator": "enterococcus",
+   "value": 166.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-08-20",
+   "indicator": "enterococcus",
+   "value": 122.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-09-03",
+   "indicator": "enterococcus",
+   "value": 1120.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-09-10",
+   "indicator": "enterococcus",
+   "value": 82.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-17",
+   "indicator": "enterococcus",
+   "value": 387.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-09-24",
+   "indicator": "enterococcus",
+   "value": 148.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-10-01",
+   "indicator": "enterococcus",
+   "value": 55.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

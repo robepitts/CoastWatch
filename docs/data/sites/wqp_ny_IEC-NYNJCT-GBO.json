@@ -1,0 +1,47 @@
+{
+ "site_id": "wqp_ny:IEC-NYNJCT-GBO",
+ "name": "Gravesend Bay, OH-015",
+ "state": "NY",
+ "county": "Kings",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "latest_sample_date": "2025-05-22",
+ "latest_value": 24196.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 3,
+ "location_approx": false,
+ "history_file": "sites/wqp_ny_IEC-NYNJCT-GBO.json",
+ "samples": [
+  {
+   "sample_date": "2025-05-08",
+   "indicator": "enterococcus",
+   "value": 74.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-15",
+   "indicator": "enterococcus",
+   "value": 10462.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-05-22",
+   "indicator": "enterococcus",
+   "value": 24196.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  }
+ ],
+ "advisories": []
+}

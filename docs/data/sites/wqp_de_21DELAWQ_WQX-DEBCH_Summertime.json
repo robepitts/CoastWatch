@@ -1,0 +1,39 @@
+{
+ "site_id": "wqp_de:21DELAWQ_WQX-DEBCH_Summertime",
+ "name": "Summertime Park",
+ "state": "DE",
+ "county": "Sussex",
+ "water_body": "Ocean",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "latest_sample_date": "2025-06-24",
+ "latest_value": 31.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 2,
+ "location_approx": false,
+ "history_file": "sites/wqp_de_21DELAWQ_WQX-DEBCH_Summertime.json",
+ "samples": [
+  {
+   "sample_date": "2025-05-27",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-24",
+   "indicator": "enterococcus",
+   "value": 31.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

@@ -1,0 +1,127 @@
+{
+ "site_id": "wqp_de:21DELAWQ_WQX-DEBCH_LittleAssa3",
+ "name": "Little Assawoman Bay 3",
+ "state": "DE",
+ "county": "Sussex",
+ "water_body": "Ocean",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "latest_sample_date": "2026-09-09",
+ "latest_value": 5.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 13,
+ "location_approx": false,
+ "history_file": "sites/wqp_de_21DELAWQ_WQX-DEBCH_LittleAssa3.json",
+ "samples": [
+  {
+   "sample_date": "2025-01-14",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-02-04",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-03-05",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-04-01",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-01",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-03",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-05",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-10-15",
+   "indicator": "enterococcus",
+   "value": 52.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-05-05",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-02",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-08",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-08-04",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-09",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

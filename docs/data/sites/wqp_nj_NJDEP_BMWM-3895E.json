@@ -1,0 +1,47 @@
+{
+ "site_id": "wqp_nj:NJDEP_BMWM-3895E",
+ "name": "3895e",
+ "state": "NJ",
+ "county": "Cape May",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://njbeaches.org/",
+ "latest_sample_date": "2025-08-07",
+ "latest_value": 3.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 3,
+ "location_approx": false,
+ "history_file": "sites/wqp_nj_NJDEP_BMWM-3895E.json",
+ "samples": [
+  {
+   "sample_date": "2025-05-08",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-14",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-07",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

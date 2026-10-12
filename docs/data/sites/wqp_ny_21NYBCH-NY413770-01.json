@@ -1,0 +1,47 @@
+{
+ "site_id": "wqp_ny:21NYBCH-NY413770-01",
+ "name": "Quogue Village Beach",
+ "state": "NY",
+ "county": "Suffolk",
+ "water_body": "Ocean",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "latest_sample_date": "2025-07-30",
+ "latest_value": 0.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 3,
+ "location_approx": false,
+ "history_file": "sites/wqp_ny_21NYBCH-NY413770-01.json",
+ "samples": [
+  {
+   "sample_date": "2025-05-12",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-13",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-30",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

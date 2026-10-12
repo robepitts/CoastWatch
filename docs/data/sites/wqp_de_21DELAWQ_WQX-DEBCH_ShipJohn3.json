@@ -1,0 +1,63 @@
+{
+ "site_id": "wqp_de:21DELAWQ_WQX-DEBCH_ShipJohn3",
+ "name": "Delaware Bay 3",
+ "state": "DE",
+ "county": "Sussex",
+ "water_body": "Ocean",
+ "status": "open",
+ "source_status": null,
+ "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "latest_sample_date": "2026-09-30",
+ "latest_value": 7.5,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 5,
+ "location_approx": false,
+ "history_file": "sites/wqp_de_21DELAWQ_WQX-DEBCH_ShipJohn3.json",
+ "samples": [
+  {
+   "sample_date": "2025-03-11",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-04-24",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-18",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-10-21",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-30",
+   "indicator": "enterococcus",
+   "value": 7.5,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

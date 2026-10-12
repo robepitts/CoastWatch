@@ -1,0 +1,47 @@
+{
+ "site_id": "wqp_de:21DELAWQ_WQX-308051",
+ "name": "Guinea Creek @ Banks Rd. (Rd. 298)",
+ "state": "DE",
+ "county": "Sussex",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "latest_sample_date": "2025-05-27",
+ "latest_value": 228.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 3,
+ "location_approx": false,
+ "history_file": "sites/wqp_de_21DELAWQ_WQX-308051.json",
+ "samples": [
+  {
+   "sample_date": "2025-01-22",
+   "indicator": "enterococcus",
+   "value": 52.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-03-11",
+   "indicator": "enterococcus",
+   "value": 62.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-27",
+   "indicator": "enterococcus",
+   "value": 228.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  }
+ ],
+ "advisories": []
+}

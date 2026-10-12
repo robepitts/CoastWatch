@@ -1,0 +1,55 @@
+{
+ "site_id": "wqp_ny:21NYBCH-NY413264-01",
+ "name": "Ditch Plains Beach",
+ "state": "NY",
+ "county": "Suffolk",
+ "water_body": "Ocean",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "latest_sample_date": "2025-08-06",
+ "latest_value": 0.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 4,
+ "location_approx": false,
+ "history_file": "sites/wqp_ny_21NYBCH-NY413264-01.json",
+ "samples": [
+  {
+   "sample_date": "2025-05-13",
+   "indicator": "enterococcus",
+   "value": 4.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-26",
+   "indicator": "enterococcus",
+   "value": 12.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-15",
+   "indicator": "enterococcus",
+   "value": 8.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-06",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

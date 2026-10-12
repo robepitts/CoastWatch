@@ -1,0 +1,159 @@
+{
+ "site_id": "wqp_nj:NJDEP_BB-BB08",
+ "name": "Barnegat Bay by Barnegat Inlet",
+ "state": "NJ",
+ "county": "Ocean",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://njbeaches.org/",
+ "latest_sample_date": "2026-06-16",
+ "latest_value": 3.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 17,
+ "location_approx": false,
+ "history_file": "sites/wqp_nj_NJDEP_BB-BB08.json",
+ "samples": [
+  {
+   "sample_date": "2025-02-11",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-03-19",
+   "indicator": "enterococcus",
+   "value": 13.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-04-02",
+   "indicator": "enterococcus",
+   "value": 13.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-13",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-17",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-08",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-13",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-11",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-10-15",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-11-05",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-12-10",
+   "indicator": "enterococcus",
+   "value": 13.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-01-08",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-02-27",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-03-24",
+   "indicator": "enterococcus",
+   "value": 13.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-04-21",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-05-07",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-16",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

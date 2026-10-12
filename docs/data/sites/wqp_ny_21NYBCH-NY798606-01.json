@@ -1,0 +1,127 @@
+{
+ "site_id": "wqp_ny:21NYBCH-NY798606-01",
+ "name": "Goose Creek",
+ "state": "NY",
+ "county": "Suffolk",
+ "water_body": "Ocean",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "latest_sample_date": "2025-08-27",
+ "latest_value": 0.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 13,
+ "location_approx": false,
+ "history_file": "sites/wqp_ny_21NYBCH-NY798606-01.json",
+ "samples": [
+  {
+   "sample_date": "2025-05-14",
+   "indicator": "enterococcus",
+   "value": 12.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-29",
+   "indicator": "enterococcus",
+   "value": 16.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-11",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-18",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-25",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-01",
+   "indicator": "enterococcus",
+   "value": 4.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-08",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-14",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-21",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-28",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-06",
+   "indicator": "enterococcus",
+   "value": 8.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-21",
+   "indicator": "enterococcus",
+   "value": 32.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-27",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

@@ -1,0 +1,55 @@
+{
+ "site_id": "wqp_nj:NJDEP_BMWM-900B",
+ "name": "900b",
+ "state": "NJ",
+ "county": "Monmouth",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://njbeaches.org/",
+ "latest_sample_date": "2025-05-22",
+ "latest_value": 23.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 4,
+ "location_approx": false,
+ "history_file": "sites/wqp_nj_NJDEP_BMWM-900B.json",
+ "samples": [
+  {
+   "sample_date": "2025-02-26",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-03-12",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-04-16",
+   "indicator": "enterococcus",
+   "value": 7.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-22",
+   "indicator": "enterococcus",
+   "value": 23.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

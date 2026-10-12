@@ -1,0 +1,79 @@
+{
+ "site_id": "wqp_de:21DELAWQ_WQX-DEBCH_IndianRiver1",
+ "name": "Indian River Bay 2",
+ "state": "DE",
+ "county": "Sussex",
+ "water_body": "Ocean",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "latest_sample_date": "2026-09-16",
+ "latest_value": 7.5,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 7,
+ "location_approx": false,
+ "history_file": "sites/wqp_de_21DELAWQ_WQX-DEBCH_IndianRiver1.json",
+ "samples": [
+  {
+   "sample_date": "2025-03-13",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-04-09",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-10",
+   "indicator": "enterococcus",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-08",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-06-09",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-07-15",
+   "indicator": "enterococcus",
+   "value": 31.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2026-09-16",
+   "indicator": "enterococcus",
+   "value": 7.5,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

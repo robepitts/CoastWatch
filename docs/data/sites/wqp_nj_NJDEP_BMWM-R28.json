@@ -1,0 +1,55 @@
+{
+ "site_id": "wqp_nj:NJDEP_BMWM-R28",
+ "name": "R28",
+ "state": "NJ",
+ "county": "Burlington",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://njbeaches.org/",
+ "latest_sample_date": "2025-09-29",
+ "latest_value": 73.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 4,
+ "location_approx": false,
+ "history_file": "sites/wqp_nj_NJDEP_BMWM-R28.json",
+ "samples": [
+  {
+   "sample_date": "2025-03-25",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-10",
+   "indicator": "enterococcus",
+   "value": 160.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-08-07",
+   "indicator": "enterococcus",
+   "value": 100.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-09-29",
+   "indicator": "enterococcus",
+   "value": 73.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

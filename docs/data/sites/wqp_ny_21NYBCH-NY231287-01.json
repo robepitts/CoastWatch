@@ -1,0 +1,103 @@
+{
+ "site_id": "wqp_ny:21NYBCH-NY231287-01",
+ "name": "Tiana Shores Association",
+ "state": "NY",
+ "county": "Suffolk",
+ "water_body": "Ocean",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "latest_sample_date": "2025-08-15",
+ "latest_value": 60.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": 33.5,
+ "bav": 104,
+ "samples_count": 10,
+ "location_approx": false,
+ "history_file": "sites/wqp_ny_21NYBCH-NY231287-01.json",
+ "samples": [
+  {
+   "sample_date": "2025-05-13",
+   "indicator": "enterococcus",
+   "value": 4.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-29",
+   "indicator": "enterococcus",
+   "value": 456.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-05-31",
+   "indicator": "enterococcus",
+   "value": 60.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-01",
+   "indicator": "enterococcus",
+   "value": 40.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-15",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-07-28",
+   "indicator": "enterococcus",
+   "value": 0.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-07",
+   "indicator": "enterococcus",
+   "value": 104.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-09",
+   "indicator": "enterococcus",
+   "value": 32.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-13",
+   "indicator": "enterococcus",
+   "value": 212.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-08-15",
+   "indicator": "enterococcus",
+   "value": 60.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

@@ -1,0 +1,39 @@
+{
+ "site_id": "wqp_de:21DELAWQ_WQX-204031",
+ "name": "Little River @ Bayside Dr. (Rt. 9)",
+ "state": "DE",
+ "county": "Kent",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "latest_sample_date": "2025-04-08",
+ "latest_value": 3080.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 2,
+ "location_approx": false,
+ "history_file": "sites/wqp_de_21DELAWQ_WQX-204031.json",
+ "samples": [
+  {
+   "sample_date": "2025-02-11",
+   "indicator": "enterococcus",
+   "value": 85.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-04-08",
+   "indicator": "enterococcus",
+   "value": 3080.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  }
+ ],
+ "advisories": []
+}

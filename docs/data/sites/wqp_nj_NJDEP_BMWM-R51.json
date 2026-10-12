@@ -1,0 +1,55 @@
+{
+ "site_id": "wqp_nj:NJDEP_BMWM-R51",
+ "name": "R51",
+ "state": "NJ",
+ "county": "Cumberland",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://njbeaches.org/",
+ "latest_sample_date": "2025-10-29",
+ "latest_value": 120.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 4,
+ "location_approx": false,
+ "history_file": "sites/wqp_nj_NJDEP_BMWM-R51.json",
+ "samples": [
+  {
+   "sample_date": "2025-02-20",
+   "indicator": "enterococcus",
+   "value": 47.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-03-24",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-08-18",
+   "indicator": "enterococcus",
+   "value": 300.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-10-29",
+   "indicator": "enterococcus",
+   "value": 120.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  }
+ ],
+ "advisories": []
+}

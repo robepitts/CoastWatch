@@ -1,0 +1,39 @@
+{
+ "site_id": "wqp_de:21DELAWQ_WQX-306181",
+ "name": "Indian River @ Buoy 49 (Swan Creek)",
+ "state": "DE",
+ "county": "Sussex",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "latest_sample_date": "2025-05-28",
+ "latest_value": 30.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 2,
+ "location_approx": false,
+ "history_file": "sites/wqp_de_21DELAWQ_WQX-306181.json",
+ "samples": [
+  {
+   "sample_date": "2025-03-12",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-28",
+   "indicator": "enterococcus",
+   "value": 30.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

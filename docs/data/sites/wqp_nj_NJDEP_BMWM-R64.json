@@ -1,0 +1,103 @@
+{
+ "site_id": "wqp_nj:NJDEP_BMWM-R64",
+ "name": "R64",
+ "state": "NJ",
+ "county": "Monmouth",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://njbeaches.org/",
+ "latest_sample_date": "2025-12-30",
+ "latest_value": 200.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 10,
+ "location_approx": false,
+ "history_file": "sites/wqp_nj_NJDEP_BMWM-R64.json",
+ "samples": [
+  {
+   "sample_date": "2025-02-26",
+   "indicator": "enterococcus",
+   "value": 47.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-03-12",
+   "indicator": "enterococcus",
+   "value": 23.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-04-16",
+   "indicator": "enterococcus",
+   "value": 93.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-05-22",
+   "indicator": "enterococcus",
+   "value": 2000.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-06-27",
+   "indicator": "enterococcus",
+   "value": 900.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-07-23",
+   "indicator": "enterococcus",
+   "value": 400.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-08-28",
+   "indicator": "enterococcus",
+   "value": 170.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-10-02",
+   "indicator": "enterococcus",
+   "value": 2000.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-10-30",
+   "indicator": "enterococcus",
+   "value": 2000.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-12-30",
+   "indicator": "enterococcus",
+   "value": 200.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1
+  }
+ ],
+ "advisories": []
+}

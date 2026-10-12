@@ -1,0 +1,39 @@
+{
+ "site_id": "wqp_nj:NJDEP_BMWM-R11",
+ "name": "R11",
+ "state": "NJ",
+ "county": "Ocean",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://njbeaches.org/",
+ "latest_sample_date": "2025-12-16",
+ "latest_value": 20.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 2,
+ "location_approx": false,
+ "history_file": "sites/wqp_nj_NJDEP_BMWM-R11.json",
+ "samples": [
+  {
+   "sample_date": "2025-03-25",
+   "indicator": "enterococcus",
+   "value": 40.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-12-16",
+   "indicator": "enterococcus",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

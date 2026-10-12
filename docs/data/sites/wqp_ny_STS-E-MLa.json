@@ -1,0 +1,31 @@
+{
+ "site_id": "wqp_ny:STS-E-MLa",
+ "name": "Rye Marshlands Conservancy",
+ "state": "NY",
+ "county": "Westchester",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "latest_sample_date": "2025-06-25",
+ "latest_value": 20.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 1,
+ "location_approx": false,
+ "history_file": "sites/wqp_ny_STS-E-MLa.json",
+ "samples": [
+  {
+   "sample_date": "2025-06-25",
+   "indicator": "enterococcus",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

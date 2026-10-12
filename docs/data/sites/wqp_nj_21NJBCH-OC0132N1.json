@@ -1,0 +1,39 @@
+{
+ "site_id": "wqp_nj:21NJBCH-OC0132N1",
+ "name": "Seaside Park Borough at 5th Ave Bay Front N1",
+ "state": "NJ",
+ "county": "Ocean",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://njbeaches.org/",
+ "latest_sample_date": "2025-06-18",
+ "latest_value": 80.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 2,
+ "location_approx": false,
+ "history_file": "sites/wqp_nj_21NJBCH-OC0132N1.json",
+ "samples": [
+  {
+   "sample_date": "2025-06-17",
+   "indicator": "enterococcus",
+   "value": 100.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-06-18",
+   "indicator": "enterococcus",
+   "value": 80.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0
+  }
+ ],
+ "advisories": []
+}

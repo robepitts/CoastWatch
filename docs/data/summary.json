@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-10-12T00:02:42+00:00",
+ "generated_at": "2026-10-12T00:24:46+00:00",
  "as_of": "2026-10-12",
  "by_state": {
   "NY": {
-   "sites": 76,
+   "sites": 462,
    "statuses": {
     "open": 3,
-    "off_season": 73
+    "off_season": 459
    },
    "newest_sample": "2026-09-29"
   },
@@ -26,6 +26,22 @@
     "open": 14
    },
    "newest_sample": null
+  },
+  "NJ": {
+   "sites": 530,
+   "statuses": {
+    "off_season": 530
+   },
+   "newest_sample": "2026-06-30"
+  },
+  "DE": {
+   "sites": 113,
+   "statuses": {
+    "off_season": 95,
+    "advisory": 9,
+    "open": 9
+   },
+   "newest_sample": "2026-09-30"
   }
  },
  "unmapped_sites": 0

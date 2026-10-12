@@ -1,0 +1,63 @@
+{
+ "site_id": "wqp_de:21DELAWQ_WQX-102041",
+ "name": "Shellpot Creek @ Hay Rd. (Rd. 501)",
+ "state": "DE",
+ "county": "New Castle",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "latest_sample_date": "2025-06-04",
+ "latest_value": 171.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 5,
+ "location_approx": false,
+ "history_file": "sites/wqp_de_21DELAWQ_WQX-102041.json",
+ "samples": [
+  {
+   "sample_date": "2025-02-05",
+   "indicator": "enterococcus",
+   "value": 420.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-03-05",
+   "indicator": "enterococcus",
+   "value": 74.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0
+  },
+  {
+   "sample_date": "2025-04-02",
+   "indicator": "enterococcus",
+   "value": 1830.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-05-07",
+   "indicator": "enterococcus",
+   "value": 345.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  },
+  {
+   "sample_date": "2025-06-04",
+   "indicator": "enterococcus",
+   "value": 171.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1
+  }
+ ],
+ "advisories": []
+}
