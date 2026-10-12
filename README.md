@@ -24,7 +24,7 @@ python scripts/make_sample_data.py       # regenerate docs/sample-data/
 
 To view the site locally: `python -m http.server -d docs 8000`, then open http://localhost:8000.
 
-Before your first real run, edit the contact address in `USER_AGENT` in `coastwatch/http.py`. Agencies are much more forgiving of automated traffic they can identify and contact.
+The collector identifies itself to every site with a link to this repository (`USER_AGENT` in `coastwatch/http.py`), so agencies can see who is collecting and why.
 
 ## How it fits together
 

@@ -21,6 +21,11 @@ CONFIG = Path(__file__).resolve().parents[2] / "config" / "sources.json"
 
 def build(source_id: str, cfg: dict, client: PoliteClient, store: Store):
     kind = cfg["collector"]
+    if cfg.get("respect_robots") is False:
+        # Only for documented public data APIs whose robots.txt targets crawlers
+        # (see the note on that source in config/sources.json). Still throttled.
+        client = PoliteClient(min_interval_s=client.min_interval_s, timeout_s=client.timeout_s,
+                              retries=client.retries, respect_robots=False)
     kw = {"client": client, "store": store}
     if kind == "nyc":
         return NYCCollector(lookback_days=cfg.get("lookback_days", 120), **kw)

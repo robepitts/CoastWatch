@@ -484,3 +484,15 @@ def test_wqp_store_and_export(tmp_path):
     # results from last year are reported, but status must not claim current conditions
     assert props["Seaside Park - 5th Ave"]["status"] == "no_data"
     assert props["Beachwood Beach West"]["latest_value"] == 1200
+
+
+
+def test_respect_robots_override_only_where_configured():
+    from coastwatch.collectors import build
+    from coastwatch.http import PoliteClient
+    base = PoliteClient()
+    wqp = build("wqp_nj", {"collector": "wqp", "state": "NJ", "agency": "x", "respect_robots": False},
+                base, store=None)
+    nyc = build("nyc_doh", {"collector": "nyc"}, base, store=None)
+    assert wqp.client.respect_robots is False and wqp.client is not base
+    assert nyc.client is base and base.respect_robots is True

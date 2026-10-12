@@ -66,7 +66,9 @@
     "_note": "Water Quality Portal: official results submitted to EPA, typically months behind.",
     "state": "NJ",
     "agency": "NJDEP beach monitoring, via the Water Quality Portal",
-    "homepage_url": "https://njbeaches.org/"
+    "homepage_url": "https://njbeaches.org/",
+    "respect_robots": false,
+    "_robots_note": "The portal's robots.txt disallows /data/ for crawlers, but /data/ is the portal's documented public web service for scripted downloads (also used by USGS's dataRetrieval software). This collector makes a few throttled requests per day with an identifying user agent. Set to true to honor robots.txt instead."
   },
   "wqp_ny": {
     "enabled": true,
@@ -84,7 +86,9 @@
     "state": "NY",
     "agency": "New York beach monitoring, via the Water Quality Portal",
     "homepage_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
-    "exclude_org_pattern": "new york city|nyc|dohmh|mental hygiene"
+    "exclude_org_pattern": "new york city|nyc|dohmh|mental hygiene",
+    "respect_robots": false,
+    "_robots_note": "The portal's robots.txt disallows /data/ for crawlers, but /data/ is the portal's documented public web service for scripted downloads (also used by USGS's dataRetrieval software). This collector makes a few throttled requests per day with an identifying user agent. Set to true to honor robots.txt instead."
   },
   "wqp_de": {
     "enabled": true,
@@ -101,6 +105,8 @@
     "_note": "Water Quality Portal: official results submitted to EPA, typically months behind.",
     "state": "DE",
     "agency": "Delaware DNREC beach monitoring, via the Water Quality Portal",
-    "homepage_url": "https://recwaters.dnrec.delaware.gov/"
+    "homepage_url": "https://recwaters.dnrec.delaware.gov/",
+    "respect_robots": false,
+    "_robots_note": "The portal's robots.txt disallows /data/ for crawlers, but /data/ is the portal's documented public web service for scripted downloads (also used by USGS's dataRetrieval software). This collector makes a few throttled requests per day with an identifying user agent. Set to true to honor robots.txt instead."
   }
 }

@@ -17,7 +17,7 @@ import requests
 log = logging.getLogger(__name__)
 
 USER_AGENT = ("CoastWatch/0.1 (mid-Atlantic beach water quality aggregator; "
-              "contact: CHANGE-ME@example.com)")
+              "+https://github.com/robepitts/CoastWatch)")
 
 
 class RobotsDisallowed(Exception):
