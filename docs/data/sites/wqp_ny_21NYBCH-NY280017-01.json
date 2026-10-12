@@ -1,0 +1,174 @@
+{
+ "site_id": "wqp_ny:21NYBCH-NY280017-01",
+ "name": "Chedmardo Beach",
+ "state": "NY",
+ "kind": "beach",
+ "link_text": "Check the official New York State Department of Health page",
+ "agency": "New York State Department of Health",
+ "county": null,
+ "water_body": "Great Lakes",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "source_label": "New York State Department of Health",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_ny",
+   "label": "New York State Department of Health, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
+ "latest_sample_date": "2025-08-25",
+ "latest_value": 109.5,
+ "latest_qualifier": null,
+ "latest_indicator": "e_coli",
+ "units": "MPN/100mL",
+ "geomean_30d": 51.3,
+ "bav": 235,
+ "samples_count": 15,
+ "location_approx": false,
+ "linked_site_ids": [],
+ "history_file": "sites/wqp_ny_21NYBCH-NY280017-01.json",
+ "samples": [
+  {
+   "sample_date": "2025-05-19",
+   "indicator": "e_coli",
+   "value": 1986.3,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-05-21",
+   "indicator": "e_coli",
+   "value": 172.3,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-06-09",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-06-16",
+   "indicator": "e_coli",
+   "value": 4.1,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-06-23",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-06-30",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-07",
+   "indicator": "e_coli",
+   "value": 4.1,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-14",
+   "indicator": "e_coli",
+   "value": 26.2,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-21",
+   "indicator": "e_coli",
+   "value": 104.6,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-28",
+   "indicator": "e_coli",
+   "value": 248.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-31",
+   "indicator": "e_coli",
+   "value": 88.6,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-08-04",
+   "indicator": "e_coli",
+   "value": 10.8,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-08-11",
+   "indicator": "e_coli",
+   "value": 7.5,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-08-18",
+   "indicator": "e_coli",
+   "value": 93.4,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-08-25",
+   "indicator": "e_coli",
+   "value": 109.5,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  }
+ ],
+ "advisories": []
+}

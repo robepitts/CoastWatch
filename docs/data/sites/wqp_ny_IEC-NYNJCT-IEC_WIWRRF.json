@@ -2,11 +2,26 @@
  "site_id": "wqp_ny:IEC-NYNJCT-IEC_WIWRRF",
  "name": "Ward's Island",
  "state": "NY",
+ "kind": "waterway",
+ "link_text": "View this station on the Water Quality Portal",
+ "agency": "Interstate Environmental Commission NewYork - New Jersey - Connecticut",
  "county": "New York",
  "water_body": "Estuary or bay",
- "status": "off_season",
+ "status": "no_data",
  "source_status": null,
- "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "detail_url": "https://www.waterqualitydata.us/provider/STORET/IEC-NYNJCT/IEC-NYNJCT-IEC_WIWRRF/",
+ "source_label": "New York State Department of Health",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_ny",
+   "label": "Interstate Environmental Commission NewYork - New Jersey - Connecticut, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
  "latest_sample_date": "2025-10-29",
  "latest_value": 10.0,
  "latest_qualifier": "<",
@@ -16,6 +31,7 @@
  "bav": 104,
  "samples_count": 30,
  "location_approx": false,
+ "linked_site_ids": [],
  "history_file": "sites/wqp_ny_IEC-NYNJCT-IEC_WIWRRF.json",
  "samples": [
   {
@@ -24,7 +40,8 @@
    "value": 311.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-04-17",
@@ -32,7 +49,8 @@
    "value": 20.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-04-23",
@@ -40,7 +58,8 @@
    "value": 84.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-04-30",
@@ -48,7 +67,8 @@
    "value": 52.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-05-07",
@@ -56,7 +76,8 @@
    "value": 259.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-05-14",
@@ -64,7 +85,8 @@
    "value": 134.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-05-21",
@@ -72,7 +94,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-05-28",
@@ -80,7 +103,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-06-04",
@@ -88,7 +112,8 @@
    "value": 31.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-06-11",
@@ -96,7 +121,8 @@
    "value": 74.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-06-16",
@@ -104,7 +130,8 @@
    "value": 63.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-06-25",
@@ -112,7 +139,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-07-02",
@@ -120,7 +148,8 @@
    "value": 243.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-07-09",
@@ -128,7 +157,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-07-16",
@@ -136,7 +166,8 @@
    "value": 426.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-07-23",
@@ -144,7 +175,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-07-30",
@@ -152,7 +184,8 @@
    "value": 73.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-08-06",
@@ -160,7 +193,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-08-13",
@@ -168,7 +202,8 @@
    "value": 52.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-08-20",
@@ -176,7 +211,8 @@
    "value": 31.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-08-27",
@@ -184,7 +220,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-09-03",
@@ -192,7 +229,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-09-10",
@@ -200,7 +238,8 @@
    "value": 20.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-09-17",
@@ -208,7 +247,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-09-24",
@@ -216,7 +256,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-10-01",
@@ -224,7 +265,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-10-07",
@@ -232,7 +274,8 @@
    "value": 20.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-10-16",
@@ -240,7 +283,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-10-22",
@@ -248,7 +292,8 @@
    "value": 41.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-10-29",
@@ -256,7 +301,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   }
  ],
  "advisories": []

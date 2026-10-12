@@ -1,0 +1,129 @@
+{
+ "site_id": "wqp_va:21VASWCB-7-BUR001.19",
+ "name": "Burke Mill Stream At Rt. 3/14",
+ "state": "VA",
+ "kind": "waterway",
+ "link_text": "View this station on the Water Quality Portal",
+ "agency": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY",
+ "county": "Gloucester",
+ "water_body": "Estuary or bay",
+ "status": "no_data",
+ "source_status": null,
+ "detail_url": "https://www.waterqualitydata.us/provider/STORET/21VASWCB/21VASWCB-7-BUR001.19/",
+ "source_label": "Virginia Department of Health",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_va",
+   "label": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
+ "latest_sample_date": "2026-08-26",
+ "latest_value": 75.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 10,
+ "location_approx": false,
+ "linked_site_ids": [],
+ "history_file": "sites/wqp_va_21VASWCB-7-BUR001.19.json",
+ "samples": [
+  {
+   "sample_date": "2025-01-13",
+   "indicator": "enterococcus",
+   "value": 100.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2025-03-06",
+   "indicator": "enterococcus",
+   "value": 25.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2025-05-05",
+   "indicator": "enterococcus",
+   "value": 100.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2025-07-07",
+   "indicator": "enterococcus",
+   "value": 325.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2025-09-08",
+   "indicator": "enterococcus",
+   "value": 600.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2025-11-13",
+   "indicator": "enterococcus",
+   "value": 25.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-02-04",
+   "indicator": "enterococcus",
+   "value": 25.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-04-06",
+   "indicator": "enterococcus",
+   "value": 50.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-06-03",
+   "indicator": "enterococcus",
+   "value": 125.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-08-26",
+   "indicator": "enterococcus",
+   "value": 75.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  }
+ ],
+ "advisories": []
+}

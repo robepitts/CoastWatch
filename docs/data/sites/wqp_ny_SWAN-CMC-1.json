@@ -2,11 +2,26 @@
  "site_id": "wqp_ny:SWAN-CMC-1",
  "name": "Crab Meadow Inlet at Beach",
  "state": "NY",
+ "kind": "waterway",
+ "link_text": "View this station on the Water Quality Portal",
+ "agency": "Salonga Wetland Advocates Network, Inc.",
  "county": "Suffolk",
  "water_body": "Estuary or bay",
- "status": "off_season",
+ "status": "no_data",
  "source_status": null,
- "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "detail_url": "https://www.waterqualitydata.us/provider/STORET/SWAN/SWAN-CMC-1/",
+ "source_label": "New York State Department of Health",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_ny",
+   "label": "Salonga Wetland Advocates Network, Inc., via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
  "latest_sample_date": "2025-10-03",
  "latest_value": 105.4,
  "latest_qualifier": null,
@@ -16,6 +31,7 @@
  "bav": 104,
  "samples_count": 11,
  "location_approx": false,
+ "linked_site_ids": [],
  "history_file": "sites/wqp_ny_SWAN-CMC-1.json",
  "samples": [
   {
@@ -24,7 +40,8 @@
    "value": 25.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Salonga Wetland Advocates Network, Inc."
   },
   {
    "sample_date": "2025-05-28",
@@ -32,7 +49,8 @@
    "value": 290.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Salonga Wetland Advocates Network, Inc."
   },
   {
    "sample_date": "2025-06-09",
@@ -40,7 +58,8 @@
    "value": 686.7,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Salonga Wetland Advocates Network, Inc."
   },
   {
    "sample_date": "2025-06-20",
@@ -48,7 +67,8 @@
    "value": 161.6,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Salonga Wetland Advocates Network, Inc."
   },
   {
    "sample_date": "2025-07-09",
@@ -56,7 +76,8 @@
    "value": 111.2,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Salonga Wetland Advocates Network, Inc."
   },
   {
    "sample_date": "2025-07-25",
@@ -64,7 +85,8 @@
    "value": 2419.6,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Salonga Wetland Advocates Network, Inc."
   },
   {
    "sample_date": "2025-08-06",
@@ -72,7 +94,8 @@
    "value": 130.1,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Salonga Wetland Advocates Network, Inc."
   },
   {
    "sample_date": "2025-08-19",
@@ -80,7 +103,8 @@
    "value": 48.7,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Salonga Wetland Advocates Network, Inc."
   },
   {
    "sample_date": "2025-09-03",
@@ -88,7 +112,8 @@
    "value": 48.7,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Salonga Wetland Advocates Network, Inc."
   },
   {
    "sample_date": "2025-09-24",
@@ -96,7 +121,8 @@
    "value": 44.3,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Salonga Wetland Advocates Network, Inc."
   },
   {
    "sample_date": "2025-10-03",
@@ -104,7 +130,8 @@
    "value": 105.4,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Salonga Wetland Advocates Network, Inc."
   }
  ],
  "advisories": []

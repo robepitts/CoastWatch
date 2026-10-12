@@ -2,11 +2,26 @@
  "site_id": "wqp_de:21DELAWQ_WQX-DEBCH_QuillensRamp",
  "name": "Quillen's Point Ramp",
  "state": "DE",
+ "kind": "beach",
+ "link_text": "Check the official Delaware DNREC page",
+ "agency": "Delaware Dept Natural Resources & Environmental Control",
  "county": "Sussex",
  "water_body": "Ocean",
  "status": "off_season",
  "source_status": null,
  "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "source_label": "Delaware DNREC",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_de",
+   "label": "Delaware Dept Natural Resources & Environmental Control, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
  "latest_sample_date": "2025-05-27",
  "latest_value": 5.0,
  "latest_qualifier": null,
@@ -16,6 +31,7 @@
  "bav": 104,
  "samples_count": 1,
  "location_approx": false,
+ "linked_site_ids": [],
  "history_file": "sites/wqp_de_21DELAWQ_WQX-DEBCH_QuillensRamp.json",
  "samples": [
   {
@@ -24,7 +40,8 @@
    "value": 5.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   }
  ],
  "advisories": []

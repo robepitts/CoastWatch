@@ -2,11 +2,26 @@
  "site_id": "wqp_ny:IEC-NYNJCT-BTH",
  "name": "Bush Terminal Park (North Embayment)",
  "state": "NY",
+ "kind": "waterway",
+ "link_text": "View this station on the Water Quality Portal",
+ "agency": "Interstate Environmental Commission NewYork - New Jersey - Connecticut",
  "county": "Kings",
  "water_body": "Estuary or bay",
- "status": "off_season",
+ "status": "no_data",
  "source_status": null,
- "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "detail_url": "https://www.waterqualitydata.us/provider/STORET/IEC-NYNJCT/IEC-NYNJCT-BTH/",
+ "source_label": "New York State Department of Health",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_ny",
+   "label": "Interstate Environmental Commission NewYork - New Jersey - Connecticut, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
  "latest_sample_date": "2025-10-02",
  "latest_value": 10.0,
  "latest_qualifier": null,
@@ -16,6 +31,7 @@
  "bav": 104,
  "samples_count": 19,
  "location_approx": false,
+ "linked_site_ids": [],
  "history_file": "sites/wqp_ny_IEC-NYNJCT-BTH.json",
  "samples": [
   {
@@ -24,7 +40,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-05-15",
@@ -32,7 +49,8 @@
    "value": 75.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-05-22",
@@ -40,7 +58,8 @@
    "value": 228.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-05-29",
@@ -48,7 +67,8 @@
    "value": 169.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-06-05",
@@ -56,7 +76,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-06-12",
@@ -64,7 +85,8 @@
    "value": 74.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-06-26",
@@ -72,7 +94,8 @@
    "value": 156.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-07-10",
@@ -80,7 +103,8 @@
    "value": 156.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-07-17",
@@ -88,7 +112,8 @@
    "value": 20.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-07-24",
@@ -96,7 +121,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-08-07",
@@ -104,7 +130,8 @@
    "value": 20.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-08-14",
@@ -112,7 +139,8 @@
    "value": 933.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-08-21",
@@ -120,7 +148,8 @@
    "value": 860.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-08-28",
@@ -128,7 +157,8 @@
    "value": 52.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-09-04",
@@ -136,7 +166,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-09-11",
@@ -144,7 +175,8 @@
    "value": 173.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-09-18",
@@ -152,7 +184,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-09-25",
@@ -160,7 +193,8 @@
    "value": 41.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   },
   {
    "sample_date": "2025-10-02",
@@ -168,7 +202,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
   }
  ],
  "advisories": []

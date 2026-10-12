@@ -1,0 +1,165 @@
+{
+ "site_id": "wqp_ny:21NYBCH-NY761078-01",
+ "name": "Sandy Island Beach State Park",
+ "state": "NY",
+ "kind": "beach",
+ "link_text": "Check the official New York State Department of Health page",
+ "agency": "New York State Department of Health",
+ "county": null,
+ "water_body": "Great Lakes",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "source_label": "New York State Department of Health",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_ny",
+   "label": "New York State Department of Health, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
+ "latest_sample_date": "2025-09-02",
+ "latest_value": 1.0,
+ "latest_qualifier": "<",
+ "latest_indicator": "e_coli",
+ "units": "CFU/100mL",
+ "geomean_30d": 4.3,
+ "bav": 235,
+ "samples_count": 14,
+ "location_approx": false,
+ "linked_site_ids": [],
+ "history_file": "sites/wqp_ny_21NYBCH-NY761078-01.json",
+ "samples": [
+  {
+   "sample_date": "2025-06-03",
+   "indicator": "e_coli",
+   "value": 12.2,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-06-10",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-06-17",
+   "indicator": "e_coli",
+   "value": 6.3,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-06-24",
+   "indicator": "e_coli",
+   "value": 155.3,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-01",
+   "indicator": "e_coli",
+   "value": 14.6,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-08",
+   "indicator": "e_coli",
+   "value": 10.8,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-15",
+   "indicator": "e_coli",
+   "value": 4.1,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-22",
+   "indicator": "e_coli",
+   "value": 9.7,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-29",
+   "indicator": "e_coli",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-08-05",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-08-12",
+   "indicator": "e_coli",
+   "value": 18.5,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-08-19",
+   "indicator": "e_coli",
+   "value": 2.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-08-26",
+   "indicator": "e_coli",
+   "value": 42.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-09-02",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  }
+ ],
+ "advisories": []
+}

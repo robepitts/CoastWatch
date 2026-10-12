@@ -2,11 +2,26 @@
  "site_id": "md_mde:{C2EDF395-97E9-4A6D-B5C1-14334633F480}",
  "name": "Baltimore City",
  "state": "MD",
+ "kind": "beach",
+ "link_text": "Check the official Maryland Department of the Environment page",
+ "agency": "Maryland Department of the Environment",
  "county": "Baltimore City",
  "water_body": null,
  "status": "advisory",
  "source_status": "Not Recommended",
  "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "source_label": "Maryland Department of the Environment",
+ "delayed": false,
+ "status_only": true,
+ "status_only_note": "Maryland publishes the current status of each beach but not individual sample results.",
+ "sources": [
+  {
+   "id": "md_mde",
+   "label": "Maryland Department of the Environment",
+   "delayed": false,
+   "role": "status"
+  }
+ ],
  "latest_sample_date": null,
  "latest_value": null,
  "latest_qualifier": null,
@@ -16,6 +31,7 @@
  "bav": 104,
  "samples_count": 0,
  "location_approx": false,
+ "linked_site_ids": [],
  "history_file": "sites/md_mde_C2EDF395-97E9-4A6D-B5C1-14334633F480_.json",
  "samples": [],
  "advisories": []

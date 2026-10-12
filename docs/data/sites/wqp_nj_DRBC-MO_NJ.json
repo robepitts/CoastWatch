@@ -1,21 +1,37 @@
 {
  "site_id": "wqp_nj:DRBC-MO_NJ",
- "name": "Mo_Nj",
+ "name": "Station MO_NJ",
  "state": "NJ",
+ "kind": "waterway",
+ "link_text": "View this station on the Water Quality Portal",
+ "agency": "Delaware River Basin Commission",
  "county": null,
  "water_body": "Estuary or bay",
- "status": "off_season",
+ "status": "no_data",
  "source_status": null,
- "detail_url": "https://njbeaches.org/",
+ "detail_url": "https://www.waterqualitydata.us/provider/STORET/DRBC/DRBC-MO_NJ/",
+ "source_label": "New Jersey DEP",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_nj",
+   "label": "Delaware River Basin Commission, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
  "latest_sample_date": "2025-09-23",
- "latest_value": 4.1,
+ "latest_value": 114.5,
  "latest_qualifier": null,
- "latest_indicator": "enterococcus",
+ "latest_indicator": "e_coli",
  "units": "MPN/100mL",
- "geomean_30d": 17.5,
- "bav": 104,
- "samples_count": 10,
+ "geomean_30d": 106.5,
+ "bav": 235,
+ "samples_count": 20,
  "location_approx": false,
+ "linked_site_ids": [],
  "history_file": "sites/wqp_nj_DRBC-MO_NJ.json",
  "samples": [
   {
@@ -24,7 +40,8 @@
    "value": 17.5,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-09-16",
@@ -32,7 +49,8 @@
    "value": 29.4,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-09-16",
@@ -40,7 +58,8 @@
    "value": 13.1,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-09-16",
@@ -48,7 +67,8 @@
    "value": 21.6,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-09-16",
@@ -56,7 +76,53 @@
    "value": 32.2,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-09-16",
+   "indicator": "e_coli",
+   "value": 365.4,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-09-16",
+   "indicator": "e_coli",
+   "value": 206.4,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-09-16",
+   "indicator": "e_coli",
+   "value": 73.3,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-09-16",
+   "indicator": "e_coli",
+   "value": 59.8,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-09-16",
+   "indicator": "e_coli",
+   "value": 108.5,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-09-23",
@@ -64,7 +130,8 @@
    "value": 26.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-09-23",
@@ -72,7 +139,8 @@
    "value": 16.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-09-23",
@@ -80,7 +148,8 @@
    "value": 40.5,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-09-23",
@@ -88,7 +157,8 @@
    "value": 7.4,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-09-23",
@@ -96,7 +166,53 @@
    "value": 4.1,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-09-23",
+   "indicator": "e_coli",
+   "value": 156.5,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-09-23",
+   "indicator": "e_coli",
+   "value": 88.4,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-09-23",
+   "indicator": "e_coli",
+   "value": 52.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-09-23",
+   "indicator": "e_coli",
+   "value": 62.7,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-09-23",
+   "indicator": "e_coli",
+   "value": 114.5,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   }
  ],
  "advisories": []

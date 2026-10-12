@@ -2,20 +2,36 @@
  "site_id": "wqp_de:31DELRBC_WQX-091023",
  "name": "Mahon River (RM 31.0)",
  "state": "DE",
+ "kind": "waterway",
+ "link_text": "View this station on the Water Quality Portal",
+ "agency": "Delaware River Basin Commission",
  "county": "Kent",
  "water_body": "Estuary or bay",
- "status": "off_season",
+ "status": "no_data",
  "source_status": null,
- "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "detail_url": "https://www.waterqualitydata.us/provider/STORET/31DELRBC_WQX/31DELRBC_WQX-091023/",
+ "source_label": "Delaware DNREC",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_de",
+   "label": "Delaware River Basin Commission, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
  "latest_sample_date": "2025-10-06",
- "latest_value": 10.0,
+ "latest_value": 1.0,
  "latest_qualifier": "<",
- "latest_indicator": "enterococcus",
+ "latest_indicator": "e_coli",
  "units": "CFU/100mL",
  "geomean_30d": null,
- "bav": 104,
- "samples_count": 8,
+ "bav": 410,
+ "samples_count": 16,
  "location_approx": false,
+ "linked_site_ids": [],
  "history_file": "sites/wqp_de_31DELRBC_WQX-091023.json",
  "samples": [
   {
@@ -24,7 +40,17 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-03-25",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-04-14",
@@ -32,7 +58,17 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-04-14",
+   "indicator": "e_coli",
+   "value": 4.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-05-12",
@@ -40,7 +76,17 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-05-12",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-06-09",
@@ -48,7 +94,17 @@
    "value": 20.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-06-09",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-07-14",
@@ -56,7 +112,17 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-07-14",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-08-04",
@@ -64,7 +130,17 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-08-04",
+   "indicator": "e_coli",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-09-22",
@@ -72,7 +148,17 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-09-22",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   },
   {
    "sample_date": "2025-10-06",
@@ -80,7 +166,17 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2025-10-06",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
   }
  ],
  "advisories": []

@@ -2,11 +2,26 @@
  "site_id": "wqp_de:21DELAWQ_WQX-DE781536",
  "name": "Bowers Beach",
  "state": "DE",
+ "kind": "beach",
+ "link_text": "Check the official Delaware DNREC page",
+ "agency": "Delaware Dept Natural Resources & Environmental Control",
  "county": "Kent",
  "water_body": "Ocean",
- "status": "advisory",
+ "status": "exceeded",
  "source_status": null,
  "detail_url": "https://recwaters.dnrec.delaware.gov/",
+ "source_label": "Delaware DNREC",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_de",
+   "label": "Delaware Dept Natural Resources & Environmental Control, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
  "latest_sample_date": "2026-09-28",
  "latest_value": 629.0,
  "latest_qualifier": null,
@@ -16,6 +31,7 @@
  "bav": 104,
  "samples_count": 40,
  "location_approx": false,
+ "linked_site_ids": [],
  "history_file": "sites/wqp_de_21DELAWQ_WQX-DE781536.json",
  "samples": [
   {
@@ -24,7 +40,8 @@
    "value": 488.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-05-27",
@@ -32,7 +49,8 @@
    "value": 58.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-06-02",
@@ -40,7 +58,8 @@
    "value": 69.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-06-03",
@@ -48,7 +67,8 @@
    "value": 69.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-06-09",
@@ -56,7 +76,8 @@
    "value": 247.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-06-16",
@@ -64,7 +85,8 @@
    "value": 139.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-06-23",
@@ -72,7 +94,8 @@
    "value": 104.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-06-30",
@@ -80,7 +103,8 @@
    "value": 41.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-07-07",
@@ -88,7 +112,8 @@
    "value": 69.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-07-14",
@@ -96,7 +121,8 @@
    "value": 41.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-07-21",
@@ -104,7 +130,8 @@
    "value": 140.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-07-28",
@@ -112,7 +139,8 @@
    "value": 36.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-08-04",
@@ -120,7 +148,8 @@
    "value": 97.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-08-11",
@@ -128,7 +157,8 @@
    "value": 69.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-08-18",
@@ -136,7 +166,8 @@
    "value": 114.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-08-26",
@@ -144,7 +175,8 @@
    "value": 75.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-09-02",
@@ -152,7 +184,8 @@
    "value": 206.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-09-08",
@@ -160,7 +193,8 @@
    "value": 122.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-09-15",
@@ -168,7 +202,8 @@
    "value": 185.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-09-22",
@@ -176,7 +211,8 @@
    "value": 104.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-09-29",
@@ -184,7 +220,8 @@
    "value": 36.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2025-10-06",
@@ -192,7 +229,8 @@
    "value": 31.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-05-18",
@@ -200,7 +238,8 @@
    "value": 41.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-05-26",
@@ -208,7 +247,8 @@
    "value": 20.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-06-01",
@@ -216,7 +256,8 @@
    "value": 340.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-06-15",
@@ -224,7 +265,8 @@
    "value": 375.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-06-22",
@@ -232,7 +274,8 @@
    "value": 25.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-06-29",
@@ -240,7 +283,8 @@
    "value": 57.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-07-06",
@@ -248,7 +292,8 @@
    "value": 41.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-07-13",
@@ -256,7 +301,8 @@
    "value": 129.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-07-20",
@@ -264,7 +310,8 @@
    "value": 92.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-07-27",
@@ -272,7 +319,8 @@
    "value": 97.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-08-03",
@@ -280,7 +328,8 @@
    "value": 310.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-08-10",
@@ -288,7 +337,8 @@
    "value": 25.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-08-17",
@@ -296,7 +346,8 @@
    "value": 25.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-08-24",
@@ -304,7 +355,8 @@
    "value": 12.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-08-31",
@@ -312,7 +364,8 @@
    "value": 95.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-09-14",
@@ -320,7 +373,8 @@
    "value": 63.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-09-21",
@@ -328,7 +382,8 @@
    "value": 265.5,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {
    "sample_date": "2026-09-28",
@@ -336,7 +391,8 @@
    "value": 629.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
   }
  ],
  "advisories": []

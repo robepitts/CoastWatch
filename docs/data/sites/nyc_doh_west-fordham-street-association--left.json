@@ -2,11 +2,26 @@
  "site_id": "nyc_doh:west-fordham-street-association--left",
  "name": "West Fordham Street Association (Left)",
  "state": "NY",
+ "kind": "beach",
+ "link_text": "Check the official NYC Health page",
+ "agency": "NYC Health",
  "county": null,
  "water_body": null,
  "status": "off_season",
  "source_status": null,
  "detail_url": "https://a816-dohbesp.nyc.gov/IndicatorPublic/Beaches/",
+ "source_label": "NYC Health",
+ "delayed": false,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "nyc_doh",
+   "label": "NYC Health",
+   "delayed": false,
+   "role": "status and results"
+  }
+ ],
  "latest_sample_date": "2026-09-14",
  "latest_value": 10.0,
  "latest_qualifier": null,
@@ -16,6 +31,7 @@
  "bav": 104,
  "samples_count": 14,
  "location_approx": true,
+ "linked_site_ids": [],
  "history_file": "sites/nyc_doh_west-fordham-street-association--left.json",
  "samples": [
   {
@@ -24,7 +40,8 @@
    "value": 9.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-06-23",
@@ -32,7 +49,8 @@
    "value": 52.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-06-30",
@@ -40,7 +58,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-07-07",
@@ -48,7 +67,8 @@
    "value": 41.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-07-14",
@@ -56,7 +76,8 @@
    "value": 9.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-07-21",
@@ -64,7 +85,8 @@
    "value": 98.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-07-28",
@@ -72,7 +94,8 @@
    "value": 31.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-08-05",
@@ -80,7 +103,8 @@
    "value": 31.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-08-11",
@@ -88,7 +112,8 @@
    "value": 41.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-08-18",
@@ -96,7 +121,8 @@
    "value": 9.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-08-25",
@@ -104,7 +130,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-09-01",
@@ -112,7 +139,8 @@
    "value": 31.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-09-09",
@@ -120,7 +148,8 @@
    "value": 9.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-09-14",
@@ -128,7 +157,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   }
  ],
  "advisories": []

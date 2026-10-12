@@ -2,21 +2,118 @@
  "site_id": "md_mde:{6F30848B-57D6-4586-A3B0-65AC69EB464A}",
  "name": "Camp Milldale Pond",
  "state": "MD",
+ "kind": "beach",
+ "link_text": "Check the official Maryland Department of the Environment page",
+ "agency": "Maryland Department of the Environment",
  "county": "Baltimore County",
- "water_body": null,
+ "water_body": "Lake",
  "status": "no_data",
  "source_status": "No Data",
  "detail_url": "https://mde.geodata.md.gov/Beaches/Photos/Baltimore/CampMilldalePond.JPG",
- "latest_sample_date": null,
- "latest_value": null,
+ "source_label": "Maryland Department of the Environment",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "md_mde",
+   "label": "Maryland Department of the Environment",
+   "delayed": false,
+   "role": "status"
+  },
+  {
+   "id": "wqp_md",
+   "label": "Maryland Department of the Environment Beaches Data, via the Water Quality Portal",
+   "delayed": true,
+   "role": "results history"
+  }
+ ],
+ "latest_sample_date": "2025-08-20",
+ "latest_value": 2.0,
  "latest_qualifier": null,
- "latest_indicator": null,
- "units": null,
+ "latest_indicator": "e_coli",
+ "units": "MPN/100mL",
  "geomean_30d": null,
- "bav": 104,
- "samples_count": 0,
+ "bav": 235,
+ "samples_count": 8,
  "location_approx": false,
+ "linked_site_ids": [
+  "wqp_md:MDEDAT08_WQX-BAMill"
+ ],
  "history_file": "sites/md_mde_6F30848B-57D6-4586-A3B0-65AC69EB464A_.json",
- "samples": [],
+ "samples": [
+  {
+   "sample_date": "2025-05-01",
+   "indicator": "e_coli",
+   "value": 6.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-05-12",
+   "indicator": "e_coli",
+   "value": 9.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-06-03",
+   "indicator": "e_coli",
+   "value": 199.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-09",
+   "indicator": "e_coli",
+   "value": 167.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-14",
+   "indicator": "e_coli",
+   "value": 172.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-24",
+   "indicator": "e_coli",
+   "value": 16.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-08-05",
+   "indicator": "e_coli",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-08-20",
+   "indicator": "e_coli",
+   "value": 2.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  }
+ ],
  "advisories": []
 }

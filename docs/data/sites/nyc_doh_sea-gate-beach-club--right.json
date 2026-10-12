@@ -2,11 +2,26 @@
  "site_id": "nyc_doh:sea-gate-beach-club--right",
  "name": "Sea Gate Beach Club (Right)",
  "state": "NY",
+ "kind": "beach",
+ "link_text": "Check the official NYC Health page",
+ "agency": "NYC Health",
  "county": null,
  "water_body": null,
  "status": "open",
  "source_status": null,
  "detail_url": "https://a816-dohbesp.nyc.gov/IndicatorPublic/Beaches/",
+ "source_label": "NYC Health",
+ "delayed": false,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "nyc_doh",
+   "label": "NYC Health",
+   "delayed": false,
+   "role": "status and results"
+  }
+ ],
  "latest_sample_date": "2026-09-29",
  "latest_value": 31.0,
  "latest_qualifier": null,
@@ -16,6 +31,7 @@
  "bav": 104,
  "samples_count": 16,
  "location_approx": true,
+ "linked_site_ids": [],
  "history_file": "sites/nyc_doh_sea-gate-beach-club--right.json",
  "samples": [
   {
@@ -24,7 +40,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-06-22",
@@ -32,7 +49,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-06-29",
@@ -40,7 +58,8 @@
    "value": 9.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-07-06",
@@ -48,7 +67,8 @@
    "value": 383.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 1
+   "exceeds_bav": 1,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-07-13",
@@ -56,7 +76,8 @@
    "value": 9.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-07-20",
@@ -64,7 +85,8 @@
    "value": 9.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-07-27",
@@ -72,7 +94,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-08-04",
@@ -80,7 +103,8 @@
    "value": 52.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-08-10",
@@ -88,7 +112,8 @@
    "value": 9.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-08-17",
@@ -96,7 +121,8 @@
    "value": 41.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-08-24",
@@ -104,7 +130,8 @@
    "value": 41.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-08-31",
@@ -112,7 +139,8 @@
    "value": 20.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-09-08",
@@ -120,7 +148,8 @@
    "value": 9.9,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-09-14",
@@ -128,7 +157,8 @@
    "value": 20.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-09-21",
@@ -136,7 +166,8 @@
    "value": 30.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   },
   {
    "sample_date": "2026-09-29",
@@ -144,7 +175,8 @@
    "value": 31.0,
    "qualifier": null,
    "units": "MPN/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NYC Health"
   }
  ],
  "advisories": []

@@ -1,0 +1,111 @@
+{
+ "site_id": "wqp_ny:21NYBCH-NY556078-01",
+ "name": "Bedford Creek Marina And Campground Beach - Center",
+ "state": "NY",
+ "kind": "beach",
+ "link_text": "Check the official New York State Department of Health page",
+ "agency": "New York State Department of Health",
+ "county": null,
+ "water_body": "Great Lakes",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "source_label": "New York State Department of Health",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_ny",
+   "label": "New York State Department of Health, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
+ "latest_sample_date": "2025-08-18",
+ "latest_value": 19.9,
+ "latest_qualifier": null,
+ "latest_indicator": "e_coli",
+ "units": "MPN/100mL",
+ "geomean_30d": null,
+ "bav": 235,
+ "samples_count": 8,
+ "location_approx": false,
+ "linked_site_ids": [],
+ "history_file": "sites/wqp_ny_21NYBCH-NY556078-01.json",
+ "samples": [
+  {
+   "sample_date": "2025-05-27",
+   "indicator": "e_coli",
+   "value": 139.6,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-06-09",
+   "indicator": "e_coli",
+   "value": 29.5,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-06-27",
+   "indicator": "e_coli",
+   "value": 13.5,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-07",
+   "indicator": "e_coli",
+   "value": 107.6,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-21",
+   "indicator": "e_coli",
+   "value": 866.4,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-07-24",
+   "indicator": "e_coli",
+   "value": 214.3,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-08-05",
+   "indicator": "e_coli",
+   "value": 95.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  },
+  {
+   "sample_date": "2025-08-18",
+   "indicator": "e_coli",
+   "value": 19.9,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
+  }
+ ],
+ "advisories": []
+}

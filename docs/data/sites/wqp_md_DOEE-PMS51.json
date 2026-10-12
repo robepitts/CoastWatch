@@ -1,0 +1,120 @@
+{
+ "site_id": "wqp_md:DOEE-PMS51",
+ "name": "Potomac River",
+ "state": "MD",
+ "kind": "waterway",
+ "link_text": "View this station on the Water Quality Portal",
+ "agency": "District Of Columbia Department Of Energy And Environment-water Quality Division (State)",
+ "county": "Prince George's",
+ "water_body": "Estuary or bay",
+ "status": "no_data",
+ "source_status": null,
+ "detail_url": "https://www.waterqualitydata.us/provider/STORET/DOEE/DOEE-PMS51/",
+ "source_label": "Maryland Department of the Environment",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_md",
+   "label": "District Of Columbia Department Of Energy And Environment-water Quality Division (State), via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
+ "latest_sample_date": "2025-12-08",
+ "latest_value": 40.0,
+ "latest_qualifier": null,
+ "latest_indicator": "e_coli",
+ "units": "MPN/100mL",
+ "geomean_30d": null,
+ "bav": 235,
+ "samples_count": 9,
+ "location_approx": false,
+ "linked_site_ids": [],
+ "history_file": "sites/wqp_md_DOEE-PMS51.json",
+ "samples": [
+  {
+   "sample_date": "2025-01-13",
+   "indicator": "e_coli",
+   "value": 4.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "District Of Columbia Department Of Energy And Environment-water Quality Division (State)"
+  },
+  {
+   "sample_date": "2025-03-10",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "District Of Columbia Department Of Energy And Environment-water Quality Division (State)"
+  },
+  {
+   "sample_date": "2025-04-07",
+   "indicator": "e_coli",
+   "value": 99.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "District Of Columbia Department Of Energy And Environment-water Quality Division (State)"
+  },
+  {
+   "sample_date": "2025-05-12",
+   "indicator": "e_coli",
+   "value": 387.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1,
+   "source": "District Of Columbia Department Of Energy And Environment-water Quality Division (State)"
+  },
+  {
+   "sample_date": "2025-06-09",
+   "indicator": "e_coli",
+   "value": 29.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "District Of Columbia Department Of Energy And Environment-water Quality Division (State)"
+  },
+  {
+   "sample_date": "2025-08-11",
+   "indicator": "e_coli",
+   "value": 112.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "District Of Columbia Department Of Energy And Environment-water Quality Division (State)"
+  },
+  {
+   "sample_date": "2025-10-06",
+   "indicator": "e_coli",
+   "value": 8.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "District Of Columbia Department Of Energy And Environment-water Quality Division (State)"
+  },
+  {
+   "sample_date": "2025-11-03",
+   "indicator": "e_coli",
+   "value": 31.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "District Of Columbia Department Of Energy And Environment-water Quality Division (State)"
+  },
+  {
+   "sample_date": "2025-12-08",
+   "indicator": "e_coli",
+   "value": 40.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "District Of Columbia Department Of Energy And Environment-water Quality Division (State)"
+  }
+ ],
+ "advisories": []
+}

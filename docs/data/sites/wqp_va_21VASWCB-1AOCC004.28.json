@@ -1,0 +1,129 @@
+{
+ "site_id": "wqp_va:21VASWCB-1AOCC004.28",
+ "name": "GMU Potomac Science Center boat dock",
+ "state": "VA",
+ "kind": "waterway",
+ "link_text": "View this station on the Water Quality Portal",
+ "agency": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY",
+ "county": null,
+ "water_body": "Estuary or bay",
+ "status": "no_data",
+ "source_status": null,
+ "detail_url": "https://www.waterqualitydata.us/provider/STORET/21VASWCB/21VASWCB-1AOCC004.28/",
+ "source_label": "Virginia Department of Health",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_va",
+   "label": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
+ "latest_sample_date": "2026-08-03",
+ "latest_value": 10.0,
+ "latest_qualifier": null,
+ "latest_indicator": "e_coli",
+ "units": "CFU/100mL",
+ "geomean_30d": null,
+ "bav": 410,
+ "samples_count": 10,
+ "location_approx": false,
+ "linked_site_ids": [],
+ "history_file": "sites/wqp_va_21VASWCB-1AOCC004.28.json",
+ "samples": [
+  {
+   "sample_date": "2026-05-11",
+   "indicator": "e_coli",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-05-26",
+   "indicator": "e_coli",
+   "value": 169.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-06-01",
+   "indicator": "e_coli",
+   "value": 95.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-06-08",
+   "indicator": "e_coli",
+   "value": 63.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-06-22",
+   "indicator": "e_coli",
+   "value": 120.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-06-29",
+   "indicator": "e_coli",
+   "value": 161.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-07-13",
+   "indicator": "e_coli",
+   "value": 206.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-07-20",
+   "indicator": "e_coli",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-07-27",
+   "indicator": "e_coli",
+   "value": 63.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-08-03",
+   "indicator": "e_coli",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  }
+ ],
+ "advisories": []
+}

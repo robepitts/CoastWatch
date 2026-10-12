@@ -1,48 +1,65 @@
 {
- "generated_at": "2026-10-12T00:24:46+00:00",
+ "generated_at": "2026-10-12T00:51:07+00:00",
  "as_of": "2026-10-12",
  "by_state": {
   "NY": {
-   "sites": 462,
+   "sites": 429,
+   "beaches": 402,
+   "waterways": 27,
    "statuses": {
     "open": 3,
-    "off_season": 459
+    "off_season": 399,
+    "no_data": 27
    },
    "newest_sample": "2026-09-29"
   },
   "VA": {
-   "sites": 49,
+   "sites": 328,
+   "beaches": 49,
+   "waterways": 279,
    "statuses": {
     "off_season": 31,
-    "open": 18
+    "open": 95,
+    "no_data": 194,
+    "exceeded": 8
    },
    "newest_sample": "2026-09-29"
   },
   "MD": {
-   "sites": 189,
+   "sites": 230,
+   "beaches": 226,
+   "waterways": 4,
    "statuses": {
-    "no_data": 173,
+    "no_data": 177,
     "advisory": 2,
-    "open": 14
+    "open": 14,
+    "off_season": 37
    },
-   "newest_sample": null
+   "newest_sample": "2026-08-03"
   },
   "NJ": {
    "sites": 530,
+   "beaches": 251,
+   "waterways": 279,
    "statuses": {
-    "off_season": 530
+    "off_season": 251,
+    "no_data": 279
    },
    "newest_sample": "2026-06-30"
   },
   "DE": {
    "sites": 113,
+   "beaches": 59,
+   "waterways": 54,
    "statuses": {
-    "off_season": 95,
-    "advisory": 9,
+    "off_season": 41,
+    "no_data": 54,
+    "exceeded": 9,
     "open": 9
    },
    "newest_sample": "2026-09-30"
   }
  },
- "unmapped_sites": 0
+ "unmapped_sites": 0,
+ "linked_beaches": 167
 }

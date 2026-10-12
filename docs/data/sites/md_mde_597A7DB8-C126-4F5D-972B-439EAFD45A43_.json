@@ -2,21 +2,127 @@
  "site_id": "md_mde:{597A7DB8-C126-4F5D-972B-439EAFD45A43}",
  "name": "Elm's Beach",
  "state": "MD",
+ "kind": "beach",
+ "link_text": "Check the official Maryland Department of the Environment page",
+ "agency": "Maryland Department of the Environment",
  "county": "St. Mary's County",
- "water_body": null,
+ "water_body": "Estuary or bay",
  "status": "no_data",
  "source_status": "No Data",
  "detail_url": "https://mde.geodata.md.gov/Beaches/Photos/StMarys/ElmsBeach.JPG",
- "latest_sample_date": null,
- "latest_value": null,
+ "source_label": "Maryland Department of the Environment",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "md_mde",
+   "label": "Maryland Department of the Environment",
+   "delayed": false,
+   "role": "status"
+  },
+  {
+   "id": "wqp_md",
+   "label": "Maryland Department of the Environment Beaches Data, via the Water Quality Portal",
+   "delayed": true,
+   "role": "results history"
+  }
+ ],
+ "latest_sample_date": "2025-08-25",
+ "latest_value": 20.0,
  "latest_qualifier": null,
- "latest_indicator": null,
- "units": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
  "geomean_30d": null,
  "bav": 104,
- "samples_count": 0,
+ "samples_count": 9,
  "location_approx": false,
+ "linked_site_ids": [
+  "wqp_md:MDEDAT08_WQX-SMELMS"
+ ],
  "history_file": "sites/md_mde_597A7DB8-C126-4F5D-972B-439EAFD45A43_.json",
- "samples": [],
+ "samples": [
+  {
+   "sample_date": "2025-05-12",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-05-27",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-06-02",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-06-16",
+   "indicator": "enterococcus",
+   "value": 40.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-06-30",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-14",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-28",
+   "indicator": "enterococcus",
+   "value": 30.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-08-11",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-08-25",
+   "indicator": "enterococcus",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  }
+ ],
  "advisories": []
 }

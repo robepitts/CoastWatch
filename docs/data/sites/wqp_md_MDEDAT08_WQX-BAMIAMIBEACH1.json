@@ -1,0 +1,102 @@
+{
+ "site_id": "wqp_md:MDEDAT08_WQX-BAMIAMIBEACH1",
+ "name": "Miami Beach",
+ "state": "MD",
+ "kind": "beach",
+ "link_text": "Check the official Maryland Department of the Environment page",
+ "agency": "Maryland Department of the Environment Beaches Data",
+ "county": "Baltimore",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "source_label": "Maryland Department of the Environment",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_md",
+   "label": "Maryland Department of the Environment Beaches Data, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
+ "latest_sample_date": "2025-08-26",
+ "latest_value": 10.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 7,
+ "location_approx": false,
+ "linked_site_ids": [],
+ "history_file": "sites/wqp_md_MDEDAT08_WQX-BAMIAMIBEACH1.json",
+ "samples": [
+  {
+   "sample_date": "2025-05-07",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-05-27",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-06-02",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-22",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-29",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-08-11",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-08-26",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  }
+ ],
+ "advisories": []
+}

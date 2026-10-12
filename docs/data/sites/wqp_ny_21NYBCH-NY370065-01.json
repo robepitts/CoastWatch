@@ -2,11 +2,26 @@
  "site_id": "wqp_ny:21NYBCH-NY370065-01",
  "name": "Head Of The Bay Club",
  "state": "NY",
+ "kind": "beach",
+ "link_text": "Check the official New York State Department of Health page",
+ "agency": "New York State Department of Health",
  "county": "Suffolk",
  "water_body": "Ocean",
  "status": "off_season",
  "source_status": null,
  "detail_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
+ "source_label": "New York State Department of Health",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_ny",
+   "label": "New York State Department of Health, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
  "latest_sample_date": "2025-09-11",
  "latest_value": 0.0,
  "latest_qualifier": null,
@@ -16,6 +31,7 @@
  "bav": 104,
  "samples_count": 31,
  "location_approx": false,
+ "linked_site_ids": [],
  "history_file": "sites/wqp_ny_21NYBCH-NY370065-01.json",
  "samples": [
   {
@@ -24,7 +40,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-05-30",
@@ -32,7 +49,8 @@
    "value": 4.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-06-03",
@@ -40,7 +58,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-06-05",
@@ -48,7 +67,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-06-10",
@@ -56,7 +76,8 @@
    "value": 8.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-06-12",
@@ -64,7 +85,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-06-17",
@@ -72,7 +94,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-06-24",
@@ -80,7 +103,8 @@
    "value": 4.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-06-26",
@@ -88,7 +112,8 @@
    "value": 36.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-06-30",
@@ -96,7 +121,8 @@
    "value": 20.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-07-02",
@@ -104,7 +130,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-07-07",
@@ -112,7 +139,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-07-09",
@@ -120,7 +148,8 @@
    "value": 12.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-07-11",
@@ -128,7 +157,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-07-15",
@@ -136,7 +166,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-07-17",
@@ -144,7 +175,8 @@
    "value": 8.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-07-21",
@@ -152,7 +184,8 @@
    "value": 84.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-07-23",
@@ -160,7 +193,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-07-25",
@@ -168,7 +202,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-07-29",
@@ -176,7 +211,8 @@
    "value": 8.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-07-31",
@@ -184,7 +220,8 @@
    "value": 8.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-08-04",
@@ -192,7 +229,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-08-06",
@@ -200,7 +238,8 @@
    "value": 12.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-08-08",
@@ -208,7 +247,8 @@
    "value": 4.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-08-12",
@@ -216,7 +256,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-08-14",
@@ -224,7 +265,8 @@
    "value": 4.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-08-20",
@@ -232,7 +274,8 @@
    "value": 28.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-08-22",
@@ -240,7 +283,8 @@
    "value": 20.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-08-29",
@@ -248,7 +292,8 @@
    "value": 4.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-09-03",
@@ -256,7 +301,8 @@
    "value": 8.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   },
   {
    "sample_date": "2025-09-11",
@@ -264,7 +310,8 @@
    "value": 0.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "New York State Department of Health"
   }
  ],
  "advisories": []

@@ -1,0 +1,84 @@
+{
+ "site_id": "wqp_md:MDEDAT08_WQX-SMWIC",
+ "name": "Wicomico Shores (Luckton Point)",
+ "state": "MD",
+ "kind": "beach",
+ "link_text": "Check the official Maryland Department of the Environment page",
+ "agency": "Maryland Department of the Environment Beaches Data",
+ "county": "St. Mary's",
+ "water_body": "Estuary or bay",
+ "status": "off_season",
+ "source_status": null,
+ "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+ "source_label": "Maryland Department of the Environment",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_md",
+   "label": "Maryland Department of the Environment Beaches Data, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
+ "latest_sample_date": "2025-08-04",
+ "latest_value": 100.0,
+ "latest_qualifier": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
+ "geomean_30d": null,
+ "bav": 104,
+ "samples_count": 5,
+ "location_approx": false,
+ "linked_site_ids": [],
+ "history_file": "sites/wqp_md_MDEDAT08_WQX-SMWIC.json",
+ "samples": [
+  {
+   "sample_date": "2025-05-20",
+   "indicator": "enterococcus",
+   "value": 80.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-05-27",
+   "indicator": "enterococcus",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-06-09",
+   "indicator": "enterococcus",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-08",
+   "indicator": "enterococcus",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-08-04",
+   "indicator": "enterococcus",
+   "value": 100.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  }
+ ],
+ "advisories": []
+}

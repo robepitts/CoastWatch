@@ -1,0 +1,93 @@
+{
+ "site_id": "wqp_va:21VASWCB-2CTIC001.26",
+ "name": "Turkey Island Cr at park, DS of Rt. 5",
+ "state": "VA",
+ "kind": "waterway",
+ "link_text": "View this station on the Water Quality Portal",
+ "agency": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY",
+ "county": null,
+ "water_body": "Estuary or bay",
+ "status": "no_data",
+ "source_status": null,
+ "detail_url": "https://www.waterqualitydata.us/provider/STORET/21VASWCB/21VASWCB-2CTIC001.26/",
+ "source_label": "Virginia Department of Health",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_va",
+   "label": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
+ "latest_sample_date": "2025-07-28",
+ "latest_value": 52.0,
+ "latest_qualifier": null,
+ "latest_indicator": "e_coli",
+ "units": "CFU/100mL",
+ "geomean_30d": 100.9,
+ "bav": 410,
+ "samples_count": 6,
+ "location_approx": false,
+ "linked_site_ids": [],
+ "history_file": "sites/wqp_va_21VASWCB-2CTIC001.26.json",
+ "samples": [
+  {
+   "sample_date": "2025-06-11",
+   "indicator": "e_coli",
+   "value": 110.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2025-06-30",
+   "indicator": "e_coli",
+   "value": 85.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2025-07-08",
+   "indicator": "e_coli",
+   "value": 160.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2025-07-17",
+   "indicator": "e_coli",
+   "value": 52.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2025-07-21",
+   "indicator": "e_coli",
+   "value": 285.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2025-07-28",
+   "indicator": "e_coli",
+   "value": 52.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  }
+ ],
+ "advisories": []
+}

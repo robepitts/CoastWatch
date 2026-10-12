@@ -1,12 +1,27 @@
 {
  "site_id": "wqp_nj:NJDEP_BMWM-A37A2",
- "name": "A37a2",
+ "name": "Station A37A2",
  "state": "NJ",
+ "kind": "waterway",
+ "link_text": "View this station on the Water Quality Portal",
+ "agency": "NJDEP Bureau of Marine Water Monitoring",
  "county": "Ocean",
  "water_body": "Ocean",
- "status": "off_season",
+ "status": "no_data",
  "source_status": null,
- "detail_url": "https://njbeaches.org/",
+ "detail_url": "https://www.waterqualitydata.us/provider/STORET/NJDEP_BMWM/NJDEP_BMWM-A37A2/",
+ "source_label": "New Jersey DEP",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "wqp_nj",
+   "label": "NJDEP Bureau of Marine Water Monitoring, via the Water Quality Portal",
+   "delayed": true,
+   "role": "status and results"
+  }
+ ],
  "latest_sample_date": "2026-06-24",
  "latest_value": 3.0,
  "latest_qualifier": null,
@@ -16,6 +31,7 @@
  "bav": 104,
  "samples_count": 8,
  "location_approx": false,
+ "linked_site_ids": [],
  "history_file": "sites/wqp_nj_NJDEP_BMWM-A37A2.json",
  "samples": [
   {
@@ -24,7 +40,8 @@
    "value": 3.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NJDEP Bureau of Marine Water Monitoring"
   },
   {
    "sample_date": "2025-07-29",
@@ -32,7 +49,8 @@
    "value": 3.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NJDEP Bureau of Marine Water Monitoring"
   },
   {
    "sample_date": "2025-10-06",
@@ -40,7 +58,8 @@
    "value": 3.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NJDEP Bureau of Marine Water Monitoring"
   },
   {
    "sample_date": "2025-11-21",
@@ -48,7 +67,8 @@
    "value": 3.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NJDEP Bureau of Marine Water Monitoring"
   },
   {
    "sample_date": "2025-12-18",
@@ -56,7 +76,8 @@
    "value": 3.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NJDEP Bureau of Marine Water Monitoring"
   },
   {
    "sample_date": "2026-04-21",
@@ -64,7 +85,8 @@
    "value": 3.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NJDEP Bureau of Marine Water Monitoring"
   },
   {
    "sample_date": "2026-05-28",
@@ -72,7 +94,8 @@
    "value": 3.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NJDEP Bureau of Marine Water Monitoring"
   },
   {
    "sample_date": "2026-06-24",
@@ -80,7 +103,8 @@
    "value": 3.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "NJDEP Bureau of Marine Water Monitoring"
   }
  ],
  "advisories": []

@@ -2,21 +2,136 @@
  "site_id": "md_mde:{0A9169B0-B4F0-4E54-A938-0459F94D4C35}",
  "name": "Pocomoke YMCA - Activity Pond Beach",
  "state": "MD",
+ "kind": "beach",
+ "link_text": "Check the official Maryland Department of the Environment page",
+ "agency": "Maryland Department of the Environment",
  "county": "Worcester County",
- "water_body": null,
+ "water_body": "River",
  "status": "open",
  "source_status": "Open",
  "detail_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
- "latest_sample_date": null,
- "latest_value": null,
+ "source_label": "Maryland Department of the Environment",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "md_mde",
+   "label": "Maryland Department of the Environment",
+   "delayed": false,
+   "role": "status"
+  },
+  {
+   "id": "wqp_md",
+   "label": "Maryland Department of the Environment Beaches Data, via the Water Quality Portal",
+   "delayed": true,
+   "role": "results history"
+  }
+ ],
+ "latest_sample_date": "2025-08-27",
+ "latest_value": 53.0,
  "latest_qualifier": null,
- "latest_indicator": null,
- "units": null,
+ "latest_indicator": "e_coli",
+ "units": "MPN/100mL",
  "geomean_30d": null,
- "bav": 104,
- "samples_count": 0,
+ "bav": 235,
+ "samples_count": 10,
  "location_approx": false,
+ "linked_site_ids": [
+  "wqp_md:MDEDAT08_WQX-WOPocoYMCA2"
+ ],
  "history_file": "sites/md_mde_0A9169B0-B4F0-4E54-A938-0459F94D4C35_.json",
- "samples": [],
+ "samples": [
+  {
+   "sample_date": "2025-05-21",
+   "indicator": "e_coli",
+   "value": 31.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-05-28",
+   "indicator": "e_coli",
+   "value": 124.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-06-04",
+   "indicator": "e_coli",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-06-17",
+   "indicator": "e_coli",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-02",
+   "indicator": "e_coli",
+   "value": 31.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-16",
+   "indicator": "e_coli",
+   "value": 271.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-23",
+   "indicator": "e_coli",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-30",
+   "indicator": "e_coli",
+   "value": 53.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-08-13",
+   "indicator": "e_coli",
+   "value": 137.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-08-27",
+   "indicator": "e_coli",
+   "value": 53.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  }
+ ],
  "advisories": []
 }

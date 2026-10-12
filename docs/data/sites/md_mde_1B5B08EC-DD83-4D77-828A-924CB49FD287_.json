@@ -2,11 +2,26 @@
  "site_id": "md_mde:{1B5B08EC-DD83-4D77-828A-924CB49FD287}",
  "name": "Castaways Campground",
  "state": "MD",
+ "kind": "beach",
+ "link_text": "Check the official Maryland Department of the Environment page",
+ "agency": "Maryland Department of the Environment",
  "county": "Worcester County",
  "water_body": null,
  "status": "open",
  "source_status": "Open",
  "detail_url": "https://mde.geodata.md.gov/Beaches/Photos/Worcester/Eagles_Nest_Campground.JPG",
+ "source_label": "Maryland Department of the Environment",
+ "delayed": false,
+ "status_only": true,
+ "status_only_note": "Maryland publishes the current status of each beach but not individual sample results.",
+ "sources": [
+  {
+   "id": "md_mde",
+   "label": "Maryland Department of the Environment",
+   "delayed": false,
+   "role": "status"
+  }
+ ],
  "latest_sample_date": null,
  "latest_value": null,
  "latest_qualifier": null,
@@ -16,6 +31,7 @@
  "bav": 104,
  "samples_count": 0,
  "location_approx": false,
+ "linked_site_ids": [],
  "history_file": "sites/md_mde_1B5B08EC-DD83-4D77-828A-924CB49FD287_.json",
  "samples": [],
  "advisories": []

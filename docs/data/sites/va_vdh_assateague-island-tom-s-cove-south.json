@@ -2,11 +2,26 @@
  "site_id": "va_vdh:assateague-island-tom-s-cove-south",
  "name": "Assateague Island, Tom's Cove South",
  "state": "VA",
+ "kind": "beach",
+ "link_text": "Check the official Virginia Department of Health page",
+ "agency": "Virginia Department of Health",
  "county": null,
  "water_body": null,
  "status": "off_season",
  "source_status": null,
  "detail_url": "https://www.vdh.virginia.gov/waterborne-hazards-control/statistics/",
+ "source_label": "Virginia Department of Health",
+ "delayed": false,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "va_vdh",
+   "label": "Virginia Department of Health",
+   "delayed": false,
+   "role": "status and results"
+  }
+ ],
  "latest_sample_date": "2026-09-08",
  "latest_value": 10.0,
  "latest_qualifier": "<",
@@ -16,6 +31,7 @@
  "bav": 104,
  "samples_count": 16,
  "location_approx": true,
+ "linked_site_ids": [],
  "history_file": "sites/va_vdh_assateague-island-tom-s-cove-south.json",
  "samples": [
   {
@@ -24,7 +40,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-06-01",
@@ -32,7 +49,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-06-08",
@@ -40,7 +58,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-06-15",
@@ -48,7 +67,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-06-22",
@@ -56,7 +76,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-06-29",
@@ -64,7 +85,8 @@
    "value": 20.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-07-06",
@@ -72,7 +94,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-07-13",
@@ -80,7 +103,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-07-20",
@@ -88,7 +112,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-07-28",
@@ -96,7 +121,8 @@
    "value": 10.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-08-03",
@@ -104,7 +130,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-08-10",
@@ -112,7 +139,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-08-17",
@@ -120,7 +148,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-08-24",
@@ -128,7 +157,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-08-31",
@@ -136,7 +166,8 @@
    "value": 30.0,
    "qualifier": null,
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   },
   {
    "sample_date": "2026-09-08",
@@ -144,7 +175,8 @@
    "value": 10.0,
    "qualifier": "<",
    "units": "CFU/100mL",
-   "exceeds_bav": 0
+   "exceeds_bav": 0,
+   "source": "Virginia Department of Health"
   }
  ],
  "advisories": []

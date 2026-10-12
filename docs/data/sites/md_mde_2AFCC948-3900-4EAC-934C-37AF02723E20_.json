@@ -2,21 +2,109 @@
  "site_id": "md_mde:{2AFCC948-3900-4EAC-934C-37AF02723E20}",
  "name": "Purse State Park",
  "state": "MD",
+ "kind": "beach",
+ "link_text": "Check the official Maryland Department of the Environment page",
+ "agency": "Maryland Department of the Environment",
  "county": "Charles County",
- "water_body": null,
+ "water_body": "Estuary or bay",
  "status": "no_data",
  "source_status": "No Data",
  "detail_url": "https://mde.geodata.md.gov/Beaches/Photos/Charles/Purse_State_Park.JPG",
- "latest_sample_date": null,
- "latest_value": null,
+ "source_label": "Maryland Department of the Environment",
+ "delayed": true,
+ "status_only": false,
+ "status_only_note": null,
+ "sources": [
+  {
+   "id": "md_mde",
+   "label": "Maryland Department of the Environment",
+   "delayed": false,
+   "role": "status"
+  },
+  {
+   "id": "wqp_md",
+   "label": "Maryland Department of the Environment Beaches Data, via the Water Quality Portal",
+   "delayed": true,
+   "role": "results history"
+  }
+ ],
+ "latest_sample_date": "2025-08-19",
+ "latest_value": 10.0,
  "latest_qualifier": null,
- "latest_indicator": null,
- "units": null,
+ "latest_indicator": "enterococcus",
+ "units": "MPN/100mL",
  "geomean_30d": null,
  "bav": 104,
- "samples_count": 0,
+ "samples_count": 7,
  "location_approx": false,
+ "linked_site_ids": [
+  "wqp_md:MDEDAT08_WQX-CHPurse"
+ ],
  "history_file": "sites/md_mde_2AFCC948-3900-4EAC-934C-37AF02723E20_.json",
- "samples": [],
+ "samples": [
+  {
+   "sample_date": "2025-05-19",
+   "indicator": "enterococcus",
+   "value": 1650.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-06-10",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-06-24",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-08",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-07-22",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-08-05",
+   "indicator": "enterococcus",
+   "value": 40.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  },
+  {
+   "sample_date": "2025-08-19",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Maryland Department of the Environment Beaches Data"
+  }
+ ],
  "advisories": []
 }
