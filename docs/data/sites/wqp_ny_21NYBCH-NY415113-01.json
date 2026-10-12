@@ -30,6 +30,7 @@
  "geomean_30d": 3.6,
  "bav": 104,
  "samples_count": 16,
+ "last_result": null,
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/wqp_ny_21NYBCH-NY415113-01.json",

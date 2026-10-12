@@ -36,6 +36,7 @@
  "geomean_30d": null,
  "bav": 235,
  "samples_count": 10,
+ "last_result": null,
  "location_approx": false,
  "linked_site_ids": [
   "wqp_md:MDEDAT08_WQX-ALROCKYMAINL"

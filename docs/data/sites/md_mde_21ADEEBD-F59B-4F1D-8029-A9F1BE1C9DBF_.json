@@ -30,6 +30,7 @@
  "geomean_30d": null,
  "bav": 104,
  "samples_count": 0,
+ "last_result": null,
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/md_mde_21ADEEBD-F59B-4F1D-8029-A9F1BE1C9DBF_.json",

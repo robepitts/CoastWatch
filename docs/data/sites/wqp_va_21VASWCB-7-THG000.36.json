@@ -30,6 +30,7 @@
  "geomean_30d": null,
  "bav": 104,
  "samples_count": 21,
+ "last_result": "ok",
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/wqp_va_21VASWCB-7-THG000.36.json",

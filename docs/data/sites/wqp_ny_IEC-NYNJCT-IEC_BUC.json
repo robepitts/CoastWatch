@@ -30,6 +30,7 @@
  "geomean_30d": 19.0,
  "bav": 104,
  "samples_count": 31,
+ "last_result": null,
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/wqp_ny_IEC-NYNJCT-IEC_BUC.json",

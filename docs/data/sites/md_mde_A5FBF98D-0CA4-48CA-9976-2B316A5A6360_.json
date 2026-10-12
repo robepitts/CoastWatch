@@ -36,6 +36,7 @@
  "geomean_30d": null,
  "bav": 104,
  "samples_count": 6,
+ "last_result": null,
  "location_approx": false,
  "linked_site_ids": [
   "wqp_md:MDEDAT08_WQX-AACAPESTCLL"

@@ -36,6 +36,7 @@
  "geomean_30d": 47.9,
  "bav": 104,
  "samples_count": 15,
+ "last_result": null,
  "location_approx": false,
  "linked_site_ids": [
   "wqp_md:MDEDAT08_WQX-AASPM"

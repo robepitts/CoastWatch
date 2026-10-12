@@ -30,6 +30,7 @@
  "geomean_30d": null,
  "bav": 410,
  "samples_count": 2,
+ "last_result": "ok",
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/wqp_va_21VASWCB-1ALIS001.60.json",

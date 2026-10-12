@@ -30,6 +30,7 @@
  "geomean_30d": 16.5,
  "bav": 104,
  "samples_count": 15,
+ "last_result": "ok",
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/va_vdh_gloucester-point-beach.json",

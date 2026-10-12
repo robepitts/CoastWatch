@@ -30,6 +30,7 @@
  "geomean_30d": 37.7,
  "bav": 104,
  "samples_count": 15,
+ "last_result": "ok",
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/nyc_doh_midland-beach--right.json",

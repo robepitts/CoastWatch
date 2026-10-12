@@ -36,6 +36,7 @@
  "geomean_30d": 36.0,
  "bav": 104,
  "samples_count": 11,
+ "last_result": null,
  "location_approx": false,
  "linked_site_ids": [
   "wqp_md:MDEDAT08_WQX-QAGunston"

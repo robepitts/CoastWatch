@@ -30,6 +30,7 @@
  "geomean_30d": 15.2,
  "bav": 104,
  "samples_count": 13,
+ "last_result": "ok",
  "location_approx": true,
  "linked_site_ids": [],
  "history_file": "sites/nyc_doh_658-sunrise-club-inc--left.json",

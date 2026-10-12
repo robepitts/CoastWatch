@@ -30,6 +30,7 @@
  "geomean_30d": 12.5,
  "bav": 104,
  "samples_count": 16,
+ "last_result": "ok",
  "location_approx": true,
  "linked_site_ids": [],
  "history_file": "sites/va_vdh_assateague-island-tom-s-cove-south.json",

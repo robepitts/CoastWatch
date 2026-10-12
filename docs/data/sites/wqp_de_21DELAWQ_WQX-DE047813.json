@@ -30,6 +30,7 @@
  "geomean_30d": 196.0,
  "bav": 104,
  "samples_count": 18,
+ "last_result": null,
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/wqp_de_21DELAWQ_WQX-DE047813.json",

@@ -30,6 +30,7 @@
  "geomean_30d": 5.0,
  "bav": 104,
  "samples_count": 18,
+ "last_result": null,
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/wqp_nj_21NJBCH-AC1036.json",

@@ -30,6 +30,7 @@
  "geomean_30d": null,
  "bav": 235,
  "samples_count": 30,
+ "last_result": null,
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/wqp_nj_31DELRBC_WQX-091017.json",
