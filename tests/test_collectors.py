@@ -701,3 +701,22 @@ def test_wqp_code_names_become_readable():
           "BMWM,NJDEP BMWM,BMWM-1013g,1013g,Estuary,,39.40,-74.40,001\n")
     names = {s.source_site_id: s.name for s in parse_wqp(_csv_rows(st), [], "NJ").sites}
     assert names == {"BMWM-1403a": "Barnegat Bay off Forked River (1403a)", "BMWM-1013g": "Station 1013g"}
+
+
+def test_last_result_this_season_for_ring_tinting(tmp_path):
+    from coastwatch.collectors.wqp import parse_wqp
+    store = Store(tmp_path / "t.db")
+    store.save("wqp_nj", "NJ", parse_wqp(_csv_rows(WQP_STATIONS), _csv_rows(WQP_RESULTS), "NJ"))
+    src = tmp_path / "s.json"; src.write_text("{}")
+    # October 2025: results from Sept 2025 are "this season"
+    export(store, tmp_path / "a", today=date(2025, 10, 11), sources_path=src, links_path=tmp_path / "x.csv")
+    p = {f["properties"]["name"]: f["properties"] for f in
+         json.loads((tmp_path / "a" / "sites.geojson").read_text())["features"]}
+    assert p["Seaside Park - 5th Ave"]["status"] == "off_season" and p["Seaside Park - 5th Ave"]["last_result"] == "ok"
+    assert p["Beachwood Beach West"]["last_result"] == "over"
+    # March 2026 still counts the 2025 season; October 2026 does not
+    export(store, tmp_path / "b", today=date(2026, 3, 1), sources_path=src, links_path=tmp_path / "x.csv")
+    assert json.loads((tmp_path / "b" / "sites.geojson").read_text())["features"][0]["properties"]["last_result"]
+    export(store, tmp_path / "c", today=date(2026, 10, 11), sources_path=src, links_path=tmp_path / "x.csv")
+    assert all(f["properties"]["last_result"] is None for f in
+               json.loads((tmp_path / "c" / "sites.geojson").read_text())["features"])

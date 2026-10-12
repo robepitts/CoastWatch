@@ -261,6 +261,12 @@ def export(store: Store, out_dir: str | Path = "docs/data", today: Optional[date
         advisories.sort(key=lambda a: a["start_date"] or "", reverse=True)
 
         latest = samples[-1] if samples else None
+        # Last reading this season (Jan-Apr counts as last year's season), for tinting
+        # sites that have no current result. None = no result this season, or no limit to compare.
+        season_year = today.year if today.month >= 5 else today.year - 1
+        last_result = None
+        if latest and int(latest["sample_date"][:4]) == season_year and latest["exceeds_bav"] is not None:
+            last_result = "over" if latest["exceeds_bav"] == 1 else "ok"
         ind = latest["indicator"] if latest else "enterococcus"
         ent = [(s["sample_date"], s["value"]) for s in samples
                if s["indicator"] == ind and s["value"] is not None]
@@ -309,6 +315,7 @@ def export(store: Store, out_dir: str | Path = "docs/data", today: Optional[date
             "geomean_30d": round(gm, 1) if gm else None,
             "bav": thr["single_sample"] if thr else None,
             "samples_count": len(samples),
+            "last_result": last_result,
             "location_approx": loc["coord_source"] == "override_approx",
             "linked_site_ids": [m["site_id"] for m in members if m is not primary],
             "history_file": f"sites/{_fname(primary['site_id'])}",

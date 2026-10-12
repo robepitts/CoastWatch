@@ -778,6 +778,7 @@ a:hover { text-decoration-color: currentColor; }
 .leaflet-bar a { background: var(--surface); color: var(--ink); border-bottom-color: var(--rule); }
 .leaflet-bar a:hover { background: var(--surface-2); }
 .leaflet-bar { border: 1px solid var(--rule) !important; box-shadow: none !important; }
+.cw-home a { display: flex; align-items: center; justify-content: center; }
 .leaflet-tile-pane { transition: filter .2s; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .leaflet-tile-pane { filter: brightness(.72) contrast(1.08) saturate(.75); }
@@ -816,6 +817,7 @@ a:hover { text-decoration-color: currentColor; }
 }
 .legend ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .2rem; }
 .legend li { display: flex; align-items: center; gap: .45rem; }
+.legend .legend-gap { margin-top: .3rem; color: var(--ink-3); font-size: .75rem; max-width: 30ch; }
 
 /* ---------- panel ---------- */
 .panel { border-left: 1px solid var(--rule); overflow-y: auto; min-height: 0; background: var(--surface); }
@@ -1021,7 +1023,15 @@ const fmtVal = (v, q) => v == null ? (q === "below_detection" ? "Below detection
 const sourceOf = id => id.split(":")[0];
 const countyName = p => (!p.county || /^(none|null|nan|n\/a|unknown)$/i.test(p.county.trim())) ? "" : (p.state === "VA" || /county|city/i.test(p.county)) ? p.county : `${p.county} County`;
 
-function shapeSVG(status, size = 18) {
+// Sites without a current result: if they had a result this season, show that result's
+// marker faded (real data, but not current); otherwise a grey ring (no result this season).
+const RING = new Set(["off_season", "no_data"]);
+const FADED = { ok: "open", over: "exceeded" };
+const FADE_OPACITY = 0.45;
+function shapeSVG(status, size = 18, last = null) {
+  if (RING.has(status) && FADED[last]) {
+    return shapeSVG(FADED[last], size).replace("<svg ", `<svg class="faded" style="opacity:${FADE_OPACITY}" `);
+  }
   const s = STATUS[status] || STATUS.unknown;
   const c = `var(${s.color})`, e = "var(--marker-edge)";
   const body = {
@@ -1098,6 +1108,22 @@ function initMap(basemap) {
   const map = app.map = L.map("map", { zoomControl: false, attributionControl: true, minZoom: 6, maxZoom: 16,
                                        zoomSnap: 0.5, worldCopyJump: false });
   L.control.zoom({ position: "topright" }).addTo(map);
+  const Home = L.Control.extend({
+    options: { position: "topright" },
+    onAdd() {
+      const bar = L.DomUtil.create("div", "leaflet-bar cw-home");
+      const a = L.DomUtil.create("a", "", bar);
+      a.href = "#"; a.setAttribute("role", "button");
+      a.title = "Zoom to the Mid-Atlantic"; a.setAttribute("aria-label", "Zoom to the Mid-Atlantic");
+      a.innerHTML = `<svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor"
+        stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V3h4M13 3h4v4M17 13v4h-4M7 17H3v-4"/>
+        <circle cx="10" cy="10" r="2.2" fill="currentColor" stroke="none"/></svg>`;
+      L.DomEvent.disableClickPropagation(bar);
+      L.DomEvent.on(a, "click", e => { L.DomEvent.preventDefault(e); goHome(); });
+      return bar;
+    },
+  });
+  new Home().addTo(map);
   map.attributionControl.setPrefix(false);
   if (basemap && !CONFIG.tiles) {
     map.attributionControl.addAttribution("Boundaries: U.S. Census Bureau");
@@ -1118,7 +1144,7 @@ function initMap(basemap) {
     const [lon, lat] = f.geometry.coordinates;
     const p = f.properties;
     const m = L.marker([lat, lon], {
-      icon: icon(p.status, false), title: `${p.name}: ${(STATUS[p.status] || STATUS.unknown).label}`,
+      icon: icon(p.status, false, p.last_result), title: `${p.name}: ${(STATUS[p.status] || STATUS.unknown).label}`,
       alt: p.name, riseOnHover: true, keyboard: true,
     });
     m.on("click", () => select(p.site_id));
@@ -1139,7 +1165,8 @@ function initMap(basemap) {
     map.setMinZoom(Math.max(4, Math.floor(z * 2) / 2 - 0.5));
   };
   fitLimits();
-  if (pts.length) map.fitBounds(pts, { padding: [40, 40] }); else map.setView([38.9, -74.9], 7);
+  app.home = pts.length ? L.latLngBounds(pts) : L.latLngBounds(CONFIG.region);
+  map.fitBounds(app.home, { padding: [40, 40] });
   // Re-measure whenever the map's container changes size (fonts loading, window
   // resize, phone rotation); otherwise tiles only load for the original size.
   if ("ResizeObserver" in window) {
@@ -1149,8 +1176,13 @@ function initMap(basemap) {
   map.on("moveend", () => { if (!app.selected) renderOverview(); });
 }
 
-function icon(status, selected) {
-  return L.divIcon({ className: "cw-marker" + (selected ? " is-selected" : ""), html: shapeSVG(status, 18),
+function goHome() {
+  app.prevView = null;   // "All sites in view" shouldn't jump back afterwards
+  app.map.fitBounds(app.home, { padding: [40, 40], animate: !reduceMotion });
+}
+
+function icon(status, selected, last = null) {
+  return L.divIcon({ className: "cw-marker" + (selected ? " is-selected" : ""), html: shapeSVG(status, 18, last),
                      iconSize: [18, 18], iconAnchor: [9, 9] });
 }
 
@@ -1198,8 +1230,12 @@ function renderControls() {
   });
   $("#search").addEventListener("input", e => { app.query = e.target.value.trim().toLowerCase(); applyFilters(); });
   $("#attention-only").addEventListener("change", e => { app.attentionOnly = e.target.checked; applyFilters(); });
-  const order = ["open", "advisory", "exceeded", "closed", "resampling", "no_data", "off_season"];
-  $("#legend").innerHTML = order.map(k => `<li>${shapeSVG(k, 14)}${STATUS[k].label}</li>`).join("");
+  const order = ["open", "advisory", "exceeded", "closed", "resampling"];
+  $("#legend").innerHTML = order.map(k => `<li>${shapeSVG(k, 14)}${STATUS[k].label}</li>`).join("") +
+    `<li class="legend-gap">Faded: no current result; shows the last result this season.</li>` +
+    `<li>${shapeSVG("off_season", 14, "ok")}Last result met standard</li>` +
+    `<li>${shapeSVG("off_season", 14, "over")}Last result over limit</li>` +
+    `<li>${shapeSVG("off_season", 14)}No result this season (dashed: overdue)</li>`;
 }
 
 // ------------------------------------------------------------------ overview panel
@@ -1228,7 +1264,7 @@ function renderOverview() {
           isDelayed(p) ? fmtDate(p.latest_sample_date, { month: "short", year: "numeric" })
                                            : fmtDate(p.latest_sample_date))}</span>`
       : `<span class="pl">${isStatusOnly(p) ? "Status only" : "No results yet"}</span>`;
-    return `<li><button type="button" data-site="${esc(p.site_id)}">${shapeSVG(p.status, 16)}
+    return `<li><button type="button" data-site="${esc(p.site_id)}">${shapeSVG(p.status, 16, p.last_result)}
       <span class="txt"><span class="nm" title="${esc(p.name)}">${esc(p.name)}</span><span class="pl">${esc(place)}</span></span>
       <span class="val">${val}</span></button></li>`;
   }).join("");
@@ -1278,11 +1314,11 @@ async function select(siteId, { fromHash = false } = {}) {
   if (!m) return;
   if (app.selected && app.markers.get(app.selected)) {
     const prev = app.markers.get(app.selected);
-    prev.setIcon(icon(prev.feature.properties.status, false));
+    prev.setIcon(icon(prev.feature.properties.status, false, prev.feature.properties.last_result));
   }
   if (!app.selected && !fromHash) app.prevView = { center: app.map.getCenter(), zoom: app.map.getZoom() };
   app.selected = siteId;
-  m.setIcon(icon(m.feature.properties.status, true));
+  m.setIcon(icon(m.feature.properties.status, true, m.feature.properties.last_result));
   const z = Math.max(app.map.getZoom(), CONFIG.siteZoom);
   if (reduceMotion) app.map.setView(m.getLatLng(), z, { animate: false });
   else app.map.flyTo(m.getLatLng(), z, { duration: 0.8 });
@@ -1299,7 +1335,7 @@ async function select(siteId, { fromHash = false } = {}) {
 function deselect() {
   if (app.selected) {
     const m = app.markers.get(app.selected);
-    if (m) m.setIcon(icon(m.feature.properties.status, false));
+    if (m) m.setIcon(icon(m.feature.properties.status, false, m.feature.properties.last_result));
   }
   app.selected = null;
   window.history.replaceState(null, "", location.pathname + location.search);
@@ -1334,6 +1370,9 @@ function renderSite(p, h) {
   const indicatorName = p.latest_indicator === "e_coli" ? "E. coli" : "Enterococcus";
   const reported = p.source_status && p.source_status.toLowerCase() !== st.label.toLowerCase()
     ? ` The state lists this beach as "${esc(p.source_status)}."` : "";
+  const lastLine = RING.has(p.status) && p.last_result
+    ? ` The last result this season (${esc(fmtDate(p.latest_sample_date))}) ${p.last_result === "over" ? "was over the limit" : "met the standard"}.`
+    : "";
   const advs = (h.advisories || []).filter(a => a.kind !== "lift").slice(0, 6);
 
   $("#panel").innerHTML = `<div class="panel-inner">
@@ -1344,8 +1383,8 @@ function renderSite(p, h) {
     <p class="sub">${esc(place)}${p.water_body ? `<br>${esc(p.water_body)}` : ""}${p.kind === "waterway"
       ? `<br>Monitoring station (not a designated swimming beach)` : ""}${p.location_approx
       ? `<br>Map position is approximate.` : ""}</p>
-    <div class="status-line">${shapeSVG(p.status, 22)}
-      <div><strong>${st.label}</strong><p>${st.note}${reported}</p></div></div>
+    <div class="status-line">${shapeSVG(p.status, 22, p.last_result)}
+      <div><strong>${st.label}</strong><p>${st.note}${lastLine}${reported}</p></div></div>
     ${isDelayed(p) ? `<p class="note">${DELAYED_NOTE}</p>` : ""}
 
     ${!samples.length ? `<p class="note">${esc(statusOnlyNote(p))}</p>` : `
