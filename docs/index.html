@@ -1174,8 +1174,7 @@ function initMap(basemap) {
   const region = L.latLngBounds(CONFIG.region);
   const coastal = pts.filter(p => region.contains(p));
   app.core = coastal.length ? L.latLngBounds(coastal) : app.home;
-  const hv = homeView();
-  map.setView(hv.center, hv.zoom, { animate: false });
+  map.fitBounds(app.core, { ...homeFit(), animate: false });
   // Re-measure whenever the map's container changes size (fonts loading, window
   // resize, phone rotation); otherwise tiles only load for the original size.
   if ("ResizeObserver" in window) {
@@ -1193,12 +1192,19 @@ function initMap(basemap) {
 }
 
 // Starting view: fit every site inside the Mid-Atlantic coastal region, so the northernmost and
-// southernmost coastal sites are both in the window. Outliers beyond it (Great Lakes beaches,
-// inland lakes) stay on the map, one zoom-out away.
-function homeView() {
-  const b = app.core;
-  const z = app.map.getBoundsZoom(b, false, L.point(24, 24));
-  return { center: b.getCenter(), zoom: Math.min(Math.floor(z * 4) / 4, 12) };
+// southernmost coastal sites are both in the window, and keep them clear of the filter and
+// legend panels that float over the map's left side (on phones those panels sit outside the
+// map, so no room is reserved). Outliers (Great Lakes beaches, inland lakes) are one zoom-out away.
+function homeFit() {
+  const mapBox = $("#map").getBoundingClientRect();
+  let left = 0;
+  for (const sel of [".filters", ".legend"]) {
+    const el = $(sel);
+    if (el && getComputedStyle(el).position === "absolute") {
+      left = Math.max(left, el.getBoundingClientRect().right - mapBox.left);
+    }
+  }
+  return { paddingTopLeft: L.point(left + 16, 20), paddingBottomRight: L.point(56, 20), maxZoom: 12 };
 }
 function coreBounds(pts) {
   if (pts.length < 20) return L.latLngBounds(pts);
@@ -1218,9 +1224,8 @@ const Z_SELECTED = 2e7;
 
 function goHome() {
   app.prevView = null;   // "All sites in view" shouldn't jump back afterwards
-  const hv = homeView();
-  if (reduceMotion) app.map.setView(hv.center, hv.zoom, { animate: false });
-  else app.map.flyTo(hv.center, hv.zoom, { duration: 0.8 });
+  if (reduceMotion) app.map.fitBounds(app.core, { ...homeFit(), animate: false });
+  else app.map.flyToBounds(app.core, { ...homeFit(), duration: 0.8 });
 }
 
 function icon(status, selected, last = null) {
