@@ -26,6 +26,8 @@ def probe(only: list[str] | None = None) -> dict:
     client = PoliteClient(min_interval_s=1.0)
     report: dict = {}
     for source_id, cfg in cfg_all.items():
+        if source_id.startswith("_") or not isinstance(cfg, dict):
+            continue
         if only and source_id not in only:
             continue
         col = build(source_id, cfg, client, store=None)

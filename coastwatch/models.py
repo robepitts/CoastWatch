@@ -15,6 +15,7 @@ class Status(str, Enum):
     ADVISORY = "advisory"       # swimming not recommended / standard exceeded
     CLOSED = "closed"
     RESAMPLING = "resampling"   # first exceedance, confirmation sample pending
+    EXCEEDED = "exceeded"       # latest result over the limit; inferred by us, not an official advisory
     OFF_SEASON = "off_season"   # not sampled until next season
     NO_DATA = "no_data"         # in season but no recent result
     UNKNOWN = "unknown"         # publisher wording we couldn't map

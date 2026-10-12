@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mid-Atlantic Beach Water Quality</title>
-<meta name="description" content="Latest beach water quality results from Virginia, Maryland, Delaware, New Jersey and New York on one map.">
+<title>Mid-Atlantic Coastal Water Quality Watcher</title>
+<meta name="description" content="Latest bacteria results for beaches, bays, harbors and tidal rivers in Virginia, Maryland, Delaware, New Jersey and New York, on one map.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -693,6 +693,10 @@ svg.leaflet-image-layer.leaflet-interactive path {
   --banner-bg: #fff4dc;
   --banner-ink: #6b4a05;
   --focus: #1b6fd1;
+  --deep: #12394a;
+  --deep-2: #0c2a38;
+  --on-deep: #f2f8f9;
+  --on-deep-2: #a9cbd2;
   --radius-s: 4px;
   --radius-m: 8px;
   color-scheme: light;
@@ -703,6 +707,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
     --surface: #13222a; --surface-2: #1a2c35; --ink: #e2ecee; --ink-2: #a9bcc2; --ink-3: #7d9198;
     --rule: #2a3f48; --open: #3cbf98; --advisory: #f0b23a; --closed: #f0675a; --resampling: #a493e6;
     --muted: #7f8d91; --marker-edge: #0f2129; --banner-bg: #3a2e12; --banner-ink: #f6dda0; --focus: #6aa8ff;
+    --deep: #0b2733; --deep-2: #071c25; --on-deep: #e6f1f3; --on-deep-2: #8fb3bb;
     color-scheme: dark;
   }
 }
@@ -711,6 +716,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
   --surface: #13222a; --surface-2: #1a2c35; --ink: #e2ecee; --ink-2: #a9bcc2; --ink-3: #7d9198;
   --rule: #2a3f48; --open: #3cbf98; --advisory: #f0b23a; --closed: #f0675a; --resampling: #a493e6;
   --muted: #7f8d91; --marker-edge: #0f2129; --banner-bg: #3a2e12; --banner-ink: #f6dda0; --focus: #6aa8ff;
+    --deep: #0b2733; --deep-2: #071c25; --on-deep: #e6f1f3; --on-deep-2: #8fb3bb;
   color-scheme: dark;
 }
 :root {
@@ -741,12 +747,21 @@ a:hover { text-decoration-color: currentColor; }
 .footer { grid-row: 4; }
 /* Desktop is a single screen: header and footer stay put, only the panel scrolls. */
 @media (min-width: 821px) { html, body { overflow: hidden; } }
+/* Deep-water band: abstract depth-contour waves over a sea gradient (header and footer). */
+.topbar, .footer {
+  background-color: var(--deep);
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22320%22%20height=%2280%22%20viewBox=%220%200%20320%2080%22%3E%3Cpath%20d=%22M-320%208.0%20L-312%209.1%20L-304%2010.1%20L-296%2010.9%20L-288%2011.7%20L-280%2012.2%20L-272%2012.6%20L-264%2012.7%20L-256%2012.6%20L-248%2012.4%20L-240%2012.0%20L-232%2011.5%20L-224%2011.0%20L-216%2010.4%20L-208%209.9%20L-200%209.4%20L-192%209.0%20L-184%208.7%20L-176%208.4%20L-168%208.2%20L-160%208.0%20L-152%207.8%20L-144%207.6%20L-136%207.3%20L-128%207.0%20L-120%206.6%20L-112%206.1%20L-104%205.6%20L-96%205.0%20L-88%204.5%20L-80%204.0%20L-72%203.6%20L-64%203.4%20L-56%203.3%20L-48%203.4%20L-40%203.8%20L-32%204.3%20L-24%205.1%20L-16%205.9%20L-8%206.9%20L0%208.0%20L8%209.1%20L16%2010.1%20L24%2010.9%20L32%2011.7%20L40%2012.2%20L48%2012.6%20L56%2012.7%20L64%2012.6%20L72%2012.4%20L80%2012.0%20L88%2011.5%20L96%2011.0%20L104%2010.4%20L112%209.9%20L120%209.4%20L128%209.0%20L136%208.7%20L144%208.4%20L152%208.2%20L160%208.0%20L168%207.8%20L176%207.6%20L184%207.3%20L192%207.0%20L200%206.6%20L208%206.1%20L216%205.6%20L224%205.0%20L232%204.5%20L240%204.0%20L248%203.6%20L256%203.4%20L264%203.3%20L272%203.4%20L280%203.8%20L288%204.3%20L296%205.1%20L304%205.9%20L312%206.9%20L320%208.0%20L328%209.1%20L336%2010.1%20L344%2010.9%20L352%2011.7%20L360%2012.2%20L368%2012.6%20L376%2012.7%20L384%2012.6%20L392%2012.4%20L400%2012.0%20L408%2011.5%20L416%2011.0%20L424%2010.4%20L432%209.9%20L440%209.4%20L448%209.0%20L456%208.7%20L464%208.4%20L472%208.2%20L480%208.0%20L488%207.8%20L496%207.6%20L504%207.3%20L512%207.0%20L520%206.6%20L528%206.1%20L536%205.6%20L544%205.0%20L552%204.5%20L560%204.0%20L568%203.6%20L576%203.4%20L584%203.3%20L592%203.4%20L600%203.8%20L608%204.3%20L616%205.1%20L624%205.9%20L632%206.9%20L640%208.0%22%20fill=%22none%22%20stroke=%22%23fff%22%20stroke-opacity=%220.07%22%20stroke-width=%221%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M-320%2023.6%20L-312%2024.4%20L-304%2024.9%20L-296%2025.1%20L-288%2025.1%20L-280%2024.8%20L-272%2024.4%20L-264%2023.9%20L-256%2023.4%20L-248%2022.9%20L-240%2022.4%20L-232%2021.9%20L-224%2021.6%20L-216%2021.3%20L-208%2021.1%20L-200%2020.9%20L-192%2020.6%20L-184%2020.3%20L-176%2019.9%20L-168%2019.3%20L-160%2018.6%20L-152%2017.7%20L-144%2016.7%20L-136%2015.7%20L-128%2014.6%20L-120%2013.6%20L-112%2012.7%20L-104%2011.9%20L-96%2011.5%20L-88%2011.3%20L-80%2011.5%20L-72%2012.0%20L-64%2012.8%20L-56%2013.9%20L-48%2015.2%20L-40%2016.7%20L-32%2018.3%20L-24%2019.8%20L-16%2021.3%20L-8%2022.5%20L0%2023.6%20L8%2024.4%20L16%2024.9%20L24%2025.1%20L32%2025.1%20L40%2024.8%20L48%2024.4%20L56%2023.9%20L64%2023.4%20L72%2022.9%20L80%2022.4%20L88%2021.9%20L96%2021.6%20L104%2021.3%20L112%2021.1%20L120%2020.9%20L128%2020.6%20L136%2020.3%20L144%2019.9%20L152%2019.3%20L160%2018.6%20L168%2017.7%20L176%2016.7%20L184%2015.7%20L192%2014.6%20L200%2013.6%20L208%2012.7%20L216%2011.9%20L224%2011.5%20L232%2011.3%20L240%2011.5%20L248%2012.0%20L256%2012.8%20L264%2013.9%20L272%2015.2%20L280%2016.7%20L288%2018.3%20L296%2019.8%20L304%2021.3%20L312%2022.5%20L320%2023.6%20L328%2024.4%20L336%2024.9%20L344%2025.1%20L352%2025.1%20L360%2024.8%20L368%2024.4%20L376%2023.9%20L384%2023.4%20L392%2022.9%20L400%2022.4%20L408%2021.9%20L416%2021.6%20L424%2021.3%20L432%2021.1%20L440%2020.9%20L448%2020.6%20L456%2020.3%20L464%2019.9%20L472%2019.3%20L480%2018.6%20L488%2017.7%20L496%2016.7%20L504%2015.7%20L512%2014.6%20L520%2013.6%20L528%2012.7%20L536%2011.9%20L544%2011.5%20L552%2011.3%20L560%2011.5%20L568%2012.0%20L576%2012.8%20L584%2013.9%20L592%2015.2%20L600%2016.7%20L608%2018.3%20L616%2019.8%20L624%2021.3%20L632%2022.5%20L640%2023.6%22%20fill=%22none%22%20stroke=%22%23fff%22%20stroke-opacity=%220.13%22%20stroke-width=%221.3%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M-320%2036.8%20L-312%2036.7%20L-304%2036.5%20L-296%2036.2%20L-288%2035.9%20L-280%2035.6%20L-272%2035.4%20L-264%2035.2%20L-256%2035.2%20L-248%2035.1%20L-240%2035.0%20L-232%2034.9%20L-224%2034.7%20L-216%2034.3%20L-208%2033.7%20L-200%2032.8%20L-192%2031.8%20L-184%2030.6%20L-176%2029.2%20L-168%2027.7%20L-160%2026.2%20L-152%2024.8%20L-144%2023.5%20L-136%2022.5%20L-128%2021.9%20L-120%2021.6%20L-112%2021.8%20L-104%2022.3%20L-96%2023.2%20L-88%2024.5%20L-80%2026.0%20L-72%2027.6%20L-64%2029.3%20L-56%2031.0%20L-48%2032.6%20L-40%2033.9%20L-32%2035.1%20L-24%2035.9%20L-16%2036.5%20L-8%2036.8%20L0%2036.8%20L8%2036.7%20L16%2036.5%20L24%2036.2%20L32%2035.9%20L40%2035.6%20L48%2035.4%20L56%2035.2%20L64%2035.2%20L72%2035.1%20L80%2035.0%20L88%2034.9%20L96%2034.7%20L104%2034.3%20L112%2033.7%20L120%2032.8%20L128%2031.8%20L136%2030.6%20L144%2029.2%20L152%2027.7%20L160%2026.2%20L168%2024.8%20L176%2023.5%20L184%2022.5%20L192%2021.9%20L200%2021.6%20L208%2021.8%20L216%2022.3%20L224%2023.2%20L232%2024.5%20L240%2026.0%20L248%2027.6%20L256%2029.3%20L264%2031.0%20L272%2032.6%20L280%2033.9%20L288%2035.1%20L296%2035.9%20L304%2036.5%20L312%2036.8%20L320%2036.8%20L328%2036.7%20L336%2036.5%20L344%2036.2%20L352%2035.9%20L360%2035.6%20L368%2035.4%20L376%2035.2%20L384%2035.2%20L392%2035.1%20L400%2035.0%20L408%2034.9%20L416%2034.7%20L424%2034.3%20L432%2033.7%20L440%2032.8%20L448%2031.8%20L456%2030.6%20L464%2029.2%20L472%2027.7%20L480%2026.2%20L488%2024.8%20L496%2023.5%20L504%2022.5%20L512%2021.9%20L520%2021.6%20L528%2021.8%20L536%2022.3%20L544%2023.2%20L552%2024.5%20L560%2026.0%20L568%2027.6%20L576%2029.3%20L584%2031.0%20L592%2032.6%20L600%2033.9%20L608%2035.1%20L616%2035.9%20L624%2036.5%20L632%2036.8%20L640%2036.8%22%20fill=%22none%22%20stroke=%22%23fff%22%20stroke-opacity=%220.1%22%20stroke-width=%221.1%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M-320%2047.9%20L-312%2047.9%20L-304%2048.0%20L-296%2048.3%20L-288%2048.4%20L-280%2047.9%20L-272%2046.6%20L-264%2044.4%20L-256%2041.7%20L-248%2038.9%20L-240%2036.9%20L-232%2035.9%20L-224%2036.4%20L-216%2038.1%20L-208%2040.6%20L-200%2043.3%20L-192%2045.6%20L-184%2047.2%20L-176%2047.9%20L-168%2048.1%20L-160%2047.9%20L-152%2047.9%20L-144%2048.0%20L-136%2048.3%20L-128%2048.4%20L-120%2047.9%20L-112%2046.6%20L-104%2044.4%20L-96%2041.7%20L-88%2038.9%20L-80%2036.9%20L-72%2035.9%20L-64%2036.4%20L-56%2038.1%20L-48%2040.6%20L-40%2043.3%20L-32%2045.6%20L-24%2047.2%20L-16%2047.9%20L-8%2048.1%20L0%2047.9%20L8%2047.9%20L16%2048.0%20L24%2048.3%20L32%2048.4%20L40%2047.9%20L48%2046.6%20L56%2044.4%20L64%2041.7%20L72%2038.9%20L80%2036.9%20L88%2035.9%20L96%2036.4%20L104%2038.1%20L112%2040.6%20L120%2043.3%20L128%2045.6%20L136%2047.2%20L144%2047.9%20L152%2048.1%20L160%2047.9%20L168%2047.9%20L176%2048.0%20L184%2048.3%20L192%2048.4%20L200%2047.9%20L208%2046.6%20L216%2044.4%20L224%2041.7%20L232%2038.9%20L240%2036.9%20L248%2035.9%20L256%2036.4%20L264%2038.1%20L272%2040.6%20L280%2043.3%20L288%2045.6%20L296%2047.2%20L304%2047.9%20L312%2048.1%20L320%2047.9%20L328%2047.9%20L336%2048.0%20L344%2048.3%20L352%2048.4%20L360%2047.9%20L368%2046.6%20L376%2044.4%20L384%2041.7%20L392%2038.9%20L400%2036.9%20L408%2035.9%20L416%2036.4%20L424%2038.1%20L432%2040.6%20L440%2043.3%20L448%2045.6%20L456%2047.2%20L464%2047.9%20L472%2048.1%20L480%2047.9%20L488%2047.9%20L496%2048.0%20L504%2048.3%20L512%2048.4%20L520%2047.9%20L528%2046.6%20L536%2044.4%20L544%2041.7%20L552%2038.9%20L560%2036.9%20L568%2035.9%20L576%2036.4%20L584%2038.1%20L592%2040.6%20L600%2043.3%20L608%2045.6%20L616%2047.2%20L624%2047.9%20L632%2048.1%20L640%2047.9%22%20fill=%22none%22%20stroke=%22%23fff%22%20stroke-opacity=%220.15%22%20stroke-width=%221.5%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M-320%2060.4%20L-312%2060.6%20L-304%2060.9%20L-296%2061.2%20L-288%2061.5%20L-280%2061.7%20L-272%2061.8%20L-264%2061.7%20L-256%2061.3%20L-248%2060.7%20L-240%2059.8%20L-232%2058.6%20L-224%2057.2%20L-216%2055.6%20L-208%2053.9%20L-200%2052.2%20L-192%2050.6%20L-184%2049.1%20L-176%2048.0%20L-168%2047.1%20L-160%2046.7%20L-152%2046.6%20L-144%2047.0%20L-136%2047.7%20L-128%2048.8%20L-120%2050.1%20L-112%2051.5%20L-104%2053.0%20L-96%2054.5%20L-88%2055.9%20L-80%2057.1%20L-72%2058.1%20L-64%2058.9%20L-56%2059.4%20L-48%2059.8%20L-40%2060.0%20L-32%2060.1%20L-24%2060.1%20L-16%2060.2%20L-8%2060.3%20L0%2060.4%20L8%2060.6%20L16%2060.9%20L24%2061.2%20L32%2061.5%20L40%2061.7%20L48%2061.8%20L56%2061.7%20L64%2061.3%20L72%2060.7%20L80%2059.8%20L88%2058.6%20L96%2057.2%20L104%2055.6%20L112%2053.9%20L120%2052.2%20L128%2050.6%20L136%2049.1%20L144%2048.0%20L152%2047.1%20L160%2046.7%20L168%2046.6%20L176%2047.0%20L184%2047.7%20L192%2048.8%20L200%2050.1%20L208%2051.5%20L216%2053.0%20L224%2054.5%20L232%2055.9%20L240%2057.1%20L248%2058.1%20L256%2058.9%20L264%2059.4%20L272%2059.8%20L280%2060.0%20L288%2060.1%20L296%2060.1%20L304%2060.2%20L312%2060.3%20L320%2060.4%20L328%2060.6%20L336%2060.9%20L344%2061.2%20L352%2061.5%20L360%2061.7%20L368%2061.8%20L376%2061.7%20L384%2061.3%20L392%2060.7%20L400%2059.8%20L408%2058.6%20L416%2057.2%20L424%2055.6%20L432%2053.9%20L440%2052.2%20L448%2050.6%20L456%2049.1%20L464%2048.0%20L472%2047.1%20L480%2046.7%20L488%2046.6%20L496%2047.0%20L504%2047.7%20L512%2048.8%20L520%2050.1%20L528%2051.5%20L536%2053.0%20L544%2054.5%20L552%2055.9%20L560%2057.1%20L568%2058.1%20L576%2058.9%20L584%2059.4%20L592%2059.8%20L600%2060.0%20L608%2060.1%20L616%2060.1%20L624%2060.2%20L632%2060.3%20L640%2060.4%22%20fill=%22none%22%20stroke=%22%23fff%22%20stroke-opacity=%220.09%22%20stroke-width=%221.1%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3Cpath%20d=%22M-320%2073.6%20L-312%2073.9%20L-304%2074.1%20L-296%2074.1%20L-288%2073.8%20L-280%2073.3%20L-272%2072.6%20L-264%2071.7%20L-256%2070.6%20L-248%2069.4%20L-240%2068.1%20L-232%2066.8%20L-224%2065.6%20L-216%2064.5%20L-208%2063.6%20L-200%2063.0%20L-192%2062.7%20L-184%2062.6%20L-176%2062.8%20L-168%2063.2%20L-160%2063.9%20L-152%2064.7%20L-144%2065.6%20L-136%2066.5%20L-128%2067.3%20L-120%2068.1%20L-112%2068.8%20L-104%2069.4%20L-96%2069.8%20L-88%2070.2%20L-80%2070.4%20L-72%2070.6%20L-64%2070.8%20L-56%2071.0%20L-48%2071.2%20L-40%2071.5%20L-32%2071.9%20L-24%2072.3%20L-16%2072.8%20L-8%2073.2%20L0%2073.6%20L8%2073.9%20L16%2074.1%20L24%2074.1%20L32%2073.8%20L40%2073.3%20L48%2072.6%20L56%2071.7%20L64%2070.6%20L72%2069.4%20L80%2068.1%20L88%2066.8%20L96%2065.6%20L104%2064.5%20L112%2063.6%20L120%2063.0%20L128%2062.7%20L136%2062.6%20L144%2062.8%20L152%2063.2%20L160%2063.9%20L168%2064.7%20L176%2065.6%20L184%2066.5%20L192%2067.3%20L200%2068.1%20L208%2068.8%20L216%2069.4%20L224%2069.8%20L232%2070.2%20L240%2070.4%20L248%2070.6%20L256%2070.8%20L264%2071.0%20L272%2071.2%20L280%2071.5%20L288%2071.9%20L296%2072.3%20L304%2072.8%20L312%2073.2%20L320%2073.6%20L328%2073.9%20L336%2074.1%20L344%2074.1%20L352%2073.8%20L360%2073.3%20L368%2072.6%20L376%2071.7%20L384%2070.6%20L392%2069.4%20L400%2068.1%20L408%2066.8%20L416%2065.6%20L424%2064.5%20L432%2063.6%20L440%2063.0%20L448%2062.7%20L456%2062.6%20L464%2062.8%20L472%2063.2%20L480%2063.9%20L488%2064.7%20L496%2065.6%20L504%2066.5%20L512%2067.3%20L520%2068.1%20L528%2068.8%20L536%2069.4%20L544%2069.8%20L552%2070.2%20L560%2070.4%20L568%2070.6%20L576%2070.8%20L584%2071.0%20L592%2071.2%20L600%2071.5%20L608%2071.9%20L616%2072.3%20L624%2072.8%20L632%2073.2%20L640%2073.6%22%20fill=%22none%22%20stroke=%22%23fff%22%20stroke-opacity=%220.12%22%20stroke-width=%221.2%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22/%3E%3C/svg%3E"), linear-gradient(100deg, var(--deep-2) 0%, var(--deep) 55%, var(--deep-2) 100%);
+  background-size: 320px 80px, 100% 100%;
+  color: var(--on-deep);
+}
 .topbar {
   display: flex; align-items: baseline; gap: 1.25rem; flex-wrap: wrap;
-  padding: .85rem 1.25rem .8rem; border-bottom: 1px solid var(--rule);
+  padding: .95rem 1.25rem .9rem;
+  background-position: -40px 6px, 0 0;
 }
-.topbar h1 { margin: 0; font-size: 1.2rem; font-weight: 700; letter-spacing: -.01em; }
-.topbar .fresh { margin: 0; color: var(--ink-2); font-size: .875rem; }
+.topbar h1 { margin: 0; font-size: 1.2rem; font-weight: 700; letter-spacing: -.01em; color: var(--on-deep); }
+.topbar .fresh { margin: 0; color: var(--on-deep-2); font-size: .875rem; }
+.topbar :focus-visible, .footer :focus-visible { outline-color: var(--on-deep); }
 .banner {
   margin: 0; padding: .5rem 1.25rem; font-size: .875rem;
   background: var(--banner-bg); color: var(--banner-ink); border-bottom: 1px solid var(--rule);
@@ -828,7 +843,8 @@ a:hover { text-decoration-color: currentColor; }
   padding: .55rem .25rem; background: none; border: 0; text-align: left; cursor: pointer;
 }
 .sitelist button:hover { background: var(--surface-2); }
-.sitelist .nm { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sitelist .txt { min-width: 0; overflow: hidden; }
+.sitelist .nm { display: block; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sitelist .pl { display: block; font-size: .8rem; color: var(--ink-3); }
 .sitelist .val { text-align: right; font-size: .85rem; color: var(--ink-2); white-space: nowrap; }
 .sitelist .val b { color: var(--ink); font-weight: 600; }
@@ -876,8 +892,11 @@ table.states .flag { color: var(--advisory); font-weight: 600; }
 .advlist .dates { color: var(--ink-2); white-space: nowrap; }
 .official { display: inline-block; margin-top: 1.4rem; font-weight: 600; }
 .fineprint { font-size: .8rem; color: var(--ink-3); margin-top: 1rem; }
+.sources { font-size: .8rem; color: var(--ink-2); margin: .8rem 0 0; }
 
-.footer { padding: .45rem 1.25rem; border-top: 1px solid var(--rule); font-size: .75rem; line-height: 1.4; color: var(--ink-3); background: var(--surface); }
+.footer { padding: .5rem 1.25rem; font-size: .75rem; line-height: 1.4; color: var(--on-deep-2);
+  background-position: 120px -22px, 0 0; }
+.footer a { color: var(--on-deep); }
 .footer p { margin: 0; max-width: 120ch; }
 .loading { padding: 2rem 1.25rem; color: var(--ink-2); }
 
@@ -900,24 +919,28 @@ table.states .flag { color: var(--advisory); font-weight: 600; }
 <body>
 <div class="app">
   <header class="topbar">
-    <h1>Mid-Atlantic Beach Water Quality</h1>
+    <h1>Mid-Atlantic Coastal Water Quality Watcher</h1>
     <p class="fresh" id="fresh">Loading the latest results…</p>
   </header>
   <p class="banner" id="banner" hidden></p>
   <main class="layout">
-    <section class="map-wrap" aria-label="Map of monitored beaches">
+    <section class="map-wrap" aria-label="Map of monitoring sites">
       <div id="map"></div>
-      <div class="filters" role="group" aria-label="Filter beaches">
+      <div class="filters" role="group" aria-label="Filter sites">
         <div class="row" id="state-chips"></div>
-        <input class="search" id="search" type="search" placeholder="Find a beach" aria-label="Find a beach by name">
-        <label class="toggle"><input type="checkbox" id="attention-only"> Only advisories and closures</label>
+        <div class="row" id="kind-chips" role="group" aria-label="Type of site">
+          <button class="chip" type="button" aria-pressed="true" data-kind="beach">Beaches</button>
+          <button class="chip" type="button" aria-pressed="true" data-kind="waterway">Other waters</button>
+        </div>
+        <input class="search" id="search" type="search" placeholder="Find a beach or waterway" aria-label="Find a site by name">
+        <label class="toggle"><input type="checkbox" id="attention-only"> Only problems (advisories, closures, high results)</label>
       </div>
       <div class="legend" aria-hidden="true"><ul id="legend"></ul></div>
     </section>
     <aside class="panel" id="panel" aria-live="polite"><div class="loading">Loading…</div></aside>
   </main>
   <footer class="footer">
-    <p>Not an official source. Combines public data from VDH, MDE, NJDEP, NYC Health and the national Water Quality Portal. Water quality can change quickly, especially after rain, so always follow posted signs and lifeguards.</p>
+    <p>Not an official source. Combines public data from VDH, MDE, NYC Health and the national Water Quality Portal. Bacteria levels can change quickly, especially after rain, so always follow posted signs and lifeguards.</p>
   </footer>
 </div>
 
@@ -952,26 +975,34 @@ const AGENCY = {
   wqp_nj: "New Jersey DEP beach", wqp_ny: "New York State Health Department beach", wqp_de: "Delaware DNREC beach",
 };
 // Sources whose results arrive with a delay (national Water Quality Portal).
-const DELAYED = new Set(["wqp_nj", "wqp_ny", "wqp_de"]);
-const DELAYED_NOTE = "These are the latest results reported to the national Water Quality Portal. " +
-  "States submit results there with a delay, often several months, so check the official page for current conditions.";
+const DELAYED = new Set(["wqp_nj", "wqp_ny", "wqp_de"]);   // fallback for older data files
+const DELAYED_NOTE = "These are the latest results reported to the national Water Quality Portal, " +
+  "where results can arrive weeks or months after sampling. Check the official page for current conditions.";
 const STATUS = {
   closed:     { label: "Closed", rank: 0, color: "--closed", shape: "square",
                 note: "Closed to swimming by the local health authority." },
   advisory:   { label: "Advisory", rank: 1, color: "--advisory", shape: "triangle",
                 note: "Swimming not recommended. A recent sample exceeded the state limit, or another hazard such as an algae bloom was reported." },
+  exceeded:   { label: "Over the limit", rank: 2, color: "--advisory", shape: "triangle-open",
+                note: "The most recent sample exceeded the state limit. The state may not have issued an advisory, so check the official page." },
   resampling: { label: "Resampling", rank: 2, color: "--resampling", shape: "diamond",
                 note: "One sample exceeded the limit. A confirmation sample is being tested." },
   open:       { label: "Meets standard", rank: 3, color: "--open", shape: "circle",
                 note: "The most recent sample met the state standard." },
   no_data:    { label: "No recent data", rank: 4, color: "--muted", shape: "ring-dashed",
-                note: "No result in the past two weeks. Check the official source before swimming." },
+                note: "There's no recent result for this site. Check the official source before swimming." },
   off_season: { label: "Off season", rank: 5, color: "--muted", shape: "ring",
                 note: "Not sampled until next swimming season, usually starting in May." },
   unknown:    { label: "Status unclear", rank: 6, color: "--muted", shape: "dot",
                 note: "The source reported a status this site could not interpret. Check the official source." },
 };
-const ATTENTION = new Set(["closed", "advisory", "resampling"]);
+const ATTENTION = new Set(["closed", "advisory", "exceeded", "resampling"]);
+// Source details come with the data (config/sources.json); the maps here are fallbacks.
+const isDelayed = p => p.delayed ?? DELAYED.has(sourceOf(p.site_id));
+const isStatusOnly = p => p.status_only ?? !!STATUS_ONLY[sourceOf(p.site_id)];
+const statusOnlyNote = p => p.status_only_note || STATUS_ONLY[sourceOf(p.site_id)] ||
+  "No sample results have been published for this site yet.";
+const agencyLabel = p => p.source_label || AGENCY[sourceOf(p.site_id)] || "state";
 // Sources that publish a status for each beach but no individual sample results.
 const STATUS_ONLY = {
   md_mde: "Maryland publishes the current status of each beach but not individual sample results, so there is no result history to show here.",
@@ -998,6 +1029,7 @@ function shapeSVG(status, size = 18) {
     triangle: `<path d="M10 2.2 18.4 16.8H1.6Z" fill="${c}" stroke="${e}" stroke-width="1.5" stroke-linejoin="round"/>`,
     square: `<rect x="3" y="3" width="14" height="14" rx="1.5" fill="${c}" stroke="${e}" stroke-width="1.5"/><rect x="6" y="9" width="8" height="2" fill="#fff"/>`,
     diamond: `<path d="M10 1.8 18.2 10 10 18.2 1.8 10Z" fill="${c}" stroke="${e}" stroke-width="1.5" stroke-linejoin="round"/>`,
+    "triangle-open": `<path d="M10 3.2 17.4 16.2H2.6Z" fill="var(--surface)" stroke="${c}" stroke-width="2.6" stroke-linejoin="round"/>`,
     ring: `<circle cx="10" cy="10" r="6" fill="var(--surface)" stroke="${c}" stroke-width="2.5"/>`,
     "ring-dashed": `<circle cx="10" cy="10" r="6" fill="var(--surface)" stroke="${c}" stroke-width="2.5" stroke-dasharray="3.2 2.4"/>`,
     dot: `<circle cx="10" cy="10" r="4" fill="${c}" stroke="${e}" stroke-width="1.5"/>`,
@@ -1014,8 +1046,9 @@ async function getJSON(path) {
 // ------------------------------------------------------------------ state
 const app = {
   features: [], summary: null, base: CONFIG.dataBase, histories: {},
-  selected: null, states: new Set(Object.keys(STATES)), attentionOnly: false, query: "",
-  map: null, markers: new Map(), markerLayer: null, chart: null,
+  selected: null, states: new Set(Object.keys(STATES)), kinds: new Set(["beach", "waterway"]),
+  attentionOnly: false, query: "",
+  map: null, markers: new Map(), aliases: new Map(), markerLayer: null, chart: null,
 };
 
 // ------------------------------------------------------------------ data
@@ -1091,6 +1124,7 @@ function initMap(basemap) {
     m.on("click", () => select(p.site_id));
     m.feature = f;
     app.markers.set(p.site_id, m);
+    for (const alias of p.linked_site_ids || []) app.aliases.set(alias, p.site_id);
   }
   const pts = app.features.map(f => [f.geometry.coordinates[1], f.geometry.coordinates[0]]);
   const siteBounds = pts.length ? L.latLngBounds(pts) : L.latLngBounds(CONFIG.region);
@@ -1122,6 +1156,7 @@ function icon(status, selected) {
 
 function passes(p) {
   if (!app.states.has(p.state)) return false;
+  if (!app.kinds.has(p.kind || "beach")) return false;
   if (app.attentionOnly && !ATTENTION.has(p.status)) return false;
   if (app.query && !p.name.toLowerCase().includes(app.query)) return false;
   return true;
@@ -1154,9 +1189,16 @@ function renderControls() {
     on ? app.states.add(k) : app.states.delete(k);
     applyFilters();
   });
+  $("#kind-chips").addEventListener("click", e => {
+    const b = e.target.closest("[data-kind]"); if (!b) return;
+    const k = b.dataset.kind, on = b.getAttribute("aria-pressed") !== "true";
+    b.setAttribute("aria-pressed", String(on));
+    on ? app.kinds.add(k) : app.kinds.delete(k);
+    applyFilters();
+  });
   $("#search").addEventListener("input", e => { app.query = e.target.value.trim().toLowerCase(); applyFilters(); });
   $("#attention-only").addEventListener("change", e => { app.attentionOnly = e.target.checked; applyFilters(); });
-  const order = ["open", "advisory", "closed", "resampling", "no_data", "off_season"];
+  const order = ["open", "advisory", "exceeded", "closed", "resampling", "no_data", "off_season"];
   $("#legend").innerHTML = order.map(k => `<li>${shapeSVG(k, 14)}${STATUS[k].label}</li>`).join("");
 }
 
@@ -1179,26 +1221,27 @@ function renderOverview() {
 
   const rows = list.slice(0, 80).map(f => {
     const p = f.properties;
-    const place = [countyName(p), p.state].filter(Boolean).join(", ");
+    const place = [countyName(p), p.state].filter(Boolean).join(", ") +
+      (p.kind === "waterway" ? ` (${(p.water_body || "coastal water").toLowerCase()})` : "");
     const val = p.latest_value != null || p.latest_qualifier
       ? `<b>${esc(fmtVal(p.latest_value, p.latest_qualifier))}</b><span class="pl">${esc(
-          DELAYED.has(sourceOf(p.site_id)) ? fmtDate(p.latest_sample_date, { month: "short", year: "numeric" })
+          isDelayed(p) ? fmtDate(p.latest_sample_date, { month: "short", year: "numeric" })
                                            : fmtDate(p.latest_sample_date))}</span>`
-      : `<span class="pl">${STATUS_ONLY[sourceOf(p.site_id)] ? "Status only" : "No results yet"}</span>`;
+      : `<span class="pl">${isStatusOnly(p) ? "Status only" : "No results yet"}</span>`;
     return `<li><button type="button" data-site="${esc(p.site_id)}">${shapeSVG(p.status, 16)}
-      <span><span class="nm">${esc(p.name)}</span><span class="pl">${esc(place)}</span></span>
+      <span class="txt"><span class="nm" title="${esc(p.name)}">${esc(p.name)}</span><span class="pl">${esc(place)}</span></span>
       <span class="val">${val}</span></button></li>`;
   }).join("");
 
   $("#panel").innerHTML = `<div class="panel-inner">
-    <h2>${total ? `${total} beach${total === 1 ? "" : "es"} in view` : "No beaches in view"}</h2>
-    <p class="sub">${total ? "Zoom or pan the map to change this list. Select a beach for its full history."
+    <h2>${total ? `${total.toLocaleString()} site${total === 1 ? "" : "s"} in view` : "No sites in view"}</h2>
+    <p class="sub">${total ? "Zoom or pan the map to change this list. Select a site for its full history."
                            : "Zoom out, or turn states back on in the filters."}</p>
-    ${offSeason ? `<p class="sub" style="margin-top:.6rem">Most beaches are between seasons. Routine sampling resumes in May.</p>` : ""}
+    ${offSeason ? `<p class="sub" style="margin-top:.6rem">Most beaches are between seasons. Routine beach sampling resumes in May.</p>` : ""}
     ${total ? `<div class="statusbar" role="img" aria-label="${order.map(k => `${counts[k]} ${STATUS[k].label}`).join(", ")}">
       ${order.map(k => `<span style="width:${(counts[k] / total) * 100}%;background:var(${STATUS[k].color})"></span>`).join("")}</div>
       <ul class="statuskey">${order.map(k => `<li>${shapeSVG(k, 13)}<b>${counts[k]}</b> ${STATUS[k].label}</li>`).join("")}</ul>` : ""}
-    <h3>Beaches, most urgent first</h3>
+    <h3>Sites, most urgent first</h3>
     ${total ? `<ul class="sitelist">${rows}</ul>${total > 80 ? `<p class="empty">Showing the first 80. Zoom in to see the rest.</p>` : ""}`
             : `<p class="empty">Nothing matches the current filters here.</p>`}
     <h3>By state</h3>
@@ -1213,8 +1256,8 @@ function stateTable() {
     s.n++; if (ATTENTION.has(p.status)) s.attention++; s.sources.add(sourceOf(p.site_id));
   }
   const newest = app.summary?.by_state || {};
-  return `<table class="states"><thead><tr><th>State</th><th class="n">Beaches</th>
-    <th class="n">Advisories or closures</th><th class="n">Newest result</th></tr></thead><tbody>
+  return `<table class="states"><thead><tr><th>State</th><th class="n">Sites</th>
+    <th class="n">Problems</th><th class="n">Newest result</th></tr></thead><tbody>
     ${Object.keys(STATES).filter(k => by[k]).map(k => `<tr data-state="${k}" tabindex="0" title="Show ${STATES[k]} on the map">
       <td>${STATES[k]}</td><td class="n">${by[k].n}</td>
       <td class="n ${by[k].attention ? "flag" : ""}">${by[k].attention}</td>
@@ -1230,6 +1273,7 @@ function zoomToState(k) {
 
 // ------------------------------------------------------------------ site panel
 async function select(siteId, { fromHash = false } = {}) {
+  siteId = app.aliases.get(siteId) || siteId;
   const m = app.markers.get(siteId);
   if (!m) return;
   if (app.selected && app.markers.get(app.selected)) {
@@ -1295,16 +1339,16 @@ function renderSite(p, h) {
   $("#panel").innerHTML = `<div class="panel-inner">
     <button class="back" type="button" id="back">
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg>
-      All beaches in view</button>
+      All sites in view</button>
     <h2>${esc(p.name)}</h2>
-    <p class="sub">${esc(place)}${p.water_body ? `<br>${esc(p.water_body)}` : ""}${p.location_approx
+    <p class="sub">${esc(place)}${p.water_body ? `<br>${esc(p.water_body)}` : ""}${p.kind === "waterway"
+      ? `<br>Monitoring station (not a designated swimming beach)` : ""}${p.location_approx
       ? `<br>Map position is approximate.` : ""}</p>
     <div class="status-line">${shapeSVG(p.status, 22)}
       <div><strong>${st.label}</strong><p>${st.note}${reported}</p></div></div>
-    ${DELAYED.has(src) ? `<p class="note">${DELAYED_NOTE}</p>` : ""}
+    ${isDelayed(p) ? `<p class="note">${DELAYED_NOTE}</p>` : ""}
 
-    ${!samples.length ? `<p class="note">${esc(STATUS_ONLY[src] ||
-        "No sample results have been published for this beach yet.")}</p>` : `
+    ${!samples.length ? `<p class="note">${esc(statusOnlyNote(p))}</p>` : `
     <div class="reading">
       ${p.latest_sample_date ? `
         <div class="big">${esc(fmtVal(p.latest_value, p.latest_qualifier))}</div>
@@ -1328,7 +1372,10 @@ function renderSite(p, h) {
         <span class="dates">${esc(fmtDate(a.start_date))}${a.end_date && a.end_date !== a.start_date ? ` to ${esc(fmtDate(a.end_date))}` : ""}</span></li>`).join("")}
       </ul>` : ""}
 
-    ${p.detail_url ? `<a class="official" href="${esc(p.detail_url)}" target="_blank" rel="noopener">Check the official ${esc(AGENCY[src] || "state")} page</a>` : ""}
+    ${p.detail_url ? `<a class="official" href="${esc(p.detail_url)}" target="_blank" rel="noopener">${esc(
+        p.link_text || `Check the official ${agencyLabel(p)} page`)}</a>` : ""}
+    ${(p.sources || []).length ? `<p class="sources">Sources: ${p.sources.map(x =>
+        `${esc(x.label)} (${esc(x.role)}${x.delayed ? ", delayed" : ""})`).join("; ")}</p>` : ""}
     <p class="fineprint">Results reflect water conditions when the sample was taken. Labs typically report results a day after sampling.</p>
   </div>`;
 
@@ -1342,6 +1389,7 @@ function drawChart(samples, bav) {
   const ink2 = css("--ink-2"), rule = css("--rule"), okC = css("--open"), badC = css("--advisory"), ink = css("--ink");
   const pts = samples.filter(s => s.value != null).map(s => ({
     x: new Date(s.sample_date + "T12:00:00").getTime(), y: Math.max(s.value, 1), over: s.exceeds_bav === 1, q: s.qualifier,
+    src: s.source,
   }));
   const xs = pts.map(p => p.x);
   const datasets = [{
@@ -1362,7 +1410,8 @@ function drawChart(samples, bav) {
       plugins: { legend: { display: false },
         tooltip: { filter: i => i.datasetIndex === 0, displayColors: false,
           callbacks: { title: i => new Date(i[0].raw.x).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }),
-                       label: i => `${i.raw.q === "<" ? "<" : ""}${Math.round(i.raw.y).toLocaleString()}${i.raw.over ? " (over limit)" : ""}` } } },
+                       label: i => `${i.raw.q === "<" ? "<" : ""}${Math.round(i.raw.y).toLocaleString()}${i.raw.over ? " (over limit)" : ""}`,
+                       afterLabel: i => i.raw.src ? `Source: ${i.raw.src}` : "" } } },
       scales: {
         x: { type: "linear", min: Math.min(...xs) - 3 * 864e5, max: Math.max(...xs) + 3 * 864e5, grid: { display: false }, border: { color: rule },
              ticks: { color: ink2, maxTicksLimit: 6, callback: v => new Date(v).toLocaleDateString("en-US", { month: "short", day: "numeric" }) } },

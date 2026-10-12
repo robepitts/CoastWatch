@@ -1,8 +1,12 @@
 {
+  "_settings_help": "priority: higher wins when sources describe the same beach (county/state ~80-90, national portal 10). label: agency name for the official-page link. delayed: results arrive months late. status_only: source publishes status but no sample results. prune_unseen: remove this source's sites that a successful run no longer returns (only for sources that always return their full site list). site_kind: 'beach' or 'waterway' for sources whose sites are all one kind (portal stations are tagged individually).",
   "nyc_doh": {
     "enabled": true,
     "collector": "nyc",
-    "lookback_days": 120
+    "lookback_days": 120,
+    "priority": 80,
+    "label": "NYC Health",
+    "site_kind": "beach"
   },
   "de_dnrec": {
     "enabled": false,
@@ -16,11 +20,17 @@
       "298",
       "304",
       "363620"
-    ]
+    ],
+    "priority": 80,
+    "label": "Delaware DNREC",
+    "site_kind": "beach"
   },
   "va_vdh": {
     "enabled": true,
-    "collector": "virginia"
+    "collector": "virginia",
+    "priority": 80,
+    "label": "Virginia Department of Health",
+    "site_kind": "beach"
   },
   "md_mde": {
     "enabled": true,
@@ -31,7 +41,12 @@
     "item_id": "724261e6ba0746bc9fa501f2d4f21de0",
     "homepage_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
     "layer_name_filter": "beach",
-    "field_map": {}
+    "field_map": {},
+    "priority": 70,
+    "label": "Maryland Department of the Environment",
+    "status_only": true,
+    "status_only_note": "Maryland publishes the current status of each beach but not individual sample results.",
+    "site_kind": "beach"
   },
   "ny_doh": {
     "enabled": false,
@@ -43,13 +58,19 @@
     "homepage_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
     "layer_name_filter": "beach",
     "field_map": {},
-    "_disabled_note": "Oct 2026: this ArcGIS item is NYSDEC's stream and lake monitoring portal, not NYSDOH's coastal beach map. Repoint to the NYSDOH beach map when it is reactivated in season."
+    "_disabled_note": "Oct 2026: this ArcGIS item is NYSDEC's stream and lake monitoring portal, not NYSDOH's coastal beach map. Repoint to the NYSDOH beach map when it is reactivated in season.",
+    "priority": 80,
+    "label": "New York State Department of Health",
+    "site_kind": "beach"
   },
   "nj_dep": {
     "enabled": false,
     "_disabled_note": "Oct 2026: njbeaches.org embeds no data; needs its JSON endpoint (see collectors/new_jersey.py).",
     "collector": "new_jersey",
-    "api_url": null
+    "api_url": null,
+    "priority": 80,
+    "label": "New Jersey DEP",
+    "site_kind": "beach"
   },
   "wqp_nj": {
     "enabled": true,
@@ -60,15 +81,20 @@
     ],
     "characteristics": [
       "Enterococcus",
-      "Enterococci"
+      "Enterococci",
+      "Escherichia coli"
     ],
     "years_back": 2,
-    "_note": "Water Quality Portal: official results submitted to EPA, typically months behind.",
+    "_note": "Water Quality Portal: all coastal monitoring stations (Ocean and Estuary site types, including tidal tributaries) with Enterococcus or E. coli results. Delays vary by agency.",
     "state": "NJ",
     "agency": "NJDEP beach monitoring, via the Water Quality Portal",
     "homepage_url": "https://njbeaches.org/",
     "respect_robots": false,
-    "_robots_note": "The portal's robots.txt disallows /data/ for crawlers, but /data/ is the portal's documented public web service for scripted downloads (also used by USGS's dataRetrieval software). This collector makes a few throttled requests per day with an identifying user agent. Set to true to honor robots.txt instead."
+    "_robots_note": "The portal's robots.txt disallows /data/ for crawlers, but /data/ is the portal's documented public web service for scripted downloads (also used by USGS's dataRetrieval software). This collector makes a few throttled requests per day with an identifying user agent. Set to true to honor robots.txt instead.",
+    "priority": 10,
+    "label": "New Jersey DEP",
+    "delayed": true,
+    "prune_unseen": true
   },
   "wqp_ny": {
     "enabled": true,
@@ -79,16 +105,29 @@
     ],
     "characteristics": [
       "Enterococcus",
-      "Enterococci"
+      "Enterococci",
+      "Escherichia coli"
     ],
     "years_back": 2,
-    "_note": "Water Quality Portal: official results submitted to EPA, typically months behind.",
+    "_note": "Water Quality Portal: all coastal monitoring stations (Ocean and Estuary site types, including tidal tributaries) with Enterococcus or E. coli results. Delays vary by agency.",
     "state": "NY",
     "agency": "New York beach monitoring, via the Water Quality Portal",
     "homepage_url": "https://www.health.ny.gov/environmental/outdoors/swimming/coastalbeaches.htm",
     "exclude_org_pattern": "new york city|nyc|dohmh|mental hygiene",
     "respect_robots": false,
-    "_robots_note": "The portal's robots.txt disallows /data/ for crawlers, but /data/ is the portal's documented public web service for scripted downloads (also used by USGS's dataRetrieval software). This collector makes a few throttled requests per day with an identifying user agent. Set to true to honor robots.txt instead."
+    "_robots_note": "The portal's robots.txt disallows /data/ for crawlers, but /data/ is the portal's documented public web service for scripted downloads (also used by USGS's dataRetrieval software). This collector makes a few throttled requests per day with an identifying user agent. Set to true to honor robots.txt instead.",
+    "priority": 10,
+    "label": "New York State Department of Health",
+    "delayed": true,
+    "prune_unseen": true,
+    "_counties_note": "Beach stations in NYC's five counties come directly from NYC Open Data (current), so they are skipped here. Other NYC waterway stations are kept.",
+    "exclude_beach_counties": [
+      "005",
+      "047",
+      "061",
+      "081",
+      "085"
+    ]
   },
   "wqp_de": {
     "enabled": true,
@@ -99,14 +138,70 @@
     ],
     "characteristics": [
       "Enterococcus",
-      "Enterococci"
+      "Enterococci",
+      "Escherichia coli"
     ],
     "years_back": 2,
-    "_note": "Water Quality Portal: official results submitted to EPA, typically months behind.",
+    "_note": "Water Quality Portal: all coastal monitoring stations (Ocean and Estuary site types, including tidal tributaries) with Enterococcus or E. coli results. Delays vary by agency.",
     "state": "DE",
     "agency": "Delaware DNREC beach monitoring, via the Water Quality Portal",
     "homepage_url": "https://recwaters.dnrec.delaware.gov/",
     "respect_robots": false,
-    "_robots_note": "The portal's robots.txt disallows /data/ for crawlers, but /data/ is the portal's documented public web service for scripted downloads (also used by USGS's dataRetrieval software). This collector makes a few throttled requests per day with an identifying user agent. Set to true to honor robots.txt instead."
+    "_robots_note": "The portal's robots.txt disallows /data/ for crawlers, but /data/ is the portal's documented public web service for scripted downloads (also used by USGS's dataRetrieval software). This collector makes a few throttled requests per day with an identifying user agent. Set to true to honor robots.txt instead.",
+    "priority": 10,
+    "label": "Delaware DNREC",
+    "delayed": true,
+    "prune_unseen": true
+  },
+  "wqp_md": {
+    "enabled": true,
+    "collector": "wqp",
+    "site_types": [
+      "Ocean",
+      "Estuary"
+    ],
+    "characteristics": [
+      "Enterococcus",
+      "Enterococci",
+      "Escherichia coli"
+    ],
+    "years_back": 2,
+    "_note": "Water Quality Portal: all coastal monitoring stations (Ocean and Estuary site types, including tidal tributaries) with Enterococcus or E. coli results. Delays vary by agency.",
+    "respect_robots": false,
+    "_robots_note": "The portal's robots.txt disallows /data/ for crawlers, but /data/ is the portal's documented public web service for scripted downloads (also used by USGS's dataRetrieval software). This collector makes a few throttled requests per day with an identifying user agent. Set to true to honor robots.txt instead.",
+    "priority": 10,
+    "delayed": true,
+    "prune_unseen": true,
+    "state": "MD",
+    "label": "Maryland Department of the Environment",
+    "agency": "Maryland monitoring agencies, via the Water Quality Portal",
+    "homepage_url": "https://mde.maryland.gov/programs/water/MHB/Pages/Current-Conditions.aspx",
+    "_beach_note": "MDE beach stations are kept so their result history merges with MDE's current status."
+  },
+  "wqp_va": {
+    "enabled": true,
+    "collector": "wqp",
+    "site_types": [
+      "Ocean",
+      "Estuary"
+    ],
+    "characteristics": [
+      "Enterococcus",
+      "Enterococci",
+      "Escherichia coli"
+    ],
+    "years_back": 2,
+    "_note": "Water Quality Portal: all coastal monitoring stations (Ocean and Estuary site types, including tidal tributaries) with Enterococcus or E. coli results. Delays vary by agency.",
+    "respect_robots": false,
+    "_robots_note": "The portal's robots.txt disallows /data/ for crawlers, but /data/ is the portal's documented public web service for scripted downloads (also used by USGS's dataRetrieval software). This collector makes a few throttled requests per day with an identifying user agent. Set to true to honor robots.txt instead.",
+    "priority": 10,
+    "delayed": true,
+    "prune_unseen": true,
+    "state": "VA",
+    "label": "Virginia Department of Health",
+    "agency": "Virginia monitoring agencies, via the Water Quality Portal",
+    "homepage_url": "https://www.vdh.virginia.gov/waterborne-hazards-control/swimming-advisories-and-monitored-beaches-map/",
+    "exclude_beach_sites": true,
+    "_beach_note": "Virginia beaches come directly from VDH's spreadsheets (current), so portal beach stations are skipped."
   }
 }

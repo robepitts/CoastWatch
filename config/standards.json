@@ -1,20 +1,83 @@
 {
   "_comment": "Single-sample Beach Action Values (BAV) and geometric-mean criteria, per state and indicator, in CFU or MPN per 100 mL. 'verified' = confirmed against an official source during the initial investigation; 'verify' = commonly cited value, confirm with the state program before launch.",
   "DE": {
-    "enterococcus": {"single_sample": 104, "geomean": 35, "geomean_window_days": 30, "status": "verified", "ref": "DNREC news release, 2025-07-04 (standard 104 single sample, 35 geomean)"}
+    "enterococcus": {
+      "single_sample": 104,
+      "geomean": 35,
+      "geomean_window_days": 30,
+      "status": "verified",
+      "ref": "DNREC news release, 2025-07-04 (standard 104 single sample, 35 geomean)"
+    },
+    "e_coli": {
+      "single_sample": 410,
+      "geomean": 100,
+      "geomean_window_days": 30,
+      "status": "verify",
+      "ref": "Delaware Surface Water Quality Standards, freshwater (confirm current values)"
+    }
   },
   "NJ": {
-    "enterococcus": {"single_sample": 104, "geomean": 30, "geomean_window_days": 30, "status": "verified", "ref": "NJDEP CCMP 2018 Summary Report"}
+    "enterococcus": {
+      "single_sample": 104,
+      "geomean": 30,
+      "geomean_window_days": 30,
+      "status": "verified",
+      "ref": "NJDEP CCMP 2018 Summary Report"
+    },
+    "e_coli": {
+      "single_sample": 235,
+      "geomean": 126,
+      "geomean_window_days": 30,
+      "status": "verify",
+      "ref": "N.J.A.C. 7:9B freshwater recreation (confirm current values)"
+    }
   },
   "MD": {
-    "enterococcus": {"single_sample": 104, "geomean": 35, "geomean_window_days": 30, "status": "verify", "ref": "COMAR 26.08.09 (confirm current BAV)"},
-    "e_coli":       {"single_sample": 235, "geomean": 126, "geomean_window_days": 30, "status": "verify", "ref": "COMAR 26.08.09 (confirm current BAV)"}
+    "enterococcus": {
+      "single_sample": 104,
+      "geomean": 35,
+      "geomean_window_days": 30,
+      "status": "verify",
+      "ref": "COMAR 26.08.09 (confirm current BAV)"
+    },
+    "e_coli": {
+      "single_sample": 235,
+      "geomean": 126,
+      "geomean_window_days": 30,
+      "status": "verify",
+      "ref": "COMAR 26.08.09 (confirm current BAV)"
+    }
   },
   "VA": {
-    "enterococcus": {"single_sample": 104, "geomean": 35, "geomean_window_days": 30, "status": "verify", "ref": "VDH Beach Monitoring Program (confirm current BAV)"}
+    "enterococcus": {
+      "single_sample": 104,
+      "geomean": 35,
+      "geomean_window_days": 30,
+      "status": "verify",
+      "ref": "VDH Beach Monitoring Program (confirm current BAV)"
+    },
+    "e_coli": {
+      "single_sample": 410,
+      "geomean": 126,
+      "geomean_window_days": 90,
+      "status": "verify",
+      "ref": "9VAC25-260-170 freshwater (confirm current values)"
+    }
   },
   "NY": {
-    "enterococcus": {"single_sample": 104, "geomean": 35, "geomean_window_days": 30, "status": "verify", "ref": "NYS Sanitary Code Subpart 6-2 / NYC Health Code (confirm current values)"},
-    "e_coli":       {"single_sample": 235, "geomean": 126, "geomean_window_days": 30, "status": "verify", "ref": "NYS Sanitary Code Subpart 6-2 (freshwater)"}
+    "enterococcus": {
+      "single_sample": 104,
+      "geomean": 35,
+      "geomean_window_days": 30,
+      "status": "verify",
+      "ref": "NYS Sanitary Code Subpart 6-2 / NYC Health Code (confirm current values)"
+    },
+    "e_coli": {
+      "single_sample": 235,
+      "geomean": 126,
+      "geomean_window_days": 30,
+      "status": "verify",
+      "ref": "NYS Sanitary Code Subpart 6-2 (freshwater)"
+    }
   }
 }

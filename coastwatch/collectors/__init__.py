@@ -10,6 +10,7 @@ from ..http import PoliteClient
 from ..store import Store
 from .arcgis import ArcGISCollector
 from .delaware import DelawareCollector
+from .generic import JSONCollector, TableCollector
 from .new_jersey import NewJerseyCollector
 from .nyc import NYCCollector
 from .virginia import VirginiaCollector
@@ -46,7 +47,25 @@ def build(source_id: str, cfg: dict, client: PoliteClient, store: Store):
                             homepage_url=cfg.get("homepage_url", ""),
                             site_types=cfg.get("site_types"), characteristics=cfg.get("characteristics"),
                             years_back=cfg.get("years_back", 2),
-                            exclude_org_pattern=cfg.get("exclude_org_pattern"), **kw)
+                            exclude_org_pattern=cfg.get("exclude_org_pattern"),
+                            location_types=cfg.get("location_types"),
+                            exclude_counties=cfg.get("exclude_counties"),
+                            exclude_beach_counties=cfg.get("exclude_beach_counties"),
+                            exclude_beach_sites=cfg.get("exclude_beach_sites", False), **kw)
+    if kind == "table":
+        return TableCollector(source_id=source_id, state=cfg["state"], agency=cfg["agency"],
+                              url=cfg["url"], columns=cfg["columns"],
+                              homepage_url=cfg.get("homepage_url", ""), fmt=cfg.get("format"),
+                              table_match=cfg.get("table_match"), sheet=cfg.get("sheet"),
+                              forward_fill=cfg.get("forward_fill"),
+                              indicator=cfg.get("indicator", "enterococcus"), units=cfg.get("units"),
+                              water_type=cfg.get("water_type", "marine"), **kw)
+    if kind == "json":
+        return JSONCollector(source_id=source_id, state=cfg["state"], agency=cfg["agency"],
+                             url=cfg["url"], columns=cfg["columns"], records=cfg.get("records"),
+                             homepage_url=cfg.get("homepage_url", ""), params=cfg.get("params"),
+                             indicator=cfg.get("indicator", "enterococcus"), units=cfg.get("units"),
+                             water_type=cfg.get("water_type", "marine"), **kw)
     raise ValueError(f"unknown collector type {kind!r}")
 
 
@@ -55,6 +74,8 @@ def run(store: Store, only: list[str] | None = None, client: PoliteClient | None
     client = client or PoliteClient()
     summaries = []
     for source_id, cfg in cfg_all.items():
+        if source_id.startswith("_") or not isinstance(cfg, dict):
+            continue
         if not cfg.get("enabled", True) or (only and source_id not in only):
             continue
         col = build(source_id, cfg, client, store)
@@ -64,6 +85,10 @@ def run(store: Store, only: list[str] | None = None, client: PoliteClient | None
         try:
             result = col.collect()
             counts = store.save(source_id, col.state, result, run_id=run_id)
+            if cfg.get("prune_unseen") and result.sites:
+                pruned = store.prune_source(source_id, {x.source_site_id for x in result.sites})
+                if pruned:
+                    log.info("%s: removed %d sites no longer returned", source_id, pruned)
             err = "; ".join(result.warnings)[:2000] or None
             store.finish_run(run_id, ok=bool(result.sites), error=err, **counts)
             summaries.append({"source": source_id, "ok": bool(result.sites), **counts,

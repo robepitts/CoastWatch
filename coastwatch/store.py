@@ -141,6 +141,18 @@ class Store:
                     (sid(r.source_site_id), ts, r.status.value, r.source_status, run_id))
         return counts
 
+    def prune_source(self, source_id: str, keep_source_site_ids: set[str]) -> int:
+        """Delete a source's sites (and their data) that the latest run no longer returned.
+        Only for sources whose every run returns their complete site list."""
+        rows = self.query("SELECT site_id, source_site_id FROM sites WHERE source_id=?", (source_id,))
+        drop = [r["site_id"] for r in rows if r["source_site_id"] not in keep_source_site_ids]
+        with self.conn:
+            for sid in drop:
+                for t in ("samples", "advisories", "status_observations"):
+                    self.conn.execute(f"DELETE FROM {t} WHERE site_id=?", (sid,))
+                self.conn.execute("DELETE FROM sites WHERE site_id=?", (sid,))
+        return len(drop)
+
     # ---- coordinate overrides -------------------------------------------
     def apply_coordinate_overrides(self, csv_path: str | Path) -> int:
         """Fill/replace coordinates from a CSV with columns site_id,latitude,longitude.

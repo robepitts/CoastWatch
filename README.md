@@ -1,6 +1,6 @@
-# CoastWatch: Mid-Atlantic Beach Water Quality Collectors
+# CoastWatch: Mid-Atlantic Coastal Water Quality Watcher
 
-Collects beach water quality results and advisories from five state programs (VA, MD, DE, NJ, NY), normalizes them into one datastore, and exports static JSON for a map-based website.
+Collects fecal-bacteria results (Enterococcus and E. coli) and advisories for **beaches and other coastal waters** (bays, harbors, sounds and tidal tributaries) in Virginia, Maryland, Delaware, New Jersey and New York. It normalizes them into one datastore and exports static JSON for a map-based website. Each site is tagged as a designated swimming **beach** or another **waterway** monitoring station, and the website can filter by either.
 
 > Unofficial aggregator. Always link users back to the official state source, and display a disclaimer that conditions can change faster than sampling.
 
@@ -54,11 +54,11 @@ Views `latest_samples` and `latest_status` drive the map popups. The schema is p
 
 ### Normalized statuses
 
-`open`, `advisory`, `closed`, `resampling`, `off_season`, `no_data`, `unknown`. Publisher wording is mapped in `coastwatch/models.py` (`STATUS_PHRASES`). When a source reports no status, export infers one from the newest sample: exceeds threshold → `advisory`; older than 14 days → `no_data` in season or `off_season` outside it.
+`open`, `advisory`, `exceeded`, `closed`, `resampling`, `off_season`, `no_data`, `unknown`. `advisory` and `closed` are only ever official statuses published by an agency; when the site infers status from a result over the limit it uses `exceeded` ("Over the limit"), because states apply their own rules before issuing advisories. Publisher wording is mapped in `coastwatch/models.py` (`STATUS_PHRASES`). When a source reports no status, export infers one from the newest sample: exceeds threshold → `exceeded`. Beaches: older than 14 days → `no_data` in season or `off_season` outside it. Other waterways (often sampled monthly, year-round): older than 45 days → `no_data`.
 
 ### Export files
 
-- `docs/data/sites.geojson`: one Point per mapped site with status, latest result, 30-day geomean and threshold
+- `docs/data/sites.geojson`: one Point per beach (linked sites merged) with status, latest result, 30-day geomean, threshold and contributing sources
 - `docs/data/sites/<site_id>.json`: full sample and advisory history for charts
 - `docs/data/summary.json`: counts by state and status, newest sample per state
 - `docs/data/unmapped_sites.json`: sites still missing coordinates
@@ -86,17 +86,23 @@ Views `latest_samples` and `latest_status` drive the map popups. The schema is p
 
 The workflow runs once a day at 22:10 UTC (evening Eastern time), commits the database and exports, and Pages republishes automatically. GitHub pauses scheduled workflows in repositories with no activity for 60 days; the daily data commits normally prevent that, but check the Actions tab occasionally. If a state's website blocks GitHub's servers, that source will fail in the logs while the others continue.
 
+## Adding sources
+
+See [ADDING_SOURCES.md](ADDING_SOURCES.md). HTML tables, CSV/Excel files and JSON feeds can be added with configuration only (`table` and `json` collectors). When sources overlap, export links their sites into one beach: status from the highest-priority source, history combined from all. Overrides go in `config/site_links.csv`.
+
 ## Sources (investigated October 2026)
 
 | Source ID | State | Method | Status |
 |---|---|---|---|
-| `nyc_doh` | NY (NYC) | NYC Open Data Socrata API, dataset `2xir-kwzz` | **Working**: results |
-| `va_vdh` | VA | Yearly Excel workbooks on VDH Beach Data page | **Working**: results and advisories |
-| `md_mde` | MD | ArcGIS layer `WSA_Healthy_Beaches_Alerts` (MDE) | **Working**: status per beach; no sample results |
-| `wqp_nj` | NJ | Water Quality Portal (EPA WQX) | **New**: official results, delayed (often months) |
-| `wqp_ny` | NY (state) | Water Quality Portal, excluding NYC Health | **New**: official results, delayed |
-| `wqp_de` | DE | Water Quality Portal | **New**: official results, delayed |
-| `ny_doh` | NY (state) | ArcGIS item `3017…365e` | **Disabled**: this is NYSDEC's stream and lake portal, not a beach map |
+| `nyc_doh` | NY (NYC) | NYC Open Data Socrata API, dataset `2xir-kwzz` | **Working**: NYC beaches, current |
+| `va_vdh` | VA | Yearly Excel workbooks on VDH Beach Data page | **Working**: VA beaches, current |
+| `md_mde` | MD | ArcGIS layer `WSA_Healthy_Beaches_Alerts` (MDE) | **Working**: MD beach status (no results) |
+| `wqp_nj` | NJ | Water Quality Portal, coastal stations | **Working**: NJDEP beaches (2025 season) plus bays, rivers, harbors |
+| `wqp_ny` | NY | Water Quality Portal, coastal stations; NYC beaches skipped | **Working**: NYSDOH beaches (2025 season) plus harbor and Sound stations |
+| `wqp_de` | DE | Water Quality Portal, coastal stations | **Working**: DNREC beaches (current within ~2 weeks) plus tidal waters |
+| `wqp_md` | MD | Water Quality Portal, coastal stations | **New**: MDE beach history (merges with MDE status) plus Chesapeake tributaries |
+| `wqp_va` | VA | Water Quality Portal, coastal stations; VA beaches skipped | **New**: tidal rivers and bays |
+| `ny_doh` | NY | ArcGIS item `3017…365e` | **Disabled**: NYSDEC stream and lake portal, not a beach map |
 | `de_dnrec` | DE | HTML of `RecWaterSitePublic.aspx?UnitID=<id>` | **Disabled**: site redesigned Oct 2026; pages now 404 |
 | `nj_dep` | NJ | Data embedded in njbeaches.org (Next.js) | **Disabled**: no embedded data; needs JSON endpoint |
 
@@ -107,7 +113,7 @@ Notes per source:
 - **Virginia**'s map is a Tableau dashboard, but the same data is published as `BeachMonitoringData_<stamp>.xlsx` and `BeachActivityReport_<stamp>.xlsx`. File names change on each update, so the collector finds the link labeled with the current year. Columns are matched by fuzzy name.
 - **Maryland and NY State** use the generic ArcGIS collector, which walks app → web map → feature layers at run time instead of hard-coding layer URLs. Only **point** layers are ever collected: boundaries, basemaps and other polygon or line layers are skipped regardless of name, and non-point features are discarded. `layer_name_filter` then keeps only layers whose name or address matches (default `beach`). The run log lists skipped layers and the field names of each collected layer. If guessed fields are wrong, set `field_map` in `config/sources.json`, for example `{"name": "BEACH_NAME", "status": "STATUS", "date": "SAMPLE_DT"}`.
 - **New Jersey** has no documented API. The collector looks for station data embedded in the page. If `probe` reports `embedded_records: 0`, the data is fetched by JavaScript and its endpoint needs to be found (below).
-- **Water Quality Portal** (`coastwatch/collectors/wqp.py`) queries the national portal by state, site type (Ocean, Estuary) and Enterococcus, so beach stations are found whichever agency account submitted them. Stations come with official coordinates. Results are delayed because agencies submit periodically; the website labels these sources as latest reported results, shows month and year in the list, and status falls to "no recent data" or "off season" rather than implying current conditions. Agencies already covered directly (NYC Health) are excluded with `exclude_org_pattern`.
+- **Water Quality Portal** (`coastwatch/collectors/wqp.py`) queries the national portal by state, site type (Ocean, Estuary, which includes tidal tributaries) and bacteria (Enterococcus, E. coli). Stations with an EPA "BEACH Program Site" location type are tagged beaches; all others are waterways and link to their own portal page. Each station is credited to the agency that submitted it. Beach stations already covered by a current direct source are skipped (`exclude_beach_counties` for NYC, `exclude_beach_sites` for Virginia). Bare station codes are shown with their description or as "Station 1403a". `prune_unseen` removes stations a run no longer returns. Non-tidal inland streams are not included; adding `River/Stream` to `site_types` with a coastal-county limit would bring them in. Stations come with official coordinates. Results are delayed because agencies submit periodically; the website labels these sources as latest reported results, shows month and year in the list, and status falls to "no recent data" or "off season" rather than implying current conditions. Agencies already covered directly (NYC Health) are excluded with `exclude_org_pattern`.
 - **Considered, not used:** NJDEP continuous sensors, NYSDEC's stream and lake portal, HRECOS (Hudson River sensors) and USGS real-time stations measure physical conditions (temperature, oxygen, chlorophyll), not beach bacteria. USGS rainfall and water temperature, and Riverkeeper's community Enterococcus sampling, are candidates for later add-ons.
 - **Next:** attach Water Quality Portal history to Maryland's existing beaches (match stations to MDE beaches by name and distance); repoint New York State to the NYSDOH coastal beach map when it reactivates in season.
 - `ny.healthinspections.us` disallows automated access in robots.txt and is deliberately not used.
