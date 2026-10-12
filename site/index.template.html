@@ -24,7 +24,7 @@
   --ink-3: #7a8f98;
   --rule: #d3dedf;
   --open: #157a62;
-  --exceeded: #dba11c;
+  --exceeded: #e08f14;
   --advisory: #d4581f;
   --closed: #9e1b2b;
   --resampling: #6a58a8;
@@ -45,7 +45,7 @@
   :root:not([data-theme="light"]) {
     --water: #0f2129; --land: #24332f; --land-context: #1b2725; --coast: #4d6662;
     --surface: #13222a; --surface-2: #1a2c35; --ink: #e2ecee; --ink-2: #a9bcc2; --ink-3: #7d9198;
-    --rule: #2a3f48; --open: #3cbf98; --exceeded: #f2c14e; --advisory: #f07a45; --closed: #f05a6a; --resampling: #a493e6;
+    --rule: #2a3f48; --open: #3cbf98; --exceeded: #f5ab3c; --advisory: #f07a45; --closed: #f05a6a; --resampling: #a493e6;
     --muted: #6f7d81; --marker-edge: #0f2129; --banner-bg: #3a2e12; --banner-ink: #f6dda0; --focus: #6aa8ff;
     --deep: #0b2733; --deep-2: #071c25; --on-deep: #e6f1f3; --on-deep-2: #8fb3bb;
     color-scheme: dark;
@@ -54,7 +54,7 @@
 :root[data-theme="dark"] {
   --water: #0f2129; --land: #24332f; --land-context: #1b2725; --coast: #4d6662;
   --surface: #13222a; --surface-2: #1a2c35; --ink: #e2ecee; --ink-2: #a9bcc2; --ink-3: #7d9198;
-  --rule: #2a3f48; --open: #3cbf98; --exceeded: #f2c14e; --advisory: #f07a45; --closed: #f05a6a; --resampling: #a493e6;
+  --rule: #2a3f48; --open: #3cbf98; --exceeded: #f5ab3c; --advisory: #f07a45; --closed: #f05a6a; --resampling: #a493e6;
   --muted: #6f7d81; --marker-edge: #0f2129; --banner-bg: #3a2e12; --banner-ink: #f6dda0; --focus: #6aa8ff;
     --deep: #0b2733; --deep-2: #071c25; --on-deep: #e6f1f3; --on-deep-2: #8fb3bb;
   color-scheme: dark;
@@ -370,7 +370,7 @@ const RING = new Set(["off_season", "no_data"]);
 const FADED = { ok: "open", over: "exceeded" };
 const FADE_OPACITY = 0.55;
 function shapeSVG(status, size = 18, last = null) {
-  // Solid shapes with no outline; colour carries the status. Sites without a current result
+  // Solid shapes with a thin outline in a darker shade of their own colour. Sites without a current result
   // show their last result this season faded; with no result this season, a grey circle.
   let key = status, opacity = 1;
   if (RING.has(status)) {
@@ -378,12 +378,15 @@ function shapeSVG(status, size = 18, last = null) {
     else { key = null; opacity = 0.8; }
   }
   const st = key ? STATUS[key] || STATUS.unknown : null;
-  const c = `var(${st ? st.color : "--muted"})`, o = `fill-opacity="${opacity}"`;
+  const col = st ? st.color : "--muted";
+  const c = `var(${col})`;
+  const o = `fill-opacity="${opacity}" style="stroke: color-mix(in srgb, var(${col}) 60%, #000);` +
+            ` stroke-width: 1.4; stroke-opacity: ${opacity}; stroke-linejoin: round"`;
   const body = {
-    circle:   `<circle cx="10" cy="10" r="7.5" fill="${c}" ${o}/>`,
-    triangle: `<path d="M10 1.8 18.8 17.2H1.2Z" fill="${c}" ${o} stroke-linejoin="round"/>`,
+    circle:   `<circle cx="10" cy="10" r="7.3" fill="${c}" ${o}/>`,
+    triangle: `<path d="M10 2.4 18.2 16.8H1.8Z" fill="${c}" ${o}/>`,
     square:   `<rect x="3" y="3" width="14" height="14" rx="1.5" fill="${c}" ${o}/>`,
-    diamond:  `<path d="M10 1.2 18.8 10 10 18.8 1.2 10Z" fill="${c}" ${o}/>`,
+    diamond:  `<path d="M10 1.8 18.2 10 10 18.2 1.8 10Z" fill="${c}" ${o}/>`,
   }[st ? st.shape : "circle"] || `<circle cx="10" cy="10" r="7.5" fill="${c}" ${o}/>`;
   const cls = opacity < 1 && FADED[last] ? ' class="faded"' : "";
   return `<svg${cls} width="${size}" height="${size}" viewBox="0 0 20 20" aria-hidden="true">${body}</svg>`;
@@ -447,8 +450,8 @@ function renderHeader() {
 
 // ------------------------------------------------------------------ map
 function initMap(basemap) {
-  const map = app.map = L.map("map", { zoomControl: false, attributionControl: true, minZoom: 6, maxZoom: 16,
-                                       zoomSnap: 0.5, worldCopyJump: false });
+  const map = app.map = L.map("map", { zoomControl: false, attributionControl: true, minZoom: 4, maxZoom: 16,
+                                       zoomSnap: 0.25, zoomDelta: 0.5, worldCopyJump: false });
   L.control.zoom({ position: "topright" }).addTo(map);
   const Home = L.Control.extend({
     options: { position: "topright" },
@@ -508,7 +511,9 @@ function initMap(basemap) {
   };
   fitLimits();
   app.home = pts.length ? L.latLngBounds(pts) : L.latLngBounds(CONFIG.region);
-  app.core = pts.length ? coreBounds(pts) : app.home;
+  const region = L.latLngBounds(CONFIG.region);
+  const coastal = pts.filter(p => region.contains(p));
+  app.core = coastal.length ? L.latLngBounds(coastal) : app.home;
   const hv = homeView();
   map.setView(hv.center, hv.zoom, { animate: false });
   // Re-measure whenever the map's container changes size (fonts loading, window
@@ -527,11 +532,13 @@ function initMap(basemap) {
   map.on("moveend", () => { if (!app.selected) renderOverview(); });
 }
 
-// Starting view: one zoom level closer than "everything fits", centred on the main body of
-// sites (ignoring the farthest 2% at each edge, e.g. inland lakes), so the coast fills the view.
+// Starting view: fit every site inside the Mid-Atlantic coastal region, so the northernmost and
+// southernmost coastal sites are both in the window. Outliers beyond it (Great Lakes beaches,
+// inland lakes) stay on the map, one zoom-out away.
 function homeView() {
-  const z = app.map.getBoundsZoom(app.home, false, L.point(80, 80));
-  return { center: app.core.getCenter(), zoom: Math.min(z + 1, 12) };
+  const b = app.core;
+  const z = app.map.getBoundsZoom(b, false, L.point(24, 24));
+  return { center: b.getCenter(), zoom: Math.min(Math.floor(z * 4) / 4, 12) };
 }
 function coreBounds(pts) {
   if (pts.length < 20) return L.latLngBounds(pts);
