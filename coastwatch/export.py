@@ -16,6 +16,7 @@ from typing import Optional
 
 from . import standards
 from .models import Status
+from .collectors.base import clean_text
 from .store import Store
 
 STALE_DAYS = 14  # in season, older results are shown as "no recent data"
@@ -71,7 +72,7 @@ def export(store: Store, out_dir: str | Path = "docs/data", today: Optional[date
 
         props = {
             "site_id": s["site_id"], "name": s["name"], "state": s["state"],
-            "county": s["county"], "water_body": s["water_body"], "status": status,
+            "county": clean_text(s["county"]), "water_body": s["water_body"], "status": status,
             "source_status": s["source_status"], "detail_url": s["detail_url"],
             "latest_sample_date": latest["sample_date"] if latest else None,
             "latest_value": latest["value"] if latest else None,

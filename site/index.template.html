@@ -72,11 +72,14 @@ a { color: var(--ink); text-decoration-color: var(--coast); text-underline-offse
 a:hover { text-decoration-color: currentColor; }
 
 /* ---------- frame ---------- */
-.app { display: grid; grid-template-rows: auto auto minmax(0, 1fr); height: 100%; }
+.app { display: grid; grid-template-rows: auto auto minmax(0, 1fr) auto; height: 100%; }
 /* Pin each part to its row: a hidden banner must not let the map slide into its row. */
 .topbar { grid-row: 1; }
 .banner { grid-row: 2; }
 .layout { grid-row: 3; }
+.footer { grid-row: 4; }
+/* Desktop is a single screen: header and footer stay put, only the panel scrolls. */
+@media (min-width: 821px) { html, body { overflow: hidden; } }
 .topbar {
   display: flex; align-items: baseline; gap: 1.25rem; flex-wrap: wrap;
   padding: .85rem 1.25rem .8rem; border-bottom: 1px solid var(--rule);
@@ -213,8 +216,8 @@ table.states .flag { color: var(--advisory); font-weight: 600; }
 .official { display: inline-block; margin-top: 1.4rem; font-weight: 600; }
 .fineprint { font-size: .8rem; color: var(--ink-3); margin-top: 1rem; }
 
-.footer { padding: .9rem 1.25rem; border-top: 1px solid var(--rule); font-size: .8rem; color: var(--ink-3); }
-.footer p { margin: 0; max-width: 70ch; }
+.footer { padding: .45rem 1.25rem; border-top: 1px solid var(--rule); font-size: .75rem; line-height: 1.4; color: var(--ink-3); background: var(--surface); }
+.footer p { margin: 0; max-width: 120ch; }
 .loading { padding: 2rem 1.25rem; color: var(--ink-2); }
 
 @media (max-width: 820px) {
@@ -252,10 +255,10 @@ table.states .flag { color: var(--advisory); font-weight: 600; }
     </section>
     <aside class="panel" id="panel" aria-live="polite"><div class="loading">Loading…</div></aside>
   </main>
+  <footer class="footer">
+    <p>Not an official source. Combines public data from VDH, MDE, NJDEP, NYC Health and the national Water Quality Portal. Water quality can change quickly, especially after rain, so always follow posted signs and lifeguards.</p>
+  </footer>
 </div>
-<footer class="footer">
-  <p>This site combines public data from the Virginia Department of Health, Maryland Department of the Environment, Delaware DNREC, New Jersey DEP, New York State Department of Health and NYC Health. It is not an official source. Water quality can change quickly, especially after rain, so always follow posted signs and lifeguards.</p>
-</footer>
 
 <script id="cw-embed" type="application/json">null</script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
