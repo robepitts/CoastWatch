@@ -2,7 +2,7 @@
  "site_id": "va_vdh:kiptopeke-state-park",
  "name": "Kiptopeke State Park",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "off_season",
  "source_status": null,

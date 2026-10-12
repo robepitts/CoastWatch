@@ -2,7 +2,7 @@
  "site_id": "va_vdh:first-landing-state-park",
  "name": "First Landing State Park",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "open",
  "source_status": null,

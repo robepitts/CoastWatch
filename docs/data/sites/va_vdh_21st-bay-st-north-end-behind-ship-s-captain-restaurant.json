@@ -2,7 +2,7 @@
  "site_id": "va_vdh:21st-bay-st-north-end-behind-ship-s-captain-restaurant",
  "name": "21st Bay St., North End Behind Ship's Captain Restaurant",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "off_season",
  "source_status": null,

@@ -2,7 +2,7 @@
  "site_id": "va_vdh:fort-story-south",
  "name": "Fort Story South",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "open",
  "source_status": null,

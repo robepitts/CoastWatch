@@ -2,7 +2,7 @@
  "site_id": "va_vdh:little-island-beach-north",
  "name": "Little Island Beach North",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "open",
  "source_status": null,

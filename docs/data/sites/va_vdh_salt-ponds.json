@@ -2,7 +2,7 @@
  "site_id": "va_vdh:salt-ponds",
  "name": "Salt Ponds",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "off_season",
  "source_status": null,

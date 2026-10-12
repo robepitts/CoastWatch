@@ -2,7 +2,7 @@
  "site_id": "va_vdh:king-lincoln-park",
  "name": "King/Lincoln Park",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "off_season",
  "source_status": null,

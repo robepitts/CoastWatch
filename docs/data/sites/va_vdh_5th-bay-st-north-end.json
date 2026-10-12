@@ -2,7 +2,7 @@
  "site_id": "va_vdh:5th-bay-st-north-end",
  "name": "5th Bay St., North End",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "off_season",
  "source_status": null,

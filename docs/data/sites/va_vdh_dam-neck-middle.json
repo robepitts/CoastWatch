@@ -2,7 +2,7 @@
  "site_id": "va_vdh:dam-neck-middle",
  "name": "Dam Neck Middle",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "off_season",
  "source_status": null,

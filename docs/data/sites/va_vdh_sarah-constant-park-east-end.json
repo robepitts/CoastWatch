@@ -2,7 +2,7 @@
  "site_id": "va_vdh:sarah-constant-park-east-end",
  "name": "Sarah Constant Park, East End",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "off_season",
  "source_status": null,

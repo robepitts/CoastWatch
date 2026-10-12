@@ -2,7 +2,7 @@
  "site_id": "va_vdh:lesner-bridge-east",
  "name": "Lesner Bridge East",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "open",
  "source_status": null,

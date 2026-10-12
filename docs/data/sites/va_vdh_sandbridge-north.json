@@ -2,7 +2,7 @@
  "site_id": "va_vdh:sandbridge-north",
  "name": "Sandbridge North",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "open",
  "source_status": null,

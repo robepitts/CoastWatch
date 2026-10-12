@@ -2,7 +2,7 @@
  "site_id": "va_vdh:little-island-beach-south",
  "name": "Little Island Beach South",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "open",
  "source_status": null,

@@ -2,7 +2,7 @@
  "site_id": "va_vdh:13th-view-north-end",
  "name": "13th View, North End",
  "state": "VA",
- "county": "none",
+ "county": null,
  "water_body": null,
  "status": "off_season",
  "source_status": null,
