@@ -127,7 +127,6 @@ a:hover { text-decoration-color: currentColor; }
 .cw-marker { background: none; border: 0; }
 .cw-marker svg { display: block; overflow: visible; transform: scale(var(--marker-scale, 1)); transform-origin: 50% 50%; }
 .cw-marker.is-selected svg { transform: scale(calc(var(--marker-scale, 1) * 1.6)); }
-.cw-marker.is-selected { z-index: 1000 !important; }
 .cw-marker.is-selected::after {
   content: ""; position: absolute; inset: -9px; border-radius: 50%;
   border: 2px solid var(--ink); pointer-events: none;
@@ -490,7 +489,7 @@ function initMap(basemap) {
     const p = f.properties;
     const m = L.marker([lat, lon], {
       icon: icon(p.status, false, p.last_result), title: `${p.name}: ${(STATUS[p.status] || STATUS.unknown).label}`,
-      alt: p.name, riseOnHover: true, keyboard: true,
+      alt: p.name, riseOnHover: true, riseOffset: 1e7, keyboard: true, zIndexOffset: zOffset(p),
     });
     m.on("click", () => select(p.site_id));
     m.feature = f;
@@ -546,6 +545,16 @@ function coreBounds(pts) {
   const lats = pts.map(p => p[0]).sort((a, b) => a - b), lons = pts.map(p => p[1]).sort((a, b) => a - b);
   return L.latLngBounds([q(lats, 0.02), q(lons, 0.02)], [q(lats, 0.98), q(lons, 0.98)]);
 }
+// Drawing order: problems always on top of greens, live results above faded ones, grey at the
+// bottom. Leaflet stacks by screen position plus this offset, so tiers are spaced far apart.
+const TIER = { closed: 6, advisory: 5, exceeded: 4, resampling: 4, open: 2 };
+function zTier(p) {
+  if (RING.has(p.status)) return p.last_result === "over" ? 3 : p.last_result === "ok" ? 1 : 0;
+  return TIER[p.status] ?? 0;
+}
+const zOffset = p => zTier(p) * 1e6;
+const Z_SELECTED = 2e7;
+
 function goHome() {
   app.prevView = null;   // "All sites in view" shouldn't jump back afterwards
   const hv = homeView();
@@ -687,10 +696,12 @@ async function select(siteId, { fromHash = false } = {}) {
   if (app.selected && app.markers.get(app.selected)) {
     const prev = app.markers.get(app.selected);
     prev.setIcon(icon(prev.feature.properties.status, false, prev.feature.properties.last_result));
+    prev.setZIndexOffset(zOffset(prev.feature.properties));
   }
   if (!app.selected && !fromHash) app.prevView = { center: app.map.getCenter(), zoom: app.map.getZoom() };
   app.selected = siteId;
   m.setIcon(icon(m.feature.properties.status, true, m.feature.properties.last_result));
+  m.setZIndexOffset(Z_SELECTED);
   const z = Math.max(app.map.getZoom(), CONFIG.siteZoom);
   if (reduceMotion) app.map.setView(m.getLatLng(), z, { animate: false });
   else app.map.flyTo(m.getLatLng(), z, { duration: 0.8 });
@@ -707,7 +718,10 @@ async function select(siteId, { fromHash = false } = {}) {
 function deselect() {
   if (app.selected) {
     const m = app.markers.get(app.selected);
-    if (m) m.setIcon(icon(m.feature.properties.status, false, m.feature.properties.last_result));
+    if (m) {
+      m.setIcon(icon(m.feature.properties.status, false, m.feature.properties.last_result));
+      m.setZIndexOffset(zOffset(m.feature.properties));
+    }
   }
   app.selected = null;
   window.history.replaceState(null, "", location.pathname + location.search);
