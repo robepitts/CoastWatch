@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-12T01:45:07+00:00",
- "as_of": "2026-10-12",
+ "generated_at": "2026-10-13T03:04:48+00:00",
+ "as_of": "2026-10-13",
  "by_state": {
   "NY": {
    "sites": 429,
@@ -52,9 +52,9 @@
    "beaches": 59,
    "waterways": 54,
    "statuses": {
-    "off_season": 41,
+    "off_season": 46,
     "no_data": 54,
-    "exceeded": 9,
+    "exceeded": 4,
     "open": 9
    },
    "newest_sample": "2026-09-30"
