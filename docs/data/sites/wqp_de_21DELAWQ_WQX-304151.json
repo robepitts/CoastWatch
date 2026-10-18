@@ -29,7 +29,7 @@
  "units": "MPN/100mL",
  "geomean_30d": null,
  "bav": 104,
- "samples_count": 6,
+ "samples_count": 8,
  "last_result": "over",
  "location_approx": false,
  "linked_site_ids": [],
@@ -75,6 +75,24 @@
    "sample_date": "2025-05-20",
    "indicator": "enterococcus",
    "value": 922.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
+  },
+  {
+   "sample_date": "2025-06-25",
+   "indicator": "enterococcus",
+   "value": 651.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 1,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
+  },
+  {
+   "sample_date": "2025-07-29",
+   "indicator": "enterococcus",
+   "value": 215.0,
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 1,

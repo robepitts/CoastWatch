@@ -22,14 +22,14 @@
    "role": "status and results"
   }
  ],
- "latest_sample_date": "2026-06-30",
+ "latest_sample_date": "2026-08-26",
  "latest_value": 1.0,
  "latest_qualifier": null,
  "latest_indicator": "enterococcus",
  "units": "CFU/100mL",
- "geomean_30d": 1.7,
+ "geomean_30d": 11.2,
  "bav": 104,
- "samples_count": 39,
+ "samples_count": 47,
  "last_result": "ok",
  "location_approx": false,
  "linked_site_ids": [],
@@ -379,6 +379,78 @@
   },
   {
    "sample_date": "2026-06-30",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
+  },
+  {
+   "sample_date": "2026-07-08",
+   "indicator": "enterococcus",
+   "value": 33.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
+  },
+  {
+   "sample_date": "2026-07-15",
+   "indicator": "enterococcus",
+   "value": 4.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
+  },
+  {
+   "sample_date": "2026-07-22",
+   "indicator": "enterococcus",
+   "value": 230.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
+  },
+  {
+   "sample_date": "2026-07-29",
+   "indicator": "enterococcus",
+   "value": 130.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
+  },
+  {
+   "sample_date": "2026-08-05",
+   "indicator": "enterococcus",
+   "value": 90.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
+  },
+  {
+   "sample_date": "2026-08-12",
+   "indicator": "enterococcus",
+   "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
+  },
+  {
+   "sample_date": "2026-08-19",
+   "indicator": "enterococcus",
+   "value": 3.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Interstate Environmental Commission NewYork - New Jersey - Connecticut"
+  },
+  {
+   "sample_date": "2026-08-26",
    "indicator": "enterococcus",
    "value": 1.0,
    "qualifier": null,

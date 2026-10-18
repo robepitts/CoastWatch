@@ -29,7 +29,7 @@
  "units": "CFU/100mL",
  "geomean_30d": null,
  "bav": 104,
- "samples_count": 34,
+ "samples_count": 36,
  "last_result": "ok",
  "location_approx": false,
  "linked_site_ids": [],
@@ -75,6 +75,15 @@
    "sample_date": "2025-06-09",
    "indicator": "enterococcus",
    "value": 5.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
+  },
+  {
+   "sample_date": "2025-06-16",
+   "indicator": "enterococcus",
+   "value": 10.0,
    "qualifier": null,
    "units": "CFU/100mL",
    "exceeds_bav": 0,
@@ -159,6 +168,15 @@
    "qualifier": null,
    "units": "CFU/100mL",
    "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
+  },
+  {
+   "sample_date": "2025-07-29",
+   "indicator": "enterococcus",
+   "value": 213.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
    "source": "Delaware Dept Natural Resources & Environmental Control"
   },
   {

@@ -7,7 +7,7 @@
  "agency": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY",
  "county": "Suffolk",
  "water_body": "Estuary or bay",
- "status": "no_data",
+ "status": "exceeded",
  "source_status": null,
  "detail_url": "https://www.waterqualitydata.us/provider/STORET/21VASWCB/21VASWCB-2-NAN019.14/",
  "source_label": "Virginia Department of Health",
@@ -22,14 +22,14 @@
    "role": "status and results"
   }
  ],
- "latest_sample_date": "2026-08-24",
+ "latest_sample_date": "2026-10-01",
  "latest_value": 800.0,
  "latest_qualifier": null,
  "latest_indicator": "enterococcus",
  "units": "CFU/100mL",
  "geomean_30d": null,
  "bav": 104,
- "samples_count": 22,
+ "samples_count": 24,
  "last_result": "over",
  "location_approx": false,
  "linked_site_ids": [],
@@ -226,6 +226,24 @@
   },
   {
    "sample_date": "2026-08-24",
+   "indicator": "enterococcus",
+   "value": 800.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-10-01",
+   "indicator": "e_coli",
+   "value": 3076.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-10-01",
    "indicator": "enterococcus",
    "value": 800.0,
    "qualifier": null,

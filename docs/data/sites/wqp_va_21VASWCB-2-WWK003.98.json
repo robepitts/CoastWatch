@@ -7,7 +7,7 @@
  "agency": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY",
  "county": "Newport News",
  "water_body": "Estuary or bay",
- "status": "no_data",
+ "status": "exceeded",
  "source_status": null,
  "detail_url": "https://www.waterqualitydata.us/provider/STORET/21VASWCB/21VASWCB-2-WWK003.98/",
  "source_label": "Virginia Department of Health",
@@ -22,15 +22,15 @@
    "role": "status and results"
   }
  ],
- "latest_sample_date": "2026-07-06",
- "latest_value": 30.0,
+ "latest_sample_date": "2026-09-24",
+ "latest_value": 800.0,
  "latest_qualifier": null,
  "latest_indicator": "enterococcus",
  "units": "CFU/100mL",
  "geomean_30d": null,
  "bav": 104,
- "samples_count": 22,
- "last_result": "ok",
+ "samples_count": 24,
+ "last_result": "over",
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/wqp_va_21VASWCB-2-WWK003.98.json",
@@ -231,6 +231,24 @@
    "qualifier": null,
    "units": "CFU/100mL",
    "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-09-24",
+   "indicator": "e_coli",
+   "value": 6131.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-09-24",
+   "indicator": "enterococcus",
+   "value": 800.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
    "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
   }
  ],
