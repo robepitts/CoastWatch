@@ -22,14 +22,14 @@
    "role": "status and results"
   }
  ],
- "latest_sample_date": "2025-04-23",
- "latest_value": 15.0,
+ "latest_sample_date": "2025-06-24",
+ "latest_value": 66.0,
  "latest_qualifier": null,
  "latest_indicator": "enterococcus",
  "units": "MPN/100mL",
  "geomean_30d": null,
  "bav": 104,
- "samples_count": 2,
+ "samples_count": 3,
  "last_result": null,
  "location_approx": false,
  "linked_site_ids": [],
@@ -48,6 +48,15 @@
    "sample_date": "2025-04-23",
    "indicator": "enterococcus",
    "value": 15.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware Dept Natural Resources & Environmental Control"
+  },
+  {
+   "sample_date": "2025-06-24",
+   "indicator": "enterococcus",
+   "value": 66.0,
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 0,

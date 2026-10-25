@@ -7,7 +7,7 @@
  "agency": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY",
  "county": "Portsmouth",
  "water_body": "Estuary or bay",
- "status": "open",
+ "status": "exceeded",
  "source_status": null,
  "detail_url": "https://www.waterqualitydata.us/provider/STORET/21VASWCB/21VASWCB-2-SBE001.98/",
  "source_label": "Virginia Department of Health",
@@ -22,15 +22,15 @@
    "role": "status and results"
   }
  ],
- "latest_sample_date": "2026-09-10",
- "latest_value": 155.0,
+ "latest_sample_date": "2026-10-06",
+ "latest_value": 180.0,
  "latest_qualifier": null,
- "latest_indicator": "e_coli",
+ "latest_indicator": "enterococcus",
  "units": "CFU/100mL",
  "geomean_30d": null,
- "bav": 410,
- "samples_count": 36,
- "last_result": "ok",
+ "bav": 104,
+ "samples_count": 38,
+ "last_result": "over",
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/wqp_va_21VASWCB-2-SBE001.98.json",
@@ -357,6 +357,24 @@
    "qualifier": null,
    "units": "CFU/100mL",
    "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-10-06",
+   "indicator": "e_coli",
+   "value": 426.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-10-06",
+   "indicator": "enterococcus",
+   "value": 180.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
    "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
   }
  ],
