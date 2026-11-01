@@ -7,7 +7,7 @@
  "agency": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY",
  "county": "James City",
  "water_body": "Estuary or bay",
- "status": "no_data",
+ "status": "open",
  "source_status": null,
  "detail_url": "https://www.waterqualitydata.us/provider/STORET/21VASWCB/21VASWCB-2-MIC000.03/",
  "source_label": "Virginia Department of Health",
@@ -22,15 +22,15 @@
    "role": "status and results"
   }
  ],
- "latest_sample_date": "2026-08-17",
- "latest_value": 480.0,
+ "latest_sample_date": "2026-10-15",
+ "latest_value": 341.0,
  "latest_qualifier": null,
  "latest_indicator": "e_coli",
  "units": "CFU/100mL",
  "geomean_30d": null,
  "bav": 410,
- "samples_count": 20,
- "last_result": "over",
+ "samples_count": 22,
+ "last_result": "ok",
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/wqp_va_21VASWCB-2-MIC000.03.json",
@@ -213,6 +213,24 @@
    "qualifier": null,
    "units": "CFU/100mL",
    "exceeds_bav": 1,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-10-15",
+   "indicator": "enterococcus",
+   "value": 800.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-10-15",
+   "indicator": "e_coli",
+   "value": 341.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
    "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
   }
  ],

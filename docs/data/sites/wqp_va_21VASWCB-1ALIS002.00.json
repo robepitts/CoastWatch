@@ -7,7 +7,7 @@
  "agency": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY",
  "county": "Northumberland",
  "water_body": "Estuary or bay",
- "status": "no_data",
+ "status": "open",
  "source_status": null,
  "detail_url": "https://www.waterqualitydata.us/provider/STORET/21VASWCB/21VASWCB-1ALIS002.00/",
  "source_label": "Virginia Department of Health",
@@ -22,15 +22,15 @@
    "role": "status and results"
   }
  ],
- "latest_sample_date": "2026-08-20",
- "latest_value": 6488.0,
+ "latest_sample_date": "2026-10-08",
+ "latest_value": 10.0,
  "latest_qualifier": null,
- "latest_indicator": "e_coli",
+ "latest_indicator": "enterococcus",
  "units": "CFU/100mL",
  "geomean_30d": null,
- "bav": 410,
- "samples_count": 21,
- "last_result": "over",
+ "bav": 104,
+ "samples_count": 23,
+ "last_result": "ok",
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/wqp_va_21VASWCB-1ALIS002.00.json",
@@ -222,6 +222,24 @@
    "qualifier": null,
    "units": "CFU/100mL",
    "exceeds_bav": 1,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-10-08",
+   "indicator": "e_coli",
+   "value": 187.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-10-08",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
    "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
   }
  ],

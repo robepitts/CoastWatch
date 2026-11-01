@@ -22,15 +22,15 @@
    "role": "status and results"
   }
  ],
- "latest_sample_date": "2025-10-06",
- "latest_value": 15.0,
- "latest_qualifier": null,
- "latest_indicator": "e_coli",
+ "latest_sample_date": "2026-05-11",
+ "latest_value": 10.0,
+ "latest_qualifier": "<",
+ "latest_indicator": "enterococcus",
  "units": "CFU/100mL",
  "geomean_30d": null,
- "bav": 235,
- "samples_count": 30,
- "last_result": null,
+ "bav": 104,
+ "samples_count": 42,
+ "last_result": "ok",
  "location_approx": false,
  "linked_site_ids": [],
  "history_file": "sites/wqp_nj_31DELRBC_WQX-091017.json",
@@ -301,6 +301,114 @@
    "indicator": "e_coli",
    "value": 15.0,
    "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2026-03-30",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2026-03-30",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2026-03-30",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2026-03-30",
+   "indicator": "enterococcus",
+   "value": 4.0,
+   "qualifier": null,
+   "units": "MPN/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2026-04-20",
+   "indicator": "e_coli",
+   "value": 18.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2026-04-20",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2026-04-20",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2026-04-20",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2026-05-11",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2026-05-11",
+   "indicator": "enterococcus",
+   "value": 1.0,
+   "qualifier": "<",
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2026-05-11",
+   "indicator": "e_coli",
+   "value": 1.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "Delaware River Basin Commission"
+  },
+  {
+   "sample_date": "2026-05-11",
+   "indicator": "enterococcus",
+   "value": 10.0,
+   "qualifier": "<",
    "units": "CFU/100mL",
    "exceeds_bav": 0,
    "source": "Delaware River Basin Commission"
