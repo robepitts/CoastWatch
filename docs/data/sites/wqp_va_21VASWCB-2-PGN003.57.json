@@ -22,14 +22,14 @@
    "role": "status and results"
   }
  ],
- "latest_sample_date": "2026-07-21",
- "latest_value": 657.0,
+ "latest_sample_date": "2026-09-16",
+ "latest_value": 582.0,
  "latest_qualifier": null,
  "latest_indicator": "e_coli",
  "units": "CFU/100mL",
  "geomean_30d": null,
  "bav": 410,
- "samples_count": 21,
+ "samples_count": 23,
  "last_result": "over",
  "location_approx": false,
  "linked_site_ids": [],
@@ -219,6 +219,24 @@
    "sample_date": "2026-07-21",
    "indicator": "e_coli",
    "value": 657.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 1,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-09-16",
+   "indicator": "enterococcus",
+   "value": 20.0,
+   "qualifier": null,
+   "units": "CFU/100mL",
+   "exceeds_bav": 0,
+   "source": "VIRGINIA DEPARTMENT OF ENVIRONMENTAL QUALITY"
+  },
+  {
+   "sample_date": "2026-09-16",
+   "indicator": "e_coli",
+   "value": 582.0,
    "qualifier": null,
    "units": "CFU/100mL",
    "exceeds_bav": 1,
