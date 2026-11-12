@@ -4,7 +4,7 @@
  "state": "MD",
  "kind": "beach",
  "link_text": "Check the official Maryland Department of the Environment page",
- "agency": "Maryland Department of the Environment Beaches Data",
+ "agency": "Maryland Department of the Environment Beaches Data (State)",
  "county": null,
  "water_body": "Lake",
  "status": "off_season",
@@ -17,7 +17,7 @@
  "sources": [
   {
    "id": "wqp_md",
-   "label": "Maryland Department of the Environment Beaches Data, via the Water Quality Portal",
+   "label": "Maryland Department of the Environment Beaches Data (State), via the Water Quality Portal",
    "delayed": true,
    "role": "status and results"
   }
@@ -42,7 +42,7 @@
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 0,
-   "source": "Maryland Department of the Environment Beaches Data"
+   "source": "Maryland Department of the Environment Beaches Data (State)"
   },
   {
    "sample_date": "2025-05-05",
@@ -51,7 +51,7 @@
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 0,
-   "source": "Maryland Department of the Environment Beaches Data"
+   "source": "Maryland Department of the Environment Beaches Data (State)"
   },
   {
    "sample_date": "2025-05-12",
@@ -60,7 +60,7 @@
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 0,
-   "source": "Maryland Department of the Environment Beaches Data"
+   "source": "Maryland Department of the Environment Beaches Data (State)"
   },
   {
    "sample_date": "2025-06-02",
@@ -69,7 +69,7 @@
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 0,
-   "source": "Maryland Department of the Environment Beaches Data"
+   "source": "Maryland Department of the Environment Beaches Data (State)"
   },
   {
    "sample_date": "2025-06-16",
@@ -78,7 +78,7 @@
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 1,
-   "source": "Maryland Department of the Environment Beaches Data"
+   "source": "Maryland Department of the Environment Beaches Data (State)"
   },
   {
    "sample_date": "2025-06-18",
@@ -87,7 +87,7 @@
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 0,
-   "source": "Maryland Department of the Environment Beaches Data"
+   "source": "Maryland Department of the Environment Beaches Data (State)"
   },
   {
    "sample_date": "2025-06-30",
@@ -96,7 +96,7 @@
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 0,
-   "source": "Maryland Department of the Environment Beaches Data"
+   "source": "Maryland Department of the Environment Beaches Data (State)"
   },
   {
    "sample_date": "2025-07-14",
@@ -105,7 +105,7 @@
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 0,
-   "source": "Maryland Department of the Environment Beaches Data"
+   "source": "Maryland Department of the Environment Beaches Data (State)"
   },
   {
    "sample_date": "2025-07-28",
@@ -114,7 +114,7 @@
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 0,
-   "source": "Maryland Department of the Environment Beaches Data"
+   "source": "Maryland Department of the Environment Beaches Data (State)"
   },
   {
    "sample_date": "2025-08-04",
@@ -123,7 +123,7 @@
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 0,
-   "source": "Maryland Department of the Environment Beaches Data"
+   "source": "Maryland Department of the Environment Beaches Data (State)"
   },
   {
    "sample_date": "2025-08-18",
@@ -132,7 +132,7 @@
    "qualifier": null,
    "units": "MPN/100mL",
    "exceeds_bav": 0,
-   "source": "Maryland Department of the Environment Beaches Data"
+   "source": "Maryland Department of the Environment Beaches Data (State)"
   }
  ],
  "advisories": []
