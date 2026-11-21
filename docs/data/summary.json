@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-20T03:03:33+00:00",
- "as_of": "2026-11-20",
+ "generated_at": "2026-11-21T03:09:12+00:00",
+ "as_of": "2026-11-21",
  "by_state": {
   "NY": {
    "sites": 429,
@@ -18,9 +18,9 @@
    "waterways": 279,
    "statuses": {
     "off_season": 49,
-    "no_data": 189,
-    "open": 79,
-    "exceeded": 11
+    "no_data": 206,
+    "open": 65,
+    "exceeded": 8
    },
    "newest_sample": "2026-10-27"
   },
